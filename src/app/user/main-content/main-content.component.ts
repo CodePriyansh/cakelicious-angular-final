@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ToastrService } from 'ngx-toastr';
+import { ProductService } from 'src/app/services/product.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-main-content',
@@ -7,8 +11,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-
-  constructor() { }
+  productList:Product[]|any;
+  constructor(private productService:ProductService , private toastr: ToastrService) { }
   what_we_offer_options: OwlOptions = {
     loop: true,
     autoplay:true,
@@ -91,6 +95,15 @@ export class MainContentComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
+    this.productService.getProductBycategory().subscribe(data=>{
+      this.productList= data;
+    },err=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status == 500)
+          this.toastr.error("Server Error","Error");
+      }
+    })
+
   }
 
 }
