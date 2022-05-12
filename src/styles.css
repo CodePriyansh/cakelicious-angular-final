@@ -2,6 +2,7 @@
  @charset "utf-8";
 
  @import "~bootstrap/dist/css/bootstrap.css";
+ @import '~ngx-toastr/toastr.css';
   @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
 
   :root {
