@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -6,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-  
+  constructor(private router:Router , private service:LoginService) { }
+  signout(){
+  sessionStorage.removeItem('jwt-token');
+  sessionStorage.removeItem('user-detail');
+  // alert("logout success");
+  this.router.navigate(['/signin'])
+
+}
+isLoggedIn(){
+  return this.service.checkToken()
+}
 
   
   ngOnInit(): void {

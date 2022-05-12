@@ -63,8 +63,8 @@
               <div class="dropdown">
                 <button class="dropbtn"> <i class="fa fa-user-circle" aria-hidden="true"></i></button>
                 <div class="dropdown-content">
-                  <a routerLink="signin">Login/Signup</a>
-                  <a >logout</a>
+                  <a *ngIf="!isLoggedIn()" routerLink="signin">Login/Signup</a>
+                  <a *ngIf="isLoggedIn()" (click)="signout()" >logout</a>
                 </div>
               </div>
 
