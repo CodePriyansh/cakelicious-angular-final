@@ -1,4 +1,10 @@
 
+
+   /* Carousel */
+
+   .carousel-item{
+     max-height: 500px;
+   }
 /* ARTICLE SECTION */
 
 .article .container {
@@ -8,6 +14,7 @@
       var(--section-back) 50%,
       rgb(240 69 6 / 27%) 102%
     );
+    /* background-image: url("https://wallpapercave.com/wp/wp7367666.jpg"); */
   
     border-radius: 8px;
     background-repeat: no-repeat;
@@ -201,20 +208,29 @@
   
   .product-section .post-slide {
     background: var(--section-back);
-    /* margin: 20px 15px 20px; */
-    border-radius: 15px;
+    /*margin: 20px 15px 20px;
+    */border-radius: 15px;
     padding-top: 1px;
     box-shadow: 0px 14px 22px -9px rgb(237, 218, 218);
-  }
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
   .product-section .post-slide:hover {
-   background: var(--head-text);
    transition: 0.8s;
+   transform: scale(1.05);
    box-shadow: 0px 14px 22px -9px rgb(237, 218, 218);
    -webkit-transition: 0.8s;
    -moz-transition: 0.8s;
    -ms-transition: 0.8s;
    -o-transition: 0.8s;
-  }
+   -webkit-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -o-transform: scale(1.05);
+}
   .product-section .post-slide .post-img {
     position: relative;
     overflow: hidden;
@@ -228,6 +244,14 @@
     -o-border-radius: 10px;
   }
   
+  .big-screen .post-slide .post-img:hover{
+    transition: all 0.5s;
+    background: var(--head-text);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
   
   .rating-color{
     color:#fbc634 !important;
@@ -248,3 +272,77 @@
     font-size:18px;
     margin-bottom:2px;
   }
+
+  @media only screen and (max-width: 400px) {
+   .big-screen{
+            display: none;
+   }
+   .small-screen{
+     display:block;
+   }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .small-screen{
+             display: none;
+    }
+   }
+
+
+
+   /* body{margin-top:20px;
+    font-style: 'Poppins';
+    } */
+    
+   
+  .why-choose-us{
+    /* background: url("../../../assets/images/Banner-transparent.png"); */
+    /*bac*/background-color:var(--section-back);
+}
+    .why-choose-us i{
+      font-size:500%;
+      color:var(--head-text);
+    }
+
+    .why-choose-us img{
+           transform: scale(1) ;
+           -webkit-transform: scale(1) ;
+           -moz-transform: scale(1) ;
+           -ms-transform: scale(1) ;
+           -o-transform: scale(1) ;
+           animation: zoom-in-zoom-out 4s ease infinite;
+           -webkit-animation: zoom-in-zoom-out 4s ease infinite;
+} 
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+}
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+}
+}
+
+
+    
+    .sub-info{
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        color: #410c0c;
+    }
+    
+    .display-30 {
+        font-size: 0.9rem;
+        color: #e94e11;
+    }
