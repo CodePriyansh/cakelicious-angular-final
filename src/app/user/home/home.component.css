@@ -3,6 +3,8 @@
 *********************************/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* 
 .header {
   position: relative;
   width: 100%;
@@ -11,173 +13,261 @@
 
 
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+} */
 
 
-nav{
-  background-image: linear-gradient(
-    140deg,
-    var(--section-back) 50%,
-    var(--section-back) 0%,
-    rgb(240 69 6 / 27%) 75%
-  );
 
-  padding: 10px 40px 10px 70px;
-  border: none;
-  border-left: none;
-  border-right: none;
-}
-nav ul{
+
+.second-nav header{
+  width: 100%;
   display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: var(--section-back);
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  padding: 0 100px;
+  transition: 0.6s;
 }
-nav ul li.logo{
-  flex: 1;
-  font-size: 30px;
-  font-weight: 700;
+
+
+.second-nav header .navigation{
+  position: relative;
+  line-height: 75px;
+  transition: 0.6s;
+  transition-property: line-height;
+  z-index:20;   
 }
-nav ul div.items{
-  padding: 0 25px;
-  display: inline-flex;
+
+.second-nav header.sticky .navigation{
+  line-height: 60px;
 }
-nav ul div.items a{
-  text-decoration: none;
-  font-size: 18px;
-  padding: 0 12px;
-  color:var(--head-text)
-}
-nav ul div.items a:hover{
-  font-weight: 500;
-}
-nav ul .search-icon{
-  height: 40px;
-  width: 240px;
+
+.second-nav header .navigation .menu{
+  position: relative;
   display: flex;
-  background: #f2f2f2;
-  border-radius: 5px;
+  justify-content: center;
+  list-style: none;
+  user-select: none;
 }
-nav ul .search-icon input{
-  height: 100%;
-  width: 200px;
-  border: none;
-  outline: none;
-  padding: 0 10px;
+
+.second-nav .menu-item > a{
   color: var(--head-text);
-  font-size: 16px;
-  border-radius: 5px 0 0 5px;
+  font-size: 1.3em;
+  text-decoration: none;
+  margin: 20px;
+  padding: 25px 0;
 }
-nav ul .search-icon .icon{
-  height: 100%;
-  width: 40px;
+
+.second-nav .menu-item > a:hover{
+  color: #469DFF;
+  transition: 0.3s;
+}
+
+.second-nav .menu-item .sub-menu{
+  position: absolute;
+  background: #23252B;
+  top: 74px;
   line-height: 40px;
-  text-align: center;
-  border: 1px solid #cccccc;
-  border-radius: 0 5px 5px 0;
+  list-style: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  pointer-events: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.second-nav header.sticky .menu-item .sub-menu{
+  top: 60px;
+}
+
+.second-nav .menu-item:hover .sub-menu{
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.second-nav .menu-item .sub-menu .sub-item{
+  position: relative;
+  padding: 7px 0;
   cursor: pointer;
+  box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
 }
-nav ul .search-icon .icon:hover{
-  background: #e6e6e6;
+
+.second-nav .menu-item .sub-menu .sub-item a{
+  color: var(--head-text);
+  font-size: 1em;
+  text-decoration: none;
+  padding: 15px 30px;
 }
-nav ul .search-icon .icon span{
-  color: #222222;
-  font-size: 18px;
+
+.second-nav .menu-item .sub-menu .sub-item:hover{
+  background: var(--head-text);
 }
-nav ul li.btn{
-  font-size: 29px;
-  flex: 1;
-  padding: 0 40px;
+
+.second-nav .menu-item .sub-menu .sub-item:last-child:hover{
+  border-radius: 0 0 8px 8px;
+}
+
+.more .more-menu{
+  position: absolute;
+  background: var(--section-back);
+  list-style: none;
+  top: 0;
+  left: 100%;
+  white-space: nowrap;
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.more:hover .more-menu{
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.more .more-menu .more-item{
+  padding: 7px 0;
+  box-shadow: inset 0px -30px 5px -30px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.more .more-menu .more-item:hover{
+  background: var(--head-text);
+}
+
+.second-nav .menu-btn{
   display: none;
 }
-nav ul li.btn span{
-  height: 42px;
-  width: 42px;
-  text-align: center;
-  line-height: 42px;
-  border: 1px solid #151515;
-  border-radius: 5px;
-  cursor: pointer;
-}
-nav ul li.btn span.show:before{
-  content: '\f00d';
-}
-@media screen and (max-width: 1052px) {
-  nav{
-    padding: 10px 40px 10px 0px;
+
+@media (max-width: 1060px){
+  .second-nav header .navigation .menu{
+    position: fixed;
+    display: block;
+    background: #23252b;
+    min-width: 350px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    padding: 90px 50px;
+    visibility: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    transition-property: right, visibility;
   }
-  nav ul li.logo{
+
+  .second-nav header.sticky .navigation{
+    line-height: 75px;
+  }
+
+  .second-nav header .navigation .menu.active{
+    right: 0;
+    visibility: visible;
+  }
+
+  .second-nav .menu-item{
+    position: relative;
+  }
+
+  .second-nav .menu-item .sub-menu{
+    opacity: 1;
+    position: relative;
+    top: 0;
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
     display: none;
   }
-  nav ul div.items{
-    flex: 4;
+
+  .second-nav header.sticky .menu-item .sub-menu{
+    top: 0;
   }
-}
-@media screen and (max-width: 800px){
-  nav ul li.btn{
+
+  .second-nav .menu-item:hover .sub-menu{
+    transform: translateX(10px);
+  }
+
+  .second-nav .menu-item .sub-menu .sub-item{
+    box-shadow: none;
+  }
+
+  .second-nav .menu-item .sub-menu .sub-item:hover{
+    background: none;
+  }
+
+  .second-nav .menu-item .sub-menu .sub-item a:hover{
+    color: #4080EF;
+    transition: 0.3s;
+  }
+
+  .more .more-menu{
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    display: none;
+  }
+
+  .more .more-menu .more-item{
+    box-shadow: none;
+  }
+
+  .more .more-menu .more-item:hover{
+    background: none;
+  }
+
+  .more .more-menu .more-item a{
+    margin-left: 20px;
+  }
+
+  .close-btn{
+    position: absolute;
+    background: url("https://flyclipart.com/thumb2/pop-music-close-button-png-icon-free-download-645906.png")no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 25px;
+    background-position: center;
+    top: 0;
+    left: 0;
+    margin: 25px;
+    cursor: pointer;
+  }
+
+  .second-nav .menu-btn{
+    background: url("https://icon-library.com/images/hamburger-menu-icon-png/hamburger-menu-icon-png-9.jpg")no-repeat;
+    width: 40px;
+    height: 40px;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
     display: block;
   }
-  nav{
-    z-index: 1;
-    padding: 9px 40px 9px 0;
+
+  .second-nav header{
+    padding: 15px 20px;
   }
-  nav ul div.items{
-    z-index: -1;
-    position: fixed;
-    top: -220px;
-    right: 0;
-    width: 100%;
-    background: #222222;
-    display: inline-block;
-    transition: top .4s;
-  }
-  nav ul div.items.show{
-    top: 60px;
-  }
-  nav ul div.items li{
-    text-align: center;
-    line-height: 30px;
-    margin: 30px 0;
-  }
-  nav ul div.items li a{
-    font-size: 19px;
+
+  .second-nav header.sticky{
+    padding: 10px 20px;
   }
 }
-@media screen and (max-width: 405px) {
-  nav ul{
-    flex-wrap: nowrap;
-  }
-  nav ul li.search{
-    width: 50vmin;
-  }
-  nav ul li input{
-    width: 40vmin;
-  }
-  nav ul li .search-icon{
-    width: 10vmin;
-  }
-}
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  padding: 0 40px;
-  z-index: -2;
-}
-.content .text{
-  font-size: 40px;
-  font-weight: 800;
-  padding: 5px 0;
-  color: #202020;
-}
-.content .p{
-  font-size: 28px;
-  font-weight: 600;
-  color: #202020;
-}
+      
+
+
 
 /*********************************
 3.2 Header Main

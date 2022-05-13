@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './user/home/home.component';
 import { MainContentComponent } from './user/main-content/main-content.component';
+import { ProductViewComponent } from './user/product-view/product-view.component';
 import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
 
@@ -10,7 +11,7 @@ const routes: Routes = [{
   children:[{path:"",component:MainContentComponent},
     {
     path:"signin",component:SigninComponent
-  },
+  },{path:"product-view", component:ProductViewComponent},
 {
   path:"signup",component:SignupComponent
 }]

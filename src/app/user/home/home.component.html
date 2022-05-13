@@ -59,7 +59,6 @@
                                   </div> -->
                 </div>
               </div>
-
               <div class="dropdown">
                 <button class="dropbtn"> <i class="fa fa-user-circle" aria-hidden="true"></i></button>
                 <div class="dropdown-content">
@@ -76,28 +75,60 @@
     </div>
 
 
-    <nav>
-      <ul>
-         <li class="btn"><span class="fas fa-bars"></span></li>
-         <div class="items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-         </div>
-         <li class="search-icon d-lg-none d-md-none d-sm-block">
-            <input type="search" placeholder="Search">
-            <label class="icon">
-            <span class="fas fa-search"></span>
-            </label>
-         </li>
-      </ul>
-   </nav>
+  
 
   </header>
+ 
+  <section class="second-nav m-0">
+    <header>
+      <!-- <a href="#" class="logo">logo</a> -->
+      <div class="navigation">
+        <ul class="menu">
+          <div class="close-btn"></div>
+          <li class="menu-item"><a href="#">Home</a></li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#">By Category <i class="fas fa-angle-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Sub Item 01</a></li>
+              <li class="sub-item"><a href="#">Sub Item 02</a></li>
+              <li class="sub-item"><a href="#">Sub Item 03</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#">By Occassion <i class="fas fa-angle-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Sub Item 01</a></li>
+              <li class="sub-item"><a href="#">Sub Item 02</a></li>
+              <li class="sub-item"><a href="#">Sub Item 03</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#">By Flavour<i class="fas fa-angle-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Sub Item 01</a></li>
+              <li class="sub-item"><a href="#">Sub Item 02</a></li>
+              <li class="sub-item"><a href="#">Sub Item 03</a></li>
+              <li class="sub-item"><a href="#">Sub Item 04</a></li>
+              <li class="sub-item more">
+                <a class="more-btn" href="#">More Items <i class="fas fa-angle-right"></i></a>
+                <ul class="more-menu">
+                  <li class="more-item"><a routerLink="product-view">product</a></li>
+                  <li class="more-item"><a href="#">More Item 02</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">Services</a></li>
+          <li class="more-item"><a routerLink="product-view">product</a></li>
 
+          <li class="menu-item"><a href="#">About</a></li>
+          <li class="menu-item"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="menu-btn"></div>
+    </header>
+</section>
 </div>
-
 
 
  <router-outlet></router-outlet>
