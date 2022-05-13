@@ -4,6 +4,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { SocialAuthService, GoogleLoginProvider } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +12,7 @@ import { User } from 'src/app/model/user';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-  user:User = new User("","","","")
+  user: User = new User('', '', '', '');
   constructor(
     private service: LoginService,
     private toastr: ToastrService,
@@ -20,44 +21,51 @@ export class SigninComponent implements OnInit {
   ) {}
 
   signinWithGoogle() {
-    this.social.signIn(GoogleLoginProvider.PROVIDER_ID).then(()=>{
-      this.social.authState.subscribe((data) => {
-        console.log(data.email);
-        this.service.SignInGoogle(data.email).subscribe((data) => {
-          console.log(data.token)
-          if (data.status=="login-success") {
-            this.toastr.success('Login Success', 'WELCOME TO CAKELICIOUS');
-            sessionStorage.setItem('jwt-token', data.token);
-            sessionStorage.setItem('user-detail', JSON.stringify(data));
-            this.router.navigate(['/']);
-          } else {
-            alert('Email is Not Rgisterd with us ');
-            this.router.navigate(['signup']);
-          }
+    this.social
+      .signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then(() => {
+        this.social.authState.subscribe((data) => {
+          console.log(data.email);
+          this.service.SignInGoogle(data.email).subscribe(
+            (data) => {
+              console.log(data.token);
+              if (data.status == 'login-success') {
+                this.toastr.success('Login Success', 'WELCOME TO CAKELICIOUS');
+                sessionStorage.setItem('jwt-token', data.token);
+                sessionStorage.setItem('user-detail', JSON.stringify(data));
+                this.router.navigate(['/']);
+              } else {
+              }
+            },
+            (err) => {
+              if (err instanceof HttpErrorResponse) {
+                if (err.status == 400) {
+                  this.toastr.error('Email is Not Rgisterd with us ');
+                  this.router.navigate(['signup']);
+                } else this.toastr.error('Server Error', 'Error');
+              }
+            }
+          );
         });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }).catch((err)=>{
-      console.log(err)
-    })
   }
 
   public signIn() {
     this.service.signInn(this.user).subscribe((data: any) => {
-      console.log(data)
-      if(data.msg=="Not varified"){
-        this.toastr.warning("Please go to your mail  id and  first verify your email.")
-      }
-      else{
+      console.log(data);
+      if (data.msg == 'Not varified') {
+        this.toastr.warning(
+          'Please go to your mail  id and  first verify your email.'
+        );
+      } else {
         this.toastr.success('login Success');
-      this.router.navigate(['/']);
-      
+        this.router.navigate(['/']);
       }
     });
   }
 
-  
-
-  
-  
   ngOnInit(): void {}
 }

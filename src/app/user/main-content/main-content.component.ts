@@ -95,15 +95,7 @@ export class MainContentComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-    this.productService.getProductBycategory().subscribe(data=>{
-      this.productList= data;
-    },err=>{
-      if(err instanceof HttpErrorResponse){
-        if(err.status == 500)
-          this.toastr.error("Server Error","Error");
-      }
-    })
-
+    
   }
 
 }
