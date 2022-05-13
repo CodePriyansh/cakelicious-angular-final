@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CacheInterceptorsService } from './interceptors/cache-interceptors.service';
 import { InterceptorService } from './interceptors/interceptor.service';
 import { SocialLoginModule , GoogleLoginProvider  } from 'angularx-social-login';
+import { ProductViewComponent } from './user/product-view/product-view.component';
 
 
 const socialProvider={
@@ -36,7 +37,8 @@ const socialProvider={
     SignupComponent,
     SigninComponent,
     HomeComponent,
-    MainContentComponent
+    MainContentComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,

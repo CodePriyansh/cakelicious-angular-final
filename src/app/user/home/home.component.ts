@@ -16,11 +16,11 @@ export class HomeComponent implements OnInit {
   this.router.navigate(['/signin'])
 
 }
-isLoggedIn(){
-  return this.service.checkToken()
-}
 
-  
+
+isLoggedIn(){
+  return this.service.checkToken();
+}
   ngOnInit(): void {
   }
 
