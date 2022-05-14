@@ -17,6 +17,8 @@ import { InterceptorService } from './interceptors/interceptor.service';
 import { SocialLoginModule , GoogleLoginProvider  } from 'angularx-social-login';
 import { ProductViewComponent } from './user/product-view/product-view.component';
 import { UpdateProfleComponent } from './user/update-profle/update-profle.component';
+import { SearchComponent } from './search/search.component';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 
 const socialProvider={
@@ -25,7 +27,7 @@ const socialProvider={
     providers:[{
       id:GoogleLoginProvider.PROVIDER_ID,
       provider:new GoogleLoginProvider("150365577052-cv0ao56rbs5t7ojg3lnirmpe5qpebuqn.apps.googleusercontent.com")
-      
+
     }]
   }
 };
@@ -40,7 +42,8 @@ const socialProvider={
     HomeComponent,
     MainContentComponent,
     ProductViewComponent,
-    UpdateProfleComponent
+    UpdateProfleComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ const socialProvider={
     FormsModule,
     HttpClientModule,
     SocialLoginModule,
+    FilterPipeModule,
     ToastrModule.forRoot()
 
   ],

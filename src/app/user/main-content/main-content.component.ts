@@ -26,7 +26,7 @@ export class MainContentComponent implements OnInit {
       this.occassionList=data;
     })
 
-    
+
 
   }
   what_we_offer_options: OwlOptions = {
