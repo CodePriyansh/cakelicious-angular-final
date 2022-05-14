@@ -6,19 +6,27 @@ import { ProductViewComponent } from './user/product-view/product-view.component
 import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
 
-const routes: Routes = [{
-  path:"",component:HomeComponent,
-  children:[{path:"",component:MainContentComponent},
-    {
-    path:"signin",component:SigninComponent
-  },{path:"product-view", component:ProductViewComponent},
-{
-  path:"signup",component:SignupComponent
-}]
-}];
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      { path: '', component: MainContentComponent },
+      {
+        path: 'signin',
+        component: SigninComponent,
+      },
+      { path: 'product-view/:pId', component: ProductViewComponent },
+      {
+        path: 'signup',
+        component: SignupComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
