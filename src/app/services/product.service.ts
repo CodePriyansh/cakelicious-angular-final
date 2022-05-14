@@ -8,7 +8,7 @@ import { Product } from '../model/product';
   providedIn: 'root',
 })
 export class ProductService {
-  
+
   constructor(private http: HttpClient) {}
 
   public getProductbyCategory(categoryId: any):Observable<Product[]>{
@@ -26,9 +26,11 @@ export class ProductService {
     let getProductById = 'http://localhost:3000/product/getProductById';
     return this.http.get<Product[]>(getProductById + '/' + pId);
   }
+  public searchProduct(text: any): Observable<any>{
+    let getProductById = 'http://localhost:3000/product/searchProduct';
+    return this.http.get<any>(getProductById + '/' + text);
+  }
 
-  // public getCategory():Observable<Category[]>{
-  //   let getCategoryList = "http://localhost:3000/category/viewCategory";
-  //   return this.http.get<Category[]>(getCategoryList)
-  // }
+
+
 }

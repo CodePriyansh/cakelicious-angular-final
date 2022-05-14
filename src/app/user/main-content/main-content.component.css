@@ -15,7 +15,7 @@
       rgb(240 69 6 / 27%) 102%
     );
     background-image: url("../../../assets/images/bANNER-FRESH-CAKE-3.png");
-  
+
     border-radius: 8px;
     background-repeat: no-repeat;
     background-position: center;
@@ -27,9 +27,9 @@
     padding: 3%;
     text-align: center;
   }
-  
+
   /* what we offer */
-  
+
   .post-slide {
     background: #fff;
     /* margin: 20px 15px 20px; */
@@ -129,20 +129,20 @@
     text-align: center;
     margin-top: 20px;
   }
-  
+
   @media only screen and (max-width: 1280px) {
     .post-slide .post-content {
       padding: 0px 15px 25px 15px;
     }
   }
-  
+
   /* Flavours          */
-  
+
   /* .flavours{
        display: flex;
        flex-wrap: wrap;
      } */
-  
+
   .flavours-section {
     background-color: var(--section-back);
     background-image: url(https://media.bakingo.com/ssr-static/flavours_bg.png);
@@ -152,7 +152,7 @@
     padding-top: 2%;
     padding-bottom: 8%;
   }
-  
+
   .flavours-section h5 {
     font-size: 100%;
   }
@@ -175,7 +175,7 @@
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
   }
-  
+
   .flavour-img img {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -188,7 +188,7 @@
     -ms-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
   }
-  
+
   .flavour-img img:hover {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
@@ -196,16 +196,16 @@
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
   }
-  
+
   /* THIS CSS APLIED TO ALL HEADINGS */
   .heading {
     padding-bottom: 5%;
     padding-top: 5%;
   }
- 
-  
+
+
   /* popular Products */
-  
+
   .product-section .post-slide {
     background: var(--section-back);
     /*margin: 20px 15px 20px;
@@ -243,7 +243,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
   }
-  
+
   .big-screen .post-slide .post-img:hover{
     transition: all 0.5s;
     background: var(--head-text);
@@ -252,30 +252,36 @@
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
 }
-  
+
   .rating-color{
     color:#fbc634 !important;
   margin:0;
-  
+
   }
-  
-  
-  
+
+
+
   .small-ratings i{
-  color:#cecece;   
+  color:#cecece;
   font-size:small;
   }
-  
-  
+
+
   .review-stat{
     font-weight:300;
     font-size:18px;
     margin-bottom:2px;
   }
-  .product-section p{
+  /* .product-section p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  } */
+  .post-description{
+    width:100%;
+    /* overflow: hidden;
+    white-space: nowrap; */
+    /* text-overflow:ellipsis; */
   }
 
   @media only screen and (max-width: 400px) {
@@ -298,8 +304,8 @@
    /* body{margin-top:20px;
     font-style: 'Poppins';
     } */
-    
-   
+
+
   .why-choose-us{
     /* background: url("../../../assets/images/Banner-transparent.png"); */
     /*bac*/background-color:var(--section-back);
@@ -317,7 +323,7 @@
            -o-transform: scale(1) ;
            animation: zoom-in-zoom-out 4s ease infinite;
            -webkit-animation: zoom-in-zoom-out 4s ease infinite;
-} 
+}
 
 @keyframes zoom-in-zoom-out {
   0% {
@@ -340,13 +346,13 @@
 }
 
 
-    
+
     .sub-info{
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         color: #410c0c;
     }
-    
+
     .display-30 {
         font-size: 0.9rem;
         color: #e94e11;
