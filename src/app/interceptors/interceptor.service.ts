@@ -9,10 +9,10 @@ export class InterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-      
-          let tokenizedReq = req.clone({
+       
+          let tokenizedReq =  req.clone({
             setHeaders : {
-              Authorization : 'Bearer '+sessionStorage.getItem('jwt-token')
+              Authorization : ""+sessionStorage.getItem('jwt-token')
             }
           })
           return next.handle(tokenizedReq)

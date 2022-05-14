@@ -56,13 +56,19 @@ export class SigninComponent implements OnInit {
   public signIn() {
     this.service.signInn(this.user).subscribe((data: any) => {
       console.log(data);
-      if (data.msg == 'Not varified') {
-        this.toastr.warning(
-          'Please go to your mail  id and  first verify your email.'
-        );
-      } else {
-        this.toastr.success('login Success');
+      if (data.status == 'login-success') {
+        this.toastr.success('Login Success', 'WELCOME TO CAKELICIOUS');
+        sessionStorage.setItem('jwt-token', data.token);
+        sessionStorage.setItem('user-detail', JSON.stringify(data));
         this.router.navigate(['/']);
+      } 
+    },
+    (err) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status == 401) {
+          this.toastr.error('Email is Not Rgisterd with us ');
+          this.router.navigate(['signup']);
+        } else this.toastr.error('Server Error', 'Error');
       }
     });
   }

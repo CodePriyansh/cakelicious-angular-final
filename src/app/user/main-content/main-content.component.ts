@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Product } from 'src/app/model/product';
+import { Occassion } from 'src/app/model/occassion';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
@@ -11,8 +13,22 @@ import { Product } from 'src/app/model/product';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  productList:Product[]|any;
-  constructor(private productService:ProductService , private toastr: ToastrService) { }
+  exclusiveList:Product[]|any;
+  occassionList:Occassion[]|any;
+  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService) {
+    this.productService.getProductbyCategory("627e2b7ddabd951c69524313").subscribe((data: any)=>{
+      console.log(data);
+      this.exclusiveList=data;
+    })
+
+    this.productService.getOccassion().subscribe((data: any)=>{
+      console.log(data);
+      this.occassionList=data;
+    })
+
+    
+
+  }
   what_we_offer_options: OwlOptions = {
     loop: true,
     autoplay:true,
@@ -95,7 +111,7 @@ export class MainContentComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-    
+
   }
 
 }
