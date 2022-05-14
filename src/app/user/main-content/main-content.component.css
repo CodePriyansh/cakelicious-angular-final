@@ -5,15 +5,30 @@
    .carousel-item{
      max-height: 500px;
    }
+
+
+   .carousel-text{
+    color: var(--head-text);
+    transform: translate(5%,-50%);
+    -webkit-transform: translate(5%,-50%);
+    -moz-transform: translate(5%,-50%);
+    -ms-transform: translate(5%,-50%);
+    -o-transform: translate(5%,-50%);
+}
+   .carousel-text h5{
+
+     font-size:400%
+
+   }
 /* ARTICLE SECTION */
 
 .article .container {
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
       180deg,
       var(--section-back) 0%,
       var(--section-back) 50%,
       rgb(240 69 6 / 27%) 102%
-    );
+    );*/
     background-image: url("../../../assets/images/bANNER-FRESH-CAKE-3.png");
   
     border-radius: 8px;
@@ -26,9 +41,25 @@
     -o-border-radius: 8px;
     padding: 3%;
     text-align: center;
+
+    overflow: hidden;
+    background: -webkit-linear-gradient(rgba(255,245,242, 0.8), rgba(240,69,6, 0.3)),
+     url("../../../assets/images/bANNER-FRESH-CAKE-3.png");
+    
+  }
+
+  .article
+  img {
+     object-fit: cover;
   }
   
   /* what we offer */
+
+
+
+  /* .wwo{
+
+  } */
   
   .post-slide {
     background: #fff;

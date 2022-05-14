@@ -7,7 +7,7 @@
 
   :root {
     --head-text: #f04506;
-    --section-back: #fff5f2;
+    --section-back: rgb(255, 245, 242);
     --btn-back:linear-gradient(to left,#f04506,#d83e06,#f04506);
     --btn-txt: #ffffff;
 
@@ -23,6 +23,7 @@
       -webkit-font-smoothing: antialiased;
       -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
       text-shadow: rgba(0,0,0,.01) 0 0 1px;
+      box-sizing:border-box;
   }
   body
   {

@@ -9,11 +9,12 @@
   position: relative;
   width: 100%;
   top: 0;
-}
+  overflow: hidden
+} */
 
 
 
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -40,7 +41,7 @@
   line-height: 75px;
   transition: 0.6s;
   transition-property: line-height;
-  z-index:20;   
+  z-index:10;   
 }
 
 .second-nav header.sticky .navigation{

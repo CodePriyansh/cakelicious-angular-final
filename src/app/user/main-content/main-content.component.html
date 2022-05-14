@@ -14,14 +14,15 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../../../assets/images/F-Banner-4.png" class="d-block w-100"  />
-            <div class="carousel-caption d-none d-md-block">
+            <img src="../../../assets/images/F-Banner-4.png" data-aos="fade-right" class="d-block w-100"  />
+            <div  data-aos="fade-left" class="carousel-caption d-none d-md-block carousel-text">
               <h5>CAKELICIOUS</h5>
-              <p>...</p>
+              <h4>Delicous Cakes For You</h4>
+              <p>Experience the variety of products</p>
             </div>
   
           </div>
-          
+<!--           
           <div class="carousel-item">
             <img src="../../../assets/images/F-Banner-2.png" class="d-block w-100" />
             <div class="carousel-caption d-none d-md-block">
@@ -46,7 +47,7 @@
               <h5>CAKELICIOUS</h5>
               <p>Welcome To Delicious World</p>
             </div>
-          </div>
+          </div> -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
           data-bs-slide="prev">
@@ -68,11 +69,11 @@
   
     <div class="container">
   
-      <div class="heading">
+      <div class="heading" style="width:60%" data-aos="fade-right" data-aos-anchor-placement="left">
         <h1>
           Only Fresh Cakes
         </h1>
-        <p>
+        <p style="font-size:larger; ">
           All of our products are made from scratch using family recipes with only the highest quality ingredients. We
           bake and sell fresh daily to ensure only the best products are sold to our customers.
         </p>
@@ -85,7 +86,8 @@
   
   <section class="wwo">
     <div class="container">
-      <h1 class="heading text-center">What We Offer</h1>
+      <h1 class="heading text-center" data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom">What We Offer</h1>
       <owl-carousel-o [options]="what_we_offer_options">
         <ng-template carouselSlide>
           <div class="post-slide m-4">
@@ -100,8 +102,7 @@
               <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
                  tempora......</p>
               <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more"> View Products</a>
-  
+                          <a href="#" class="read-more">View Products</a>
             </div>
           </div>
         </ng-template>
@@ -202,10 +203,10 @@
   
   
   <section class="flavours-section">
-    <div class="container p-5">
+    <div class="container p-5"  data-aos="fade-left">
       <div class="heading text-center">
   
-      <h1>Flavours</h1>
+      <h1 data-aos="fade-right">Flavours</h1>
       <p>Experince variaty of flavours</p>
     </div>
   
@@ -246,16 +247,16 @@
   
   
                            <!-- PRODUCTS CARDS -->
-  <section class="product-section big-screen">
+  <section class="product-section big-screen" >
     <div class="container">
       <div class="row justify-content-center">
       <h1 class="heading text-center">Our Exclusive Products</h1>
       
         
           <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
+            <div class="post-img" routerLink="product-view">
               <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+              <a class="over-layer"><i class="fa fa-link"></i></a>
             </div>
             <div class="post-content">
               <h3 class="post-title">
@@ -402,7 +403,7 @@
           </div>
         
         
-          <div class="post-slide m-4 col-lg-3">
+          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
             <div class="post-img">
               <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
               <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
@@ -649,8 +650,8 @@
 
 
 
-  <section class="why-choose-us pt-5 pb-5">
-  <div class="container">
+  <section class="why-choose-us pt-5 pb-5" >
+  <div class="container" data-aos="fade-right">
     <div class="text-center mb-2-8 mb-lg-6">
         <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);">Why choose <strong class="font-weight-700" style="color:orangered">Us</strong></h1>
         <span style="color: rgb(58, 11, 11);">The trusted source for why choose us</span>

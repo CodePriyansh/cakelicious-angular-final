@@ -16,6 +16,7 @@ import { CacheInterceptorsService } from './interceptors/cache-interceptors.serv
 import { InterceptorService } from './interceptors/interceptor.service';
 import { SocialLoginModule , GoogleLoginProvider  } from 'angularx-social-login';
 import { ProductViewComponent } from './user/product-view/product-view.component';
+import { ContactUsComponent } from './user/contact-us/contact-us.component';
 
 
 const socialProvider={
@@ -38,7 +39,8 @@ const socialProvider={
     SigninComponent,
     HomeComponent,
     MainContentComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
