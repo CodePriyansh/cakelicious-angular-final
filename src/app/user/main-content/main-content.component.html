@@ -1,4 +1,3 @@
-
 <section class="mt-2">
     <div class="container-fluid">
       <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -49,668 +48,270 @@
             </div>
           </div> -->
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  
-  </section>
-  
-  
-  <section class="article">
-  
-    <div class="container">
-  
-      <div class="heading" style="width:60%" data-aos="fade-right" data-aos-anchor-placement="left">
-        <h1>
-          Only Fresh Cakes
-        </h1>
-        <p style="font-size:larger; ">
-          All of our products are made from scratch using family recipes with only the highest quality ingredients. We
-          bake and sell fresh daily to ensure only the best products are sold to our customers.
-        </p>
-      </div>
-      <button class="btn"> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-  
+
+</section>
+
+
+<section class="article">
+
+  <div class="container">
+
+    <div class="heading">
+      <h1>
+        Only Fresh Cakes
+      </h1>
+      <p>
+        All of our products are made from scratch using family recipes with only the highest quality ingredients. We
+        bake and sell fresh daily to ensure only the best products are sold to our customers.
+      </p>
     </div>
-  </section>
-  
-  
-  <section class="wwo">
-    <div class="container">
-      <h1 class="heading text-center" data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom">What We Offer</h1>
-      <owl-carousel-o [options]="what_we_offer_options">
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i><b>Explore</b></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more">View Products</a>
-            </div>
+    <button class="btn"> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+
+  </div>
+</section>
+
+
+<section class="wwo">
+  <div class="container">
+    <h1 class="heading text-center">What We Offer</h1>
+    <owl-carousel-o [options]="what_we_offer_options">
+      <ng-template carouselSlide  *ngFor="let occassion of occassionList;" >
+        <div class="post-slide m-4">
+          <div class="post-img">
+            <img src="{{occassion.occImage}}" alt="">
+            <a href="" class="over-layer"><i><b>Explore</b></i></a>
           </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more"> View Products</a>
-  
-            </div>
+          <div class="post-content">
+            <h3 class="post-title">
+              <a >{{occassion.occName}}</a>
+            </h3>
+            <p class="post-description">{{occassion.occDescription}}</p>
+            <span class="post-date"><i class="fa fa-clock-o"></i>😊</span>
+            <a  class="read-more"> View Products</a>
+
           </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more"> View Products</a>
-  
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more"> View Products</a>
-  
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-                          <a href="#" class="read-more"> View Products</a>
-  
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-  
-              <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-              <a href="#" class="read-more"> View Products</a>
-            </div>
-          </div>
-        </ng-template>
-      </owl-carousel-o>
-    </div>
-  
-  </section>
-  
-  
-  <section class="flavours-section">
-    <div class="container p-5"  data-aos="fade-left">
-      <div class="heading text-center">
-  
-      <h1 data-aos="fade-right">Flavours</h1>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+</section>
+
+
+<section class="flavours-section">
+  <div class="container p-5">
+    <div class="heading text-center">
+
+      <h1>Flavours</h1>
       <p>Experince variaty of flavours</p>
     </div>
-  
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img class="p-3"  src="../../../assets/images/flavour/Choclate-cake.png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img  class="p-3" src="../../../assets/images/flavour/Butter scotch-cake.png" >
-          <h5 class="text-center pb-2">Butter-scotch</h5></div>
-        </ng-template>  
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img class="p-3"  src="../../../assets/images/flavour/Red valvet-cake (1).png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img class="p-3"  src="../../../assets/images/flavour/Coffee-cake (1).png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img class="p-3"  src="../../../assets/images/flavour/Fruit-cake (1).png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="flavour-img m-3"><img class="p-3"  src="../../../assets/images/flavour/Red valvet-cake (1).png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        <ng-template carouselSlide> 
-          <div class="flavour-img m-3"><img  class="p-3" src="../../../assets/images/flavour/Strawberry-cake (1).png" >
-            <h5 class="text-center pb-2">Chocolate</h5></div>
-        </ng-template>
-        
-      </owl-carousel-o>
-  
-    </div>
-  </section>
-  
-  
-                           <!-- PRODUCTS CARDS -->
-  <section class="product-section big-screen" >
-    <div class="container">
-      <div class="row justify-content-center">
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Choclate-cake.png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Butter scotch-cake.png">
+          <h5 class="text-center pb-2">Butter-scotch</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Red valvet-cake (1).png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Coffee-cake (1).png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Fruit-cake (1).png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Red valvet-cake (1).png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Strawberry-cake (1).png">
+          <h5 class="text-center pb-2">Chocolate</h5>
+        </div>
+      </ng-template>
+
+    </owl-carousel-o>
+
+  </div>
+</section>
+
+
+<!-- PRODUCTS CARDS -->
+<section class="product-section big-screen">
+  <div class="container">
+    <div class="row justify-content-center">
       <h1 class="heading text-center">Our Exclusive Products</h1>
-      
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img" routerLink="product-view">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a class="over-layer"><i class="fa fa-link"></i></a>
+
+
+      <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2" *ngFor='let product of exclusiveList.slice(0,6)'>
+        <div class="post-img" >
+          <img  src="{{product.prodImage1}}" alt="" routerLink="product-view/{{product._id}}">
+          <a routerLink="product-view/{{product._id}}" class="over-layer"><i class="fa fa-link"></i></a>
+        </div>
+        <div class="post-content">
+          <h3 class="post-title">
+            <a >{{product.prodName}}</a>
+          </h3>
+          <p class="post-description mb-2">{{product.prodDescription}}</p>
+
+          <span class="post-date">
+            <div class="mt-1 d-flex justify-content-between align-items-center">
+              <div class="small-ratings">
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star rating-color"></i>
+                <i class="fa fa-star"></i>
+              </div>
             </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
+          </span>
+          <div class="mt-3">
+            <span class="font-size-lg">{{product.prodPrice}}
+
+            </span>
+            <a  class="read-more"> Add to Cart</a>
           </div>
-        
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="product-section small-screen">
+  <div class="container">
+    <h1 class="heading text-center">Our Exclusive Products</h1>
+    <owl-carousel-o [options]="product_options">
+      <ng-template carouselSlide *ngFor="let product of exclusiveList">
+        <div class="post-slide m-4"  >
+          <div class="post-img">
+            <img
+              src="{{product.prodImage1}}"
+              alt="" routerLink="product-view/{{product._id}}">
+            <a class="over-layer"><i class="fa fa-link"></i></a>
           </div>
-        
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
+          <div class="post-content">
+            <h3 class="post-title">
+              <a >{{product.prodName}}</a>
+            </h3>
+            <p class="post-description mb-2">{{product.prodDescription}}</p>
+
+            <span class="post-date">
+              <div class="mt-1 d-flex justify-content-between align-items-center">
                 <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star rating-color"></i>
+                  <i class="fa fa-star"></i>
                 </div>
-            </div></span>
+              </div>
+            </span>
             <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
+              <span class="font-size-lg">{{product.prodPrice}}
               </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        
-        
-          <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
+              <a  class="read-more"> Add to Cart</a>
             </div>
           </div>
         </div>
-    </div>
-  
-  </section>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+</section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section class="product-section small-screen">
-    <div class="container">
-      <h1 class="heading text-center">Our Exclusive Products</h1>
-      <owl-carousel-o [options]="product_options">
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="https://images.unsplash.com/photo-1572383672419-ab35444a6934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="">
-              <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a href="#">Birthday Cakes</a>
-              </h3>
-              <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur
-                 tempora......</p>
-                 
-              <span class="post-date"><div class="mt-1 d-flex justify-content-between align-items-center">
-                <div class="small-ratings">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-            </div></span>
-            <div class="mt-3">
-              <span class="font-size-lg">Rs 185
-  
-              </span>
-              <a href="#" class="read-more"> Add to Cart</a></div>
-            </div>
-          </div>
-        </ng-template>
-      </owl-carousel-o>
-    </div>
-  
-  </section>
-  
-
-
-
-  <section class="why-choose-us pt-5 pb-5" >
-  <div class="container" data-aos="fade-right">
+<section class="why-choose-us pt-5 pb-5">
+  <div class="container">
     <div class="text-center mb-2-8 mb-lg-6">
-        <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);">Why choose <strong class="font-weight-700" style="color:orangered">Us</strong></h1>
-        <span style="color: rgb(58, 11, 11);">The trusted source for why choose us</span>
+      <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);">Why choose
+        <strong class="font-weight-700" style="color:orangered">Us</strong></h1>
+      <span style="color: rgb(58, 11, 11);">The trusted source for why choose us</span>
     </div>
     <div class="row align-items-center text-center">
-        <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
-            <div class="pr-md-3">
-                <div class="text-center text-sm-right mb-2-9">
-                    <div class="mb-4">
-                      <i class="far fa-check-circle rounded-circle" ></i>
-                     
-                    </div>
-                    <h4 class="sub-info placeholder-glow">QUALITY PRODUCTS</h4>
-                    <p class="display-30 mb-0">
-  
-                      We guarantee the quality of all the cakes we provide as they are baked using the freshest ingredients..</p>
-                </div>
-                <div class="text-center text-sm-right mt-5 fadeOutDownBig">
-                    <div class="mb-4">
-                        <i class="far fa-check-circle rounded-circle" ></i>
-                       
-                    </div>
-                    <h4 class="sub-info">FREE DELIVERY</h4>
-                    <p class="display-30 mb-0 animated bounce ">
-                      All orders submitted by our indian clients are delivered for free throughout the India.</p>
-  
-                </div>
+      <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
+        <div class="pr-md-3">
+          <div class="text-center text-sm-right mb-2-9">
+            <div class="mb-4">
+              <i class="far fa-check-circle rounded-circle"></i>
+
             </div>
-        </div>
-        <div class="col-lg-4 d-none d-lg-block fadeOutDownBig">
-            <div class="why-choose-center-image" style="margin-left:30px">
-                <img src="../../../assets/images/logo-removebg-preview (1).png" alt="..." class="roun" style="background:transparent;" >
+            <h4 class="sub-info placeholder-glow">QUALITY PRODUCTS</h4>
+            <p class="display-30 mb-0">
+
+              We guarantee the quality of all the cakes we provide as they are baked using the freshest ingredients..
+            </p>
+          </div>
+          <div class="text-center text-sm-right mt-5 fadeOutDownBig">
+            <div class="mb-4">
+              <i class="far fa-check-circle rounded-circle"></i>
+
             </div>
+            <h4 class="sub-info">FREE DELIVERY</h4>
+            <p class="display-30 mb-0 animated bounce ">
+              All orders submitted by our indian clients are delivered for free throughout the India.</p>
+
+          </div>
         </div>
-        <div class="col-sm-6 col-lg-4">
-            <div class="pl-md-3">
-                <div class="text-center text-sm-left mb-2-9 ">
-                  <div class="mb-4">
-                    <i class="far fa-check-circle rounded-circle" ></i>
-                   
-                </div>
-                    <h4 class="sub-info">   ONLINE PAYMENT</h4>
-                    <p class="display-30 mb-0">
-  
-                      We accept all kinds of online payments including Visa, MasterCard, American Express credit cards..</p>
-                </div>
-  
-                <div class="text-center text-sm-left mt-5">
-                  <div class="mb-4">
-                    <i class="far fa-check-circle rounded-circle" ></i>
-                   
-                </div>
-                    <h4 class="sub-info"> CATERING SERVICE</h4>
-                    <p class="display-30 mb-0">
-  
-                      Our bakery also provides an outstanding catering service for events and special occasions..</p>
-                </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block fadeOutDownBig">
+        <div class="why-choose-center-image" style="margin-left:30px">
+          <img src="../../../assets/images/logo-removebg-preview (1).png" alt="..." class="roun"
+            style="background:transparent;">
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="pl-md-3">
+          <div class="text-center text-sm-left mb-2-9 ">
+            <div class="mb-4">
+              <i class="far fa-check-circle rounded-circle"></i>
+
             </div>
+            <h4 class="sub-info"> ONLINE PAYMENT</h4>
+            <p class="display-30 mb-0">
+
+              We accept all kinds of online payments including Visa, MasterCard, American Express credit cards..</p>
+          </div>
+
+          <div class="text-center text-sm-left mt-5">
+            <div class="mb-4">
+              <i class="far fa-check-circle rounded-circle"></i>
+
+            </div>
+            <h4 class="sub-info"> CATERING SERVICE</h4>
+            <p class="display-30 mb-0">
+
+              Our bakery also provides an outstanding catering service for events and special occasions..</p>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </section>
