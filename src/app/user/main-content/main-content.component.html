@@ -87,7 +87,7 @@
   <div class="container">
     <h1 class="heading text-center">What We Offer</h1>
     <owl-carousel-o [options]="what_we_offer_options">
-      <ng-template carouselSlide  *ngFor="let occassion of occassionList;" >
+      <ng-template carouselSlide *ngFor="let occassion of occassionList;">
         <div class="post-slide m-4">
           <div class="post-img">
             <img src="{{occassion.occImage}}" alt="">
@@ -95,8 +95,9 @@
           </div>
           <div class="post-content">
             <h3 class="post-title">
-              <a >{{occassion.occName}}</a>
+              <a>{{occassion.occName}}</a>
             </h3>
+
             <p class="post-description">{{occassion.occDescription}}</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>😊</span>
             <a  class="read-more"> View Products</a>
@@ -119,41 +120,12 @@
     </div>
 
     <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Choclate-cake.png">
-          <h5 class="text-center pb-2">Chocolate</h5>
+      <ng-template carouselSlide *ngFor="let flavour of flavourList">
+        <div class="flavour-img m-3"><img class="p-3" src="{{flavour.flavourimage}}">
+          <h5 class="text-center pb-2">{{flavour.flavourname}}</h5>
         </div>
       </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Butter scotch-cake.png">
-          <h5 class="text-center pb-2">Butter-scotch</h5>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Red valvet-cake (1).png">
-          <h5 class="text-center pb-2">Chocolate</h5>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Coffee-cake (1).png">
-          <h5 class="text-center pb-2">Chocolate</h5>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Fruit-cake (1).png">
-          <h5 class="text-center pb-2">Chocolate</h5>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Red valvet-cake (1).png">
-          <h5 class="text-center pb-2">Chocolate</h5>
-        </div>
-      </ng-template>
-      <ng-template carouselSlide>
-        <div class="flavour-img m-3"><img class="p-3" src="../../../assets/images/flavour/Strawberry-cake (1).png">
-          <h5 class="text-center pb-2">Chocolate</h5>
-        </div>
-      </ng-template>
+
 
     </owl-carousel-o>
 
@@ -168,15 +140,17 @@
       <h1 class="heading text-center">Our Exclusive Products</h1>
 
 
+
       <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2" *ngFor='let product of exclusiveList.slice(0,6)'>
         <div class="post-img" >
-          <img  src="{{product.prodImage1}}" alt="" routerLink="product-view/{{product._id}}">
+          <img src="{{product.prodImage1}}" alt="" routerLink="product-view/{{product._id}}">
           <a routerLink="product-view/{{product._id}}" class="over-layer"><i class="fa fa-link"></i></a>
         </div>
        
         <div class="post-content">
           <h3 class="post-title">
-            <a >loaded with Choco </a>
+            <a>{{product.prodName}}</a>
+
           </h3>
           <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim cupiditate onsectetur neque quisquam ipsa!</p>
 
@@ -195,6 +169,7 @@
             <span class="font-size-lg">{{product.prodPrice}}
 
             </span>
+
             <a  class="read-more">Add to Cart</a>
           </div>
         </div>
@@ -209,8 +184,9 @@
     <h1 class="heading text-center">Our Exclusive Products</h1>
     <owl-carousel-o [options]="product_options">
       <ng-template carouselSlide *ngFor="let product of exclusiveList">
-        <div class="post-slide m-4"  >
+        <div class="post-slide m-4">
           <div class="post-img">
+
             <img
               src="{{product.prodImage1}}"
               alt="" routerLink="product-view/{{product._id}}">
@@ -218,7 +194,7 @@
           </div>
           <div class="post-content">
             <h3 class="post-title">
-              <a >{{product.prodName}}</a>
+              <a>{{product.prodName}}</a>
             </h3>
             <p class="post-description mb-2">{{product.prodDescription}}</p>
 
@@ -236,7 +212,7 @@
             <div class="mt-3">
               <span class="font-size-lg">{{product.prodPrice}}
               </span>
-              <a  class="read-more"> Add to Cart</a>
+              <a class="read-more"> Add to Cart</a>
             </div>
           </div>
         </div>
@@ -253,7 +229,8 @@
   <div class="container">
     <div class="text-center mb-2-8 mb-lg-6">
       <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);">Why choose
-        <strong class="font-weight-700" style="color:orangered">Us</strong></h1>
+        <strong class="font-weight-700" style="color:orangered">Us</strong>
+      </h1>
       <span style="color: rgb(58, 11, 11);">The trusted source for why choose us</span>
     </div>
     <div class="row align-items-center text-center">
