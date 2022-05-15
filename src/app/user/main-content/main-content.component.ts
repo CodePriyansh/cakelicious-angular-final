@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Product } from 'src/app/model/product';
 import { Occassion } from 'src/app/model/occassion';
 import { Router } from '@angular/router';
+import { FlavourService } from 'src/app/services/flavour.service';
 
 @Component({
   selector: 'app-main-content',
@@ -15,7 +16,8 @@ import { Router } from '@angular/router';
 export class MainContentComponent implements OnInit {
   exclusiveList:Product[]|any;
   occassionList:Occassion[]|any;
-  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService) {
+  flavourList: any;
+  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService) {
     this.productService.getProductbyCategory("627e2b7ddabd951c69524313").subscribe((data: any)=>{
       console.log(data);
       this.exclusiveList=data;
@@ -111,7 +113,14 @@ export class MainContentComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-
+    this.flavourService.getFlaovurList().subscribe(data=>{
+      this.flavourList = data;
+    },err=>{
+      if(err instanceof HttpErrorResponse){
+         if(err.status == 500)
+           alert('Something went wrong...')
+;       }
+    })
   }
 
 }

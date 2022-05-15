@@ -1,7 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/model/category';
+import { Flavour } from 'src/app/model/flavour';
 import { Occassion } from 'src/app/model/occassion';
+import { FlavourService } from 'src/app/services/flavour.service';
 import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
@@ -12,7 +15,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomeComponent implements OnInit {
   occassionList:Occassion[]|any;
   categoryList : Category[]|any;
-  constructor(private router:Router , private service:LoginService , private productService:ProductService) { 
+  flavourList?:Flavour[]; // or |any 
+  constructor(private router:Router , private service:LoginService , private productService:ProductService, private flavourService:FlavourService) { 
     this.productService.getOccassion().subscribe((data: any)=>{
       console.log(data);
       this.occassionList=data;
@@ -24,6 +28,16 @@ export class HomeComponent implements OnInit {
     // })
 
   }
+  ngOnInit(){
+     this.flavourService.getFlaovurList().subscribe(data=>{
+       this.flavourList = data;
+     },err=>{
+       if(err instanceof HttpErrorResponse){
+          if(err.status == 500)
+            alert('Something went wrong...')
+;       }
+     })
+  } 
   signout(){
   sessionStorage.removeItem('jwt-token');
   sessionStorage.removeItem('user-detail');
@@ -37,7 +51,4 @@ export class HomeComponent implements OnInit {
 isLoggedIn(){
   return this.service.checkToken();
 }
-  ngOnInit(): void {
-  }
-
 }
