@@ -44,13 +44,22 @@ export class MainContentComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 2
+        items: 1
       },
       740: {
         items: 3
       },
       940: {
         items: 3
+      },
+      1200:{
+        items:3
+      },
+      1300:{
+        items:3
+      },
+      1500:{
+        items:3
       }
     },
     nav: true
@@ -82,6 +91,7 @@ export class MainContentComponent implements OnInit {
     },
     nav: true
   }
+
   customOptions: OwlOptions = {
     loop: true,
     autoplay:false,
