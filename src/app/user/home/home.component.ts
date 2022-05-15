@@ -5,6 +5,7 @@ import { Category } from 'src/app/model/category';
 import { Flavour } from 'src/app/model/flavour';
 import { Occassion } from 'src/app/model/occassion';
 import { FlavourService } from 'src/app/services/flavour.service';
+import { CategoryService } from 'src/app/services/category.service';
 import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
@@ -16,16 +17,24 @@ export class HomeComponent implements OnInit {
   occassionList:Occassion[]|any;
   categoryList : Category[]|any;
   flavourList?:Flavour[]; // or |any 
-  constructor(private router:Router , private service:LoginService , private productService:ProductService, private flavourService:FlavourService) { 
+  constructor(private router:Router , private service:LoginService , private productService:ProductService, private flavourService:FlavourService,private category:CategoryService) { 
+
     this.productService.getOccassion().subscribe((data: any)=>{
       console.log(data);
       this.occassionList=data;
     })
+    this.category.getCategory().subscribe((data: any)=>{
+      console.log(data);
+      this.categoryList=data;
+    })
+  }
+  public searchProduct(event:any){
+    let searchText = event.target.value;
+    console.log(searchText)
+    this.router.navigate(['/searchProduct',searchText]);
+  }
 
-    // this.productService.getCategory().subscribe((data: any)=>{
-    //   console.log(data);
-    //   this.occassionList=data;
-    // })
+
 
   }
   ngOnInit(){
@@ -38,6 +47,7 @@ export class HomeComponent implements OnInit {
 ;       }
      })
   } 
+
   signout(){
   sessionStorage.removeItem('jwt-token');
   sessionStorage.removeItem('user-detail');

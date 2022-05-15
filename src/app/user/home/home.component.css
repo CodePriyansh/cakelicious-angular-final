@@ -4,16 +4,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* 
+
 .header {
   position: relative;
   width: 100%;
   top: 0;
+  overflow: hidden
 }
 
 
 
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -456,12 +457,12 @@ select option {
   /* background-color: #f1f1f1; */
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 10;
+  z-index: 20;
 }
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 4px 16px;
   background-color:#fff;
   text-decoration: none;
   display: block;
