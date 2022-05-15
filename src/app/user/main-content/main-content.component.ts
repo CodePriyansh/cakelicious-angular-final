@@ -18,7 +18,7 @@ export class MainContentComponent implements OnInit {
   occassionList:Occassion[]|any;
   flavourList: any;
   constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService) {
-    this.productService.getProductbyCategory("627e2b7ddabd951c69524313").subscribe((data: any)=>{
+    this.productService.getProductbyCategory("6280ffc166388dbc10c22570").subscribe((data: any)=>{
       console.log(data);
       this.exclusiveList=data;
     })

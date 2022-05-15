@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  }
+  
   ngOnInit(){
      this.flavourService.getFlaovurList().subscribe(data=>{
        this.flavourList = data;
