@@ -8,6 +8,7 @@ import { FlavourService } from 'src/app/services/flavour.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
+import { OccassionService } from 'src/app/services/occassion.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,14 +18,14 @@ export class HomeComponent implements OnInit {
   occassionList:Occassion[]|any;
   categoryList : Category[]|any;
   flavourList?:Flavour[]; // or |any 
-  constructor(private router:Router , private service:LoginService , private productService:ProductService, private flavourService:FlavourService,private category:CategoryService) { 
+  constructor(private router:Router , private service:LoginService , private flavourService:FlavourService,private category:CategoryService, private occassionServe:OccassionService) { 
 
-    this.productService.getOccassion().subscribe((data: any)=>{
-      console.log(data);
+    this.occassionServe.getOccassion().subscribe((data: any)=>{
+      // console.log(data);
       this.occassionList=data;
     })
     this.category.getCategory().subscribe((data: any)=>{
-      console.log(data);
+      // console.log(data);
       this.categoryList=data;
     })
   }

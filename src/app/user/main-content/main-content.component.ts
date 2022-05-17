@@ -7,6 +7,7 @@ import { Product } from 'src/app/model/product';
 import { Occassion } from 'src/app/model/occassion';
 import { Router } from '@angular/router';
 import { FlavourService } from 'src/app/services/flavour.service';
+import { OccassionService } from 'src/app/services/occassion.service';
 
 @Component({
   selector: 'app-main-content',
@@ -14,16 +15,16 @@ import { FlavourService } from 'src/app/services/flavour.service';
   styleUrls: ['./main-content.component.css']
 })
 export class MainContentComponent implements OnInit {
-  exclusiveList:Product[]|any;
-  occassionList:Occassion[]|any;
-  flavourList: any;
-  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService) {
-    this.productService.getProductbyCategory("6280ffc166388dbc10c22570").subscribe((data: any)=>{
+  exclusiveList:Product[]|any=[];
+  occassionList:Occassion[]|any=[];
+  flavourList: any=[];
+  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService, private ocassionServe:OccassionService) {
+    this.productService.getProductbyCategory("62833692871c3910a1fd0c25").subscribe((data: any)=>{
       console.log(data);
       this.exclusiveList=data;
     })
 
-    this.productService.getOccassion().subscribe((data: any)=>{
+    this.ocassionServe.getOccassion().subscribe((data: any)=>{
       console.log(data);
       this.occassionList=data;
     })
@@ -33,7 +34,7 @@ export class MainContentComponent implements OnInit {
   }
   what_we_offer_options: OwlOptions = {
     loop: true,
-    autoplay:true,
+    autoplay:false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
@@ -46,7 +47,7 @@ export class MainContentComponent implements OnInit {
         items: 1
       },
       400: {
-        items: 1
+        items: 2
       },
       740: {
         items: 3

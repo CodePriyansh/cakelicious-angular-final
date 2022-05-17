@@ -84,22 +84,23 @@
       <div class="navigation">
         <ul class="menu">
           <div class="close-btn"></div>
-          <li class="menu-item"><a href="#">Home</a></li>
+          <li class="menu-item"><a href="/">Home</a></li>
           <li class="menu-item"><a href="#">All Cakes</a></li>
 
           <li class="menu-item">
             <a class="sub-btn">By Category <i class="fas fa-angle-down"></i></a>
             <ul class="sub-menu" >
-              <li class="sub-item" *ngFor="let cat of categoryList"><a>{{cat.catName}}</a></li>
+              <li class="sub-item" *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}">{{cat.catName}}</a></li>
             </ul>
           </li>
 
           <li class="menu-item">
             <a class="sub-btn">By Occassion <i class="fas fa-angle-down"></i></a>
             <ul class="sub-menu" >
-              <li class="sub-item" *ngFor="let occ of occassionList"><a>{{occ.occName}}</a></li>
+              <li class="sub-item" *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}">{{occ.occName}}</a></li>
             </ul>
           </li>
+
           <li class="menu-item">
             <a class="sub-btn">By Flavour<i class="fas fa-angle-down"></i></a>
             <ul class="sub-menu">

@@ -11,11 +11,8 @@ export class ContactUsComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.invokeParticles();
   }
 
-  public invokeParticles(): void {
-    particlesJS('particles-js', ParticlesConfig, function() {});
-  }
+
 
 }

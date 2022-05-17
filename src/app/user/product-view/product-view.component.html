@@ -1,29 +1,27 @@
-<div class="pd-wrap" routerLink="">
+<div class="pd-wrap">
   <div class="container" *ngFor="let prod of productList">
     <div class="heading-section">
       <h2>Product Details</h2>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex flex-wrap" style="align-content:flex-start">
         <!-- <div id="slider" class="owl-carousel product-slider"> -->
-          <div class="item">
-            <img src="{{prod.prodImage2}}"/>
+          <div class="item p-3 w-50 ">
+            <img class="img-fluid" src="{{prod.prodImage1}}"/>
+          </div>
+          <div class="item p-3 w-50">
+            <img class="img-fluid" src="{{prod.prodImage2}}" />
+          </div>
+          <div class="item p-3 w-50">
+            <img class="img-fluid" src="{{prod.prodImage3}}" />
+          </div>
+          <div class="item p-3 w-50">
+            <img class="img-fluid" src="{{prod.prodImage4}}" />
           </div>
           
+          
         <!-- </div> -->
-        <!-- <div id="thumb" class="owl-carousel product-thumb">
-          <div class="item">
-            <img src="{{prod.prodImage1}}" />
-          </div>
-          <div class="item">
-            <img src="{{prod.prodImage1}}" />
-          </div>
-          <div class="item">
-            <img src="{{prod.prodImage1}}" />
-          </div>
-          <div class="item">
-            <img src="{{prod.prodImage1}}" />
-          </div>
+        <!-- <div id="thumb" class="product-thumb">
          
         </div> -->
       </div>
@@ -78,12 +76,25 @@
             <a href="#" class="round-black-btn">Add to Cart</a>
           </div>
         </div>
+        <div>
+          <div class="caring-tip mt-5">
+         <h3>Caring Tips</h3> 
+         <ul>
+           <li> <i class="fa fa-check-circle mx-3" aria-hidden="true"></i>   While receiving, do not squeeze the sides of the box.</li>
+         <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i>  Keep the box upright on the table.</li>
+         <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i> Keep it away from direct sunlight.</li>
+         <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i> Store it in a cool place.</li>
+         <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i>  Cover the leftover cake, then refrigerate.</li>
+        <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i> The cake should be consumed within 24 hours.</li>
+      </ul>
+    </div>
+        </div>
       </div>
     </div>
     <div class="product-info-tabs">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
+          <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab"
             aria-controls="description" aria-selected="true">Description</a>
         </li>
         <li class="nav-item">
@@ -138,8 +149,6 @@
       </div>
     </div>
 
-    <div style="text-align:center;font-size:14px;padding-bottom:20px;">Get free icon packs for your next project at <a
-        href="http://iiicons.in/" target="_blank" style="color:#ff5e63;font-weight:bold;">www.iiicons.in</a></div>
+  
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

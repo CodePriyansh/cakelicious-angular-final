@@ -30,8 +30,8 @@ const routes: Routes = [
         component: ContactUsComponent,
       },
       { path: 'searchProduct/:text', component: SearchComponent },
-      { path: 'category-wise/:categoryId', component: CategoryWiseCakeComponent },
-      { path: 'occassion-wise', component: OccassionWiseCakeComponent }
+      { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },
+      { path: 'occassion-wise/:occassionId', component: OccassionWiseCakeComponent }
 
     ],
   },

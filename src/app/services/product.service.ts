@@ -16,20 +16,18 @@ export class ProductService {
       'http://localhost:3000/product/getProductBycategory';
     return this.http.get<Product[]>(getProductByCategory + '/' + categoryId);
   }
-  public getOccassion():Observable<Occassion[]>{
-    let getProductByOccassion =
-      'http://localhost:3000/occassion/viewOccassion';
-    return this.http.get<Occassion[]>(getProductByOccassion);
-  }
+ 
 
   public getProductbypId(pId: any): Observable<Product[]>{
     let getProductById = 'http://localhost:3000/product/getProductById';
     return this.http.get<Product[]>(getProductById + '/' + pId);
   }
+
   public searchProduct(text: any): Observable<any>{
     let getProductById = 'http://localhost:3000/product/searchProduct';
     return this.http.get<any>(getProductById + '/' + text);
   }
+
 
 
 
