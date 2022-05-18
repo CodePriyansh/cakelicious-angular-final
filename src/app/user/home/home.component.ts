@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   occassionList: Occassion[] | any;
   categoryList: Category[] | any;
   flavourList?: Flavour[]; // or |any
+  title="CAKELICIOUS";
   constructor(
     private router: Router,
     private service: LoginService,
@@ -54,15 +55,29 @@ export class HomeComponent implements OnInit {
     mobileMenuHead.classList.add('active');
   }
 
-  subMenu(subMenu:any){
+  subMenu(subMenu:any,title:any){
+
      subMenu.classList.add('active')
     subMenu.style.animation = "slideLeft 0.5s ease forwards";
+    this.title = title;
   }
 
-  hideSubMenu(subMenu:any){
+  hideSubMenu(subMenu:any,submenu2:any,submenu3:any){
+    this.title = "CAKELICIOUS";
+
     subMenu.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
        subMenu.classList.remove("active");	
+    },300); 
+
+    submenu2.style.animation = "slideRight 0.5s ease forwards";
+    setTimeout(() =>{
+       submenu2.classList.remove("active");	
+    },300); 
+
+    submenu3.style.animation = "slideRight 0.5s ease forwards";
+    setTimeout(() =>{
+       submenu3.classList.remove("active");	
     },300); 
   }
 
@@ -74,6 +89,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.flavourService.getFlaovurList().subscribe(
       (data) => {
         this.flavourList = data;

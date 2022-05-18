@@ -33,7 +33,7 @@ const routes: Routes = [
       },
       { path: 'searchProduct/:text', component: SearchComponent },
       { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },
-      { path: 'occassion-wise/:occassionId', component: OccassionWiseCakeComponent },
+      { path: 'occassion-wise/:occassionId/:occName', component: OccassionWiseCakeComponent },
       {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent}
 
     ],

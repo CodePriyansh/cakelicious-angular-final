@@ -13,34 +13,8 @@ export class OccassionWiseCakeComponent implements OnInit {
   occassionId: any;
   occassionDetail: any = {};
   productbyOccassion:Product[]=[];
+  occName: any;
   constructor(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     private route: ActivatedRoute,
     private occassionServe: OccassionService,
     private router: Router
@@ -48,6 +22,7 @@ export class OccassionWiseCakeComponent implements OnInit {
     this.router.events.subscribe((event) => {
       this.route.params.subscribe((params) => {
         this.occassionId = params['occassionId'];
+        this.occName = params['occName'];
         console.log(this.occassionId);
       });
 

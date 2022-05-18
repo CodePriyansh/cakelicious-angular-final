@@ -232,8 +232,12 @@ html::-webkit-scrollbar-thumb{
   }
 
   .header .header-1 .search-form.active{
-      top:115%;
-      z-index: 2;
+      top:109%;
+      z-index: 100;
+	  margin-right: 5rem;
+	  border: 1.5px dotted var(--head-text);
+	  width: 67%;
+
   }
 
   .home .row .content{
@@ -244,14 +248,7 @@ html::-webkit-scrollbar-thumb{
       font-size: 3.5rem;
   }
 
-  .newsletter{
-      background-position: right;
-  }
 
-  .newsletter form{
-      margin-left:0;
-      max-width: 100%;
-  }
 
 }
 
@@ -263,7 +260,9 @@ html::-webkit-scrollbar-thumb{
 
 }
 
+/* @media (min-width: 768px) and (max-width: 992px){
 
+}  */
 
 
 
@@ -275,6 +274,7 @@ html::-webkit-scrollbar-thumb{
 	z-index: 99;
 	padding:15px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--section-back);
 }
 .header2 .item-left{
 	flex:0 0 17%;
@@ -296,6 +296,7 @@ html::-webkit-scrollbar-thumb{
      margin-left: 10px;
      transition: color 0.3s ease;
 }
+
 .header2 .menu > ul > li{
 	display: inline-block;
 	line-height: 45px;
@@ -543,6 +544,73 @@ html::-webkit-scrollbar-thumb{
 	  visibility: visible;
 	  opacity:1;	
 	}
+}
+
+
+
+.footer .box-container{
+ display:flex;
+ justify-content: space-evenly;
+}
+
+.footer .box-container .box h3{
+    font-size: 1.5rem;
+    color:var(--black);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a i{
+    color:var(--head-text);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .box-container .box .map{
+    width:100%;
+}
+
+.footer .share{
+    padding:1rem 0;
+    text-align: center;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#fff;
+    background:var(--head-text);
+    margin:0 .3rem;
+    border-radius: 50%; 
+}
+
+.footer .share a:hover{
+    background:var(--black);
+}
+
+.footer .credit{
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding:0 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span{
+    color:var(--head-text);
 }
 
 
