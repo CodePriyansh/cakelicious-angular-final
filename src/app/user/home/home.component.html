@@ -73,7 +73,7 @@
               <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu3>
                 <ul>
-                  <li *ngFor="let flavour of flavourList"><a href="#">{{flavour.flavourname}}</a></li>
+                  <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}">{{flavour.flavourname}}</a></li>
                  
                 </ul>
               </div>

@@ -10,7 +10,9 @@ import { FlavourService } from 'src/app/services/flavour.service';
   styleUrls: ['.././category-wise-cake/category-wise-cake.component.css']
 })
 export class FlavourViseComponent implements OnInit {
-
+  fid: any;
+  productListByFlavour: Product[] | any;
+  flavourname: any;
   constructor(private route: ActivatedRoute, private flavourServe: FlavourService, private router: Router) {
 
     this.router.events.subscribe(event => {
@@ -32,9 +34,7 @@ export class FlavourViseComponent implements OnInit {
 
     })
   }
-  fid: any;
-  productListByFlavour: Product[] | any;
-  flavourname: any;
+ 
 
   ngOnInit(): void {
 
