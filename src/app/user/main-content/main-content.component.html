@@ -99,8 +99,12 @@
             </h3>
 
             <p class="post-description">{{occassion.occDescription}}</p>
-            <span class="post-date"><i class="fa fa-clock-o"></i>😊</span>
-            <a  class="read-more"> View Products</a>
+
+            <span *ngIf="occassion.occName=='Birthday'" class="post-date"><i class="fa fa-clock-o"></i>🎂</span>
+            <span *ngIf="occassion.occName=='Wedding'" class="post-date"><i class="fa fa-clock-o"></i>👰</span>
+            <span *ngIf="occassion.occName=='Baby Shower'" class="post-date"><i class="fa fa-clock-o"></i>👼</span>
+            <span *ngIf="occassion.occName=='Anniversory'" class="post-date"><i class="fa fa-clock-o"></i>🧑‍🤝‍🧑</span>
+            <a  class="read-more" routerLink="/occassion-wise/{{occassion._id}}/{{occassion.occName}}"> View Products</a>
 
           </div>
         </div>
