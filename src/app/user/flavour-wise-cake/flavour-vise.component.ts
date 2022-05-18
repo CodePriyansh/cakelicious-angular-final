@@ -61,7 +61,7 @@ export class FlavourViseComponent implements OnInit {
           }
           value = this.ID.indexOf(id);
           console.log(value);
-
+//////dksmflaksdkfoa
           if (value == -1) {
             this.cartService.addtoCart(id, this.userId).subscribe((data) => {
               if (data.status == 'ok') {
