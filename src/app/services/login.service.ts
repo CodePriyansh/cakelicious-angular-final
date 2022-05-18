@@ -7,7 +7,7 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class LoginService {
-  
+
   signUpApi = "http://localhost:3000/customer/sign-up";
   signInApi = "http://localhost:3000/customer/sign-in";
   signupGoogle = 'http://localhost:3000/customer/login-with-google';
@@ -26,7 +26,7 @@ export class LoginService {
     return this.http.post(this.signupGoogle, { email });
   }
 
-  public checkToken() {
+    public checkToken() {
     return !!sessionStorage.getItem('jwt-token');
   }
 
