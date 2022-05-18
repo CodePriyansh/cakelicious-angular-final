@@ -22,6 +22,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
 import { SearchComponent } from './user/search/search.component';
 import { OccassionWiseCakeComponent } from './user/occassion-wise-cake/occassion-wise-cake.component';
 import { CategoryWiseCakeComponent } from './user/category-wise-cake/category-wise-cake.component';
+import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.component';
 
 
 const socialProvider={
@@ -49,7 +50,8 @@ const socialProvider={
     UpdateProfleComponent,
     SearchComponent,
     OccassionWiseCakeComponent,
-    CategoryWiseCakeComponent
+    CategoryWiseCakeComponent,
+    FlavourViseComponent
   ],
   imports: [
     BrowserModule,

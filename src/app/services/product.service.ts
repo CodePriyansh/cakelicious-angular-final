@@ -27,6 +27,7 @@ export class ProductService {
     let getProductById = 'http://localhost:3000/product/searchProduct';
     return this.http.get<any>(getProductById + '/' + text);
   }
+   
 
 
 
