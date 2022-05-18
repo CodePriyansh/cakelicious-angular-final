@@ -18,11 +18,11 @@
           <div class="item p-3 w-50">
             <img class="img-fluid" src="{{prod.prodImage4}}" />
           </div>
-          
-          
+
+
         <!-- </div> -->
         <!-- <div id="thumb" class="product-thumb">
-         
+
         </div> -->
       </div>
       <div class="col-md-6">
@@ -73,13 +73,13 @@
               <input type="text" name="quantity" value="1" class="qty">
               <div class="qtyplus">+</div>
             </form>
-            <a href="#" class="round-black-btn">Add to Cart</a>
+            <a (click)="addCart(prod._id)" class="round-black-btn">Add to Cart</a>
             <a href="#" class="round-black-btn mx-3">Buy Now</a>
           </div>
         </div>
         <div>
           <div class="caring-tip mt-5">
-         <h3>Caring Tips</h3> 
+         <h3>Caring Tips</h3>
          <ul>
            <li> <i class="fa fa-check-circle mx-3" aria-hidden="true"></i>   While receiving, do not squeeze the sides of the box.</li>
          <li><i class="fa fa-check-circle mx-3" aria-hidden="true"></i>  Keep the box upright on the table.</li>
@@ -150,6 +150,6 @@
       </div>
     </div>
 
-  
+
   </div>
 </div>
