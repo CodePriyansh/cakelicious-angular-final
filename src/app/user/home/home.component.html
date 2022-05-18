@@ -16,7 +16,7 @@
             <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
-            <div id="login-btn" class="fas fa-user"></div>
+            <div id="login-btn" class="fas fa-user" rotuerLink="/signin"></div>
         </div>
 
     </div>
@@ -35,7 +35,7 @@
 <header class="header2">
   <div >
     <div class="row d-flex justify-content-center ">
-    
+
       <!-- menu start here -->
       <div class="header-item d-flex justify-content-center">
         <div class="menu-overlay" #overlay>
@@ -50,13 +50,13 @@
             <li>
               <a href="#">All Cakes</a>
             </li>
-          
+
             <li class="menu-item-has-children" (click)="subMenu(submenu)">
               <a href="#">By Category <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu>
                 <ul>
                   <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}">{{cat.catName}}</a></li>
-                  
+
                 </ul>
               </div>
             </li>
@@ -65,7 +65,7 @@
               <div class="sub-menu single-column-menu" #submenu2>
                 <ul>
                   <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}">{{occ.occName}}</a></li>
-                
+
                 </ul>
               </div>
             </li>
@@ -74,7 +74,7 @@
               <div class="sub-menu single-column-menu" #submenu3>
                 <ul>
                   <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}">{{flavour.flavourname}}</a></li>
-                 
+
                 </ul>
               </div>
             </li>
@@ -89,7 +89,7 @@
       </div>
       <!-- menu end here -->
       <div class="header-item item-right">
-    
+
         <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead)">
           <span></span>
         </div>
@@ -147,30 +147,30 @@
 
  <router-outlet></router-outlet>
                        <!-- FOOTER SECTION -->
-  
+
                        <section class="footer">
-    
+
                         <!-- Remove the container if you want to extend the Footer to full width. -->
                         <div class="container-fluid my-5">
-                      
+
                           <footer class="text-center text-lg-start">
                             <div class="container-fluid p-4">
                               <div class="row mt-4" style="text-align: -webkit-center;">
                                 <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
                                   <h5 class="text-uppercase mb-4">About company</h5>
-                      
+
                                   <p class="text-black">
                                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
                                     voluptatum deleniti atque corrupti.
                                   </p>
-                      
+
                                   <p class="text-black">
                                     Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
                                     molestias.
                                   </p>
-                      
+
                                 </div>
-                             
+
                                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                                   <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
                                   <ul class="fa-ul text-black " style="margin-left: 1.65em; width: max-content;" >
@@ -186,11 +186,11 @@
                                   </ul>
                                 </div>
                                 <!--Grid column-->
-                      
+
                                 <!--Grid column-->
                                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                                   <h5 class="text-uppercase mb-4">Opening hours</h5>
-                      
+
                                   <table class="table text-center">
                                     <tbody class="fw-normal">
                                       <tr>
@@ -213,7 +213,7 @@
                               <!--Grid row-->
                             </div>
                             <!-- Grid container -->
-                      
+
                             <!-- Copyright -->
                             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                               © 2022 Copyright:
@@ -221,13 +221,12 @@
                             </div>
                             <!-- Copyright -->
                           </footer>
-                      
+
                         </div>
                       </section>
-                      
-                      
-                      
-                      
-                      
+
+
+
+
+
 </div>
-                    

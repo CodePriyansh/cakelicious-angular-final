@@ -10,6 +10,7 @@ import { FlavourService } from 'src/app/services/flavour.service';
 import { OccassionService } from 'src/app/services/occassion.service';
 import { LoginService } from 'src/app/services/login.service';
 import { data } from 'jquery';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-main-content',
@@ -20,7 +21,7 @@ export class MainContentComponent implements OnInit {
   exclusiveList:Product[]|any=[];
   occassionList:Occassion[]|any=[];
   flavourList: any=[];
-  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService, private ocassionServe:OccassionService ,private loginService:LoginService) {
+  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService, private ocassionServe:OccassionService ,private loginService:LoginService , private cartService:CartService) {
     this.productService.getProductbyCategory("62833692871c3910a1fd0c25").subscribe((data: any)=>{
       console.log(data);
       this.exclusiveList=data;
@@ -125,16 +126,76 @@ export class MainContentComponent implements OnInit {
     },
     nav: true
   }
-  
-  
+
+  userId: any;
+  // id: any;
+  ID: any = [];
+  userData: any;
+  cartItems: any = [];
+  ItemsLength: any;
+  addCart(id: any) {
+    console.log(id)
+    console.log(this.userId)
+    if (this.userId) {
+      this.cartService.getCartItems(this.userId).subscribe((data) => {
+        console.log(data);
+
+        if (data) {
+          let value: any;
+          this.cartItems = data.cartItems;
+          this.ItemsLength = this.cartItems.length;
+          for (let id of this.cartItems) {
+            console.log(id._id);
+            this.ID.push(id._id);
+          }
+          value = this.ID.indexOf(id);
+          console.log(value);
+
+          if (value == -1) {
+            this.cartService.addtoCart(id, this.userId).subscribe((data) => {
+              if (data.status == 'ok') {
+                console.log(data);
+                this.toastr.success('item Added To CART', 'CakeLicious');
+              } else {
+                console.log(data);
+                alert('item not added');
+              }
+            });
+          } else {
+            this.toastr.warning('item Already In Cart', 'CakeLicious');
+          }
+        } else {
+          this.cartService.addtoCart(id, this.userId).subscribe((data) => {
+            if (data.status == 'ok') {
+              console.log(data);
+              this.toastr.success('item Added To CART', 'CakeLicious');
+            } else {
+              console.log(data);
+              alert('item not added');
+            }
+          });
+        }
+      });
+    } else {
+      this.router.navigate(['signin']);
+    }
+  }
+
+
+
   ngOnInit(): void {
+    this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
+    console.log(this.userData);
+    this.userId = this.userData.current_user._id;
+
+
     this.flavourService.getFlaovurList().subscribe(data=>{
       this.flavourList = data;
     },err=>{
       if(err instanceof HttpErrorResponse){
          if(err.status == 500)
-           alert('Something went wrong...')
-;       }
+           alert('Something went wrong...');
+      }
     })
   }
 //gkfjdhgjksfdj

@@ -11,6 +11,7 @@ export class Product {
     public prodDescription:string,
     public flavour:string,
     public prodReview:string,
-    public discount:string
+    public discount:string,
+    public _id:string
   ){}
 }
