@@ -28,7 +28,7 @@
       <div class="col-md-6">
         <div class="product-dtl">
           <div class="product-info">
-            <div class="product-name">{{prod.prodName}}</div>
+            <div class="product-name d-flex justify-content-between">{{prod.prodName}}<div><button class="fa fa-heart"></button></div></div>
             <div class="reviews-counter">
               <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" checked />
@@ -51,10 +51,10 @@
             <div class="col-md-6">
               <label for="size">Size</label>
               <select id="size" name="size" class="form-control">
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
               </select>
             </div>
             <div class="col-md-6">
@@ -74,6 +74,7 @@
               <div class="qtyplus">+</div>
             </form>
             <a href="#" class="round-black-btn">Add to Cart</a>
+            <a href="#" class="round-black-btn mx-3">Buy Now</a>
           </div>
         </div>
         <div>

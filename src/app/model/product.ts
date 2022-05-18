@@ -7,10 +7,10 @@ export class Product {
     public prodImage2:string,
     public prodImage3:string,
     public prodImage4:string,
-    public prodProce:string,
+    public prodPrice:string,
     public prodDescription:string,
     public flavour:string,
     public prodReview:string,
-    public discount:string,
+    public discount:string
   ){}
 }

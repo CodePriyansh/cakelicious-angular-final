@@ -1,12 +1,12 @@
-<div class="container-fluid"><div class="row"><div class="col">
+<div class="container"><div class="row"><div class="col">
     <img class="img-fluid" src="{{occassionDetail.occBanner}}" alt="">
 </div></div>
 <h1 class="text-center m-5">Product By Occassion</h1>
 <div class="row">
-    <div class="col-lg-3">
-    <div class="post-slide m-4">
+    <div class="col-lg-4" *ngFor="let product of productbyOccassion">
+    <div class="post-slide m-5">
         <div class="post-img">
-          <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
+          <img src="{{product.prodImage1}}" alt="">
           <div class="over-layer">
               
               <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
@@ -16,175 +16,19 @@
         </div>
         <div class="post-content">
           <h3 class="post-title">
-            <a>AnnniverSary Cake </a>
+            <a>{{product.prodName}}</a>
           </h3>
 
-          <p class="post-description">Best cake for your Anniversary day.. </p>
+          <p class="post-description">{{product.prodDescription}}</p>
           <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
+          <div class="d-flex justify-content-between">
+          <a>{{product.prodPrice}}</a>
           <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
+        </div>
         </div>
         </div>
       </div>
 
-      <div class="col-lg-3">
-        <div class="post-slide m-4">
-            <div class="post-img">
-              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-              <div class="over-layer">
-                  
-                  <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                  <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                  
-              </div>
-            </div>
-            <div class="post-content">
-              <h3 class="post-title">
-                <a>AnnniverSary Cake </a>
-              </h3>
-    
-              <p class="post-description">Best cake for your Anniversary day.. </p>
-              <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-              <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-            </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3">
-            <div class="post-slide m-4">
-                <div class="post-img">
-                  <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                  <div class="over-layer">
-                      
-                      <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                      <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                      
-                  </div>
-                </div>
-                <div class="post-content">
-                  <h3 class="post-title">
-                    <a>AnnniverSary Cake </a>
-                  </h3>
-        
-                  <p class="post-description">Best cake for your Anniversary day.. </p>
-                  <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                  <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="post-slide m-4">
-                    <div class="post-img">
-                      <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                      <div class="over-layer">
-                          
-                          <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                          <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                          
-                      </div>
-                    </div>
-                    <div class="post-content">
-                      <h3 class="post-title">
-                        <a>AnnniverSary Cake </a>
-                      </h3>
-            
-                      <p class="post-description">Best cake for your Anniversary day.. </p>
-                      <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                      <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                    </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <div class="post-slide m-4">
-                        <div class="post-img">
-                          <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                          <div class="over-layer">
-                              
-                              <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                              <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                              
-                          </div>
-                        </div>
-                        <div class="post-content">
-                          <h3 class="post-title">
-                            <a>AnnniverSary Cake </a>
-                          </h3>
-                
-                          <p class="post-description">Best cake for your Anniversary day.. </p>
-                          <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                          <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                        </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-3">
-                        <div class="post-slide m-4">
-                            <div class="post-img">
-                              <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                              <div class="over-layer">
-                                  
-                                  <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                                  <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                                  
-                              </div>
-                            </div>
-                            <div class="post-content">
-                              <h3 class="post-title">
-                                <a>AnnniverSary Cake </a>
-                              </h3>
-                    
-                              <p class="post-description">Best cake for your Anniversary day.. </p>
-                              <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                              <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-3">
-                            <div class="post-slide m-4">
-                                <div class="post-img">
-                                  <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                                  <div class="over-layer">
-                                      
-                                      <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                                      <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                                      
-                                  </div>
-                                </div>
-                                <div class="post-content">
-                                  <h3 class="post-title">
-                                    <a>AnnniverSary Cake </a>
-                                  </h3>
-                        
-                                  <p class="post-description">Best cake for your Anniversary day.. </p>
-                                  <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                                  <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                                </div>
-                                </div>
-                              </div>
-                              <div class="col-lg-3">
-                                <div class="post-slide m-4">
-                                    <div class="post-img">
-                                      <img src="../../../assets/images/flavour/Wedding-Image.png" alt="">
-                                      <div class="over-layer">
-                                          
-                                          <button class="btn btn-secondary"><i  class="fa fa-heart" aria-hidden="true"></i></button>
-                                          <button class="btn btn-secondary"><i  class="fa fa-eye" aria-hidden="true"></i></button>
-                                          
-                                      </div>
-                                    </div>
-                                    <div class="post-content">
-                                      <h3 class="post-title">
-                                        <a>AnnniverSary Cake </a>
-                                      </h3>
-                            
-                                      <p class="post-description">Best cake for your Anniversary day.. </p>
-                                      <span class="post-date"> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i> <i style="color:yellow" class="zmdi zmdi-star"></i></span>
-                                      <a  class="read-more"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
-                                    </div>
-                                    </div>
-                                  </div>
       
 </div>
 </div>
