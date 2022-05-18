@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class OccassionWiseCakeComponent implements OnInit {
   occassionId: any;
   occassionDetail: any = {};
-  productbyOccassion: Product[] = [];
+  productbyOccassion:Product[]=[];
   constructor(
 
 
@@ -44,9 +44,7 @@ export class OccassionWiseCakeComponent implements OnInit {
     private route: ActivatedRoute,
     private occassionServe: OccassionService,
     private router: Router
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.router.events.subscribe((event) => {
       this.route.params.subscribe((params) => {
         this.occassionId = params['occassionId'];
@@ -72,5 +70,9 @@ export class OccassionWiseCakeComponent implements OnInit {
           });
       }
     });
+  }
+
+  ngOnInit(): void {
+   
   }
 }

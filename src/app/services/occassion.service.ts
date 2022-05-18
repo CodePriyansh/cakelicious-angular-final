@@ -22,7 +22,7 @@ export class OccassionService {
   }
 
   public getProductByOccassion(oid:any):Observable<Product[]>{
-    let productsByOccasssion = "http://localhost:3000/occassion/occassion-product"
+    let productsByOccasssion = "http://localhost:3000/admin-product/occassion-product"
       return this.http.get<Product[]>(productsByOccasssion+'/'+oid)
   }
 }

@@ -1,86 +1,106 @@
 <div class="super_container">
 
   <!-- Header -->
+  <header class="header">
 
-  <header class="header" data-aos="fade-up">
+    <div class="header-1">
 
+        <a href="#" class="logo"><img src="../../../assets/images/logo.png"></a>
 
-    <!-- Header Main -->
+        <form action="" class="search-form" #search_form>
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
 
-    <div class="header_main">
-      <div class="container">
-        <div class="row">
-          <!-- Search -->
-          <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-            <div class="header_search">
-              <div class="header_search_content">
-                <div class="header_search_form_container">
-                  <form action="#" class="header_search_form clearfix">
-                    <input (keyup)="searchProduct($event)" type="search" required="required" class="header_search_input"
-                      placeholder="Search for products...">
-                    <button type="submit" class="header_search_button trans_300" value="Submit"><img
-                        src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png" alt=""></button>
-                  </form>
-                </div>
-              </div>
-            </div>
+        <div class="icons">
+            <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <!-- <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#arrivals">arrivals</a>
+            <a href="#reviews">reviews</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+    </div> -->
+
+</header>
+<header class="header2">
+  <div >
+    <div class="row d-flex justify-content-center ">
+    
+      <!-- menu start here -->
+      <div class="header-item d-flex justify-content-center">
+        <div class="menu-overlay" #overlay>
+        </div>
+        <nav class="menu" #menu>
+          <div class="mobile-menu-head" #mobileMenuHead>
+            <div class="go-back" (click)="hideSubMenu(submenu)"><i class="fa fa-angle-left"></i></div>
+            <div class="current-menu-title"></div>
+            <div class="mobile-menu-close" (click)="menuClick(menu,overlay,mobileMenuHead)">&times;</div>
           </div>
-          <!-- Logo -->
-          <div class="col-lg-2 col-sm-3 col-3 order-1">
-            <div class="logo_container">
-              <div class="logo"><a><img style="width:50%" src="../../../assets/images/logo.png"></a></div>
-            </div>
-          </div>
-
-          <!-- Wishlist -->
-          <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-            <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-              <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                <div class="wishlist_icon"><img
-                    src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918681/heart.png" alt=""></div>
-                <!-- <div class="wishlist_content">
-                                  <div class="wishlist_text"><a>Wishlist</a></div>
-                                  <div class="wishlist_count">10</div>
-                              </div> -->
+          <ul class="menu-main" >
+            <li>
+              <a href="#">All Cakes</a>
+            </li>
+          
+            <li class="menu-item-has-children" (click)="subMenu(submenu)">
+              <a href="#">By Category <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu>
+                <ul>
+                  <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}">{{cat.catName}}</a></li>
+                  
+                </ul>
               </div>
-
-              <!-- Cart -->
-              <div class="cart">
-                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                  <div class="cart_icon">
-                    <i class="fa fa-cart-plus"></i>
-
-                    <div class="cart_count"><span>3</span></div>
-                  </div>
-                  <!-- <div class="cart_content">
-                                      <div class="cart_text"><a>Cart</a></div>
-                                      <div class="cart_price">₹185</div>
-                                  </div> -->
-                </div>
+            </li>
+            <li class="menu-item-has-children" (click)="subMenu(submenu2)">
+              <a href="#">By Occassion  <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu2>
+                <ul>
+                  <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}">{{occ.occName}}</a></li>
+                
+                </ul>
               </div>
-              <div class="dropdown">
-                <button class="dropbtn"> <i class="fa fa-user-circle" aria-hidden="true"></i></button>
-                <div class="dropdown-content">
-                  <a *ngIf="!isLoggedIn()" routerLink="signin">Login/Signup</a>
-                  <a *ngIf="isLoggedIn()" (click)="signout()">logout</a>
-                </div>
+            </li>
+            <li class="menu-item-has-children" (click)="subMenu(submenu3)">
+              <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu3>
+                <ul>
+                  <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}">{{flavour.flavourname}}</a></li>
+                 
+                </ul>
               </div>
-
-            </div>
-
-          </div>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- menu end here -->
+      <div class="header-item item-right">
+    
+        <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead)">
+          <span></span>
         </div>
       </div>
     </div>
+  </div>
+</header>
 
 
-
-
-  </header>
-
-  <section class="second-nav m-0">
+  <!-- <section class="second-nav m-0">
     <header>
-      <!-- <a class="logo">logo</a> -->
       <div class="navigation">
         <ul class="menu">
           <div class="close-btn"></div>
@@ -122,8 +142,7 @@
       </div>
       <div class="menu-btn"></div>
     </header>
-  </section>
-</div>
+  </section> -->
 
 
  <router-outlet></router-outlet>
@@ -210,3 +229,5 @@
                       
                       
                       
+</div>
+                    
