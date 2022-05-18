@@ -14,6 +14,33 @@ export class OccassionWiseCakeComponent implements OnInit {
   occassionDetail: any = {};
   productbyOccassion:Product[]=[];
   constructor(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     private route: ActivatedRoute,
     private occassionServe: OccassionService,
     private router: Router
