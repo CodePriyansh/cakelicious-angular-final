@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-occassion-wise-cake',
   templateUrl: './occassion-wise-cake.component.html',
-  styleUrls: ['./occassion-wise-cake.component.css'],
+  styleUrls: ['.././category-wise-cake/category-wise-cake.component.css'],
 })
 export class OccassionWiseCakeComponent implements OnInit {
   occassionId: any;
