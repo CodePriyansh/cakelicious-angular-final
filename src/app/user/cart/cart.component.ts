@@ -118,12 +118,19 @@ export class CartComponent implements OnInit {
   deleteCart() {
     this.cartServe.deleteCart(this.userId).subscribe((data) => {
       console.log(data);
+      if(data){
+        this.ngOnInit()
+      }
     });
   }
 
   deleteItem(pid: any) {
     this.cartServe.deleteOne(this.userId, pid).subscribe((data) => {
+
       console.log(data);
+      if(data){
+        this.ngOnInit()
+      }
     });
   }
 
