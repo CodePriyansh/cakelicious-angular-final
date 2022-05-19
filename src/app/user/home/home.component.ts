@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { OccassionService } from 'src/app/services/occassion.service';
 import { ElementRef, ViewChild } from '@angular/core';
 
+declare var webkitSpeechRecognition :any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -67,18 +68,18 @@ export class HomeComponent implements OnInit {
 
     subMenu.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       subMenu.classList.remove("active");	
-    },300); 
+       subMenu.classList.remove("active");
+    },300);
 
     submenu2.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       submenu2.classList.remove("active");	
-    },300); 
+       submenu2.classList.remove("active");
+    },300);
 
     submenu3.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       submenu3.classList.remove("active");	
-    },300); 
+       submenu3.classList.remove("active");
+    },300);
   }
 
   signout() {
@@ -89,7 +90,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.flavourService.getFlaovurList().subscribe(
       (data) => {
         this.flavourList = data;
@@ -105,4 +106,27 @@ export class HomeComponent implements OnInit {
   isLoggedIn() {
     return this.service.checkToken();
   }
+  search(){
+    if("webkitSpeechRecognition" in window){
+
+      let vSearch = new webkitSpeechRecognition();
+      vSearch.lang = "en-US";
+      vSearch.start();
+
+      vSearch.onresult = async (e:any) =>{
+        console.log(e.results[0][0].transcript);
+        vSearch.stop();
+
+      }
+      vSearch.onerror = function(e:any){
+        console.log(e);
+        vSearch.stop();
+      }
+    }
+    else{
+      console.log("Your browser dosen't support speech recognition");
+    }
+
+  }
+
 }

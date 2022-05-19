@@ -9,12 +9,12 @@
 
         <form  class="search-form" #search_form>
             <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
+            <label for="search-box" class="fas fa-search" (click)="search()"></label>
         </form>
 
         <div class="icons">
             <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
-            <a  class="fas fa-heart"></a>
+            <a  class="fas fa-heart" routerLink="view-wishlist"></a>
             <a class="fas fa-shopping-cart" routerLink="cart" ></a>
             <div id="login-btn" class="fas fa-user" routerLink="/signin" ></div>
         </div>

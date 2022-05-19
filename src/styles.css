@@ -50,7 +50,6 @@
   }
 
   button, .btn{
-      box-shadow:0 17px 27px rgb(240 69 6 / 27%);
       transition:all 0.3s  ;
       -webkit-transition:all 0.3s  ;
       -moz-transition:all 0.3s  ;
@@ -90,8 +89,8 @@
       -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
       text-shadow: rgba(0,0,0,.01) 0 0 1px;
   }
-  
-  
+
+
   .form-control
   {
       color: #db5246;
@@ -102,9 +101,9 @@
       position: relative;
       box-sizing: border-box;
     margin-top:5%;
-    
 
-    
+
+
 
   }
   .clear
@@ -132,7 +131,7 @@
   {
       float: right;
   }
-  
+
   .fill_height
   {
       height: 100%;
@@ -153,5 +152,5 @@
   {
       padding: 0px !important;
   }
-  
+
 

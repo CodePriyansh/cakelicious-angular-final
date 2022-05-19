@@ -14,6 +14,8 @@ import { SearchComponent } from './user/search/search.component';
 import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { AllproductComponent } from './user/allproduct/allproduct.component';
+import { AppGuardGuard } from './auth.guard'
+import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 
 const routes: Routes = [
   {
@@ -41,8 +43,9 @@ const routes: Routes = [
       { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },
       { path: 'occassion-wise/:occassionId/:occName', component: OccassionWiseCakeComponent },
       {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent},
-      {path:"cart",component:CartComponent},
-      {path:"empty-cart",component:EmptyCartComponent}
+      {path:"cart",component:CartComponent,canActivate:[AppGuardGuard]},
+      {path:"empty-cart",component:EmptyCartComponent},
+      {path:'view-wishlist',component:ViewWishlistComponent}
 
 
     ],

@@ -24,11 +24,11 @@ export class CartComponent implements OnInit {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
-    
+
   }
 
 
-  
+
   onPay(n: any) {
      this.orderServe.CreateOrder(this.totalAmt).subscribe((data) => {
       console.log(data);
@@ -118,12 +118,14 @@ export class CartComponent implements OnInit {
   deleteCart() {
     this.cartServe.deleteCart(this.userId).subscribe((data) => {
       console.log(data);
+      window.location.reload();
     });
   }
 
   deleteItem(pid: any) {
     this.cartServe.deleteOne(this.userId, pid).subscribe((data) => {
       console.log(data);
+      window.location.reload();
     });
   }
 

@@ -27,6 +27,7 @@ import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.comp
 import { CartComponent } from './user/cart/cart.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { AllproductComponent } from './user/allproduct/allproduct.component';
+import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 
 
 const socialProvider={
@@ -59,7 +60,7 @@ const socialProvider={
     CartComponent,
     EmptyCartComponent,
     AllproductComponent
-
+    ViewWishlistComponent
   ],
   imports: [
     BrowserModule,
