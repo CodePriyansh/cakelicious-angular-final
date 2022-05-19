@@ -37,7 +37,7 @@ export class MainContentComponent implements OnInit {
   }
   what_we_offer_options: OwlOptions = {
     loop: true,
-    autoplay:false,
+    autoplay:true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
@@ -100,7 +100,7 @@ export class MainContentComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
-    autoplay:false,
+    autoplay:true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -186,7 +186,7 @@ export class MainContentComponent implements OnInit {
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
-    this.userId = this.userData.current_user._id;
+    // this.userId = this.userData.current_user._id;
 
 
     this.flavourService.getFlaovurList().subscribe(data=>{
