@@ -16,7 +16,7 @@ export class ProductService {
       'http://localhost:3000/product/getProductBycategory';
     return this.http.get<Product[]>(getProductByCategory + '/' + categoryId);
   }
- 
+
 
   public getProductbypId(pId: any): Observable<Product[]>{
     let getProductById = 'http://localhost:3000/product/getProductById';
@@ -27,7 +27,10 @@ export class ProductService {
     let getProductById = 'http://localhost:3000/product/searchProduct';
     return this.http.get<any>(getProductById + '/' + text);
   }
-   
+  public getProductList():Observable<any>{
+    var api = "http://localhost:3000/admin-product/viewProduct";
+    return this.http.get(api);
+  }
 
 
 

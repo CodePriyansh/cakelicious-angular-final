@@ -89,8 +89,8 @@
       -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
       text-shadow: rgba(0,0,0,.01) 0 0 1px;
   }
-  
-  
+
+
   .form-control
   {
       color: #db5246;
@@ -101,9 +101,9 @@
       position: relative;
       box-sizing: border-box;
     margin-top:5%;
-    
 
-    
+
+
 
   }
   .clear
@@ -131,7 +131,7 @@
   {
       float: right;
   }
-  
+
   .fill_height
   {
       height: 100%;
@@ -152,5 +152,5 @@
   {
       padding: 0px !important;
   }
-  
+
 

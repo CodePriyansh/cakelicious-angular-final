@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './user/signup/signup.component';
@@ -25,6 +26,8 @@ import { CategoryWiseCakeComponent } from './user/category-wise-cake/category-wi
 import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.component';
 import { CartComponent } from './user/cart/cart.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
+import { AllproductComponent } from './user/allproduct/allproduct.component';
+import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 
 
 const socialProvider={
@@ -55,7 +58,9 @@ const socialProvider={
     CategoryWiseCakeComponent,
     FlavourViseComponent,
     CartComponent,
-    EmptyCartComponent
+    EmptyCartComponent,
+    AllproductComponent,
+    ViewWishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +71,7 @@ const socialProvider={
     HttpClientModule,
     SocialLoginModule,
     FilterPipeModule,
+    NgxPaginationModule,
     ToastrModule.forRoot()
 
   ],

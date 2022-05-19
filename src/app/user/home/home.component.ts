@@ -67,18 +67,18 @@ export class HomeComponent implements OnInit {
 
     subMenu.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       subMenu.classList.remove("active");	
-    },300); 
+       subMenu.classList.remove("active");
+    },300);
 
     submenu2.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       submenu2.classList.remove("active");	
-    },300); 
+       submenu2.classList.remove("active");
+    },300);
 
     submenu3.style.animation = "slideRight 0.5s ease forwards";
     setTimeout(() =>{
-       submenu3.classList.remove("active");	
-    },300); 
+       submenu3.classList.remove("active");
+    },300);
   }
 
   signout() {
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
     this.flavourService.getFlaovurList().subscribe(
       (data) => {
         this.flavourList = data;
