@@ -13,6 +13,7 @@ import { ProductViewComponent } from './user/product-view/product-view.component
 import { SearchComponent } from './user/search/search.component';
 import { SigninComponent } from './user/signin/signin.component';
 import { SignupComponent } from './user/signup/signup.component';
+import { AllproductComponent } from './user/allproduct/allproduct.component';
 import { AppGuardGuard } from './auth.guard'
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 
@@ -34,6 +35,9 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactUsComponent,
+      },
+      {
+        path: 'allProduct',component:AllproductComponent
       },
       { path: 'searchProduct/:text', component: SearchComponent },
       { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },
