@@ -5,6 +5,7 @@ import { Product } from 'src/app/model/product';
 import { FlavourService } from 'src/app/services/flavour.service';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-flavour-vise',
@@ -15,7 +16,7 @@ export class FlavourViseComponent implements OnInit {
   fid: any;
   productListByFlavour: Product[] | any;
   flavourname: any;
-  constructor(private route: ActivatedRoute, private flavourServe: FlavourService, private router: Router , private toastr: ToastrService , private cartService:CartService) {
+  constructor(private route: ActivatedRoute, private flavourServe: FlavourService, private router: Router , private toastr: ToastrService , private cartService:CartService , private wishlistService:WishlistService) {
 
     this.router.events.subscribe(event => {
 
@@ -36,7 +37,7 @@ export class FlavourViseComponent implements OnInit {
 
     })
   }
- 
+
 
   userId: any;
   // id: any;
@@ -83,6 +84,56 @@ export class FlavourViseComponent implements OnInit {
             } else {
               console.log(data);
               alert('item not added');
+            }
+          });
+        }
+      });
+    } else {
+      this.router.navigate(['signin']);
+    }
+  }
+
+  //wishlist
+  wishlistItem: any = [];
+  addWishlist(id: any) {
+    console.log(id)
+    console.log(this.userId)
+    if (this.userId) {
+      this.wishlistService.getWishlistItems(this.userId).subscribe((data) => {
+        console.log(data);
+
+        if (data) {
+          let value: any;
+          this.wishlistItem = data.wishlistItem;
+          console.log(this.wishlistItem);
+          this.ItemsLength = this.wishlistItem.length;
+          for (let id of this.wishlistItem) {
+            console.log(id._id);
+            this.ID.push(id._id);
+          }
+          value = this.ID.indexOf(id);
+          console.log(value);
+
+          if (value == -1) {
+            this.wishlistService.addtoWishlist(id, this.userId).subscribe((data) => {
+              if (data.status == 'ok') {
+                console.log(data);
+                this.toastr.success('item Added To WISHLIST', 'CakeLicious');
+              } else {
+              this.toastr.warning('item not added')
+              }
+            });
+          } else {
+            this.toastr.warning('item Already In Wishlist', 'CakeLicious');
+          }
+        } else {
+          this.wishlistService.addtoWishlist(id, this.userId).subscribe((data) => {
+            if (data.status == 'ok') {
+              console.log(data);
+              this.toastr.success('item Added To WISHLIST', 'CakeLicious');
+            } else {
+              console.log(data);
+              this.toastr.warning('item not added')
             }
           });
         }
