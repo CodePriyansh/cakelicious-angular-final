@@ -23,6 +23,8 @@ import { SearchComponent } from './user/search/search.component';
 import { OccassionWiseCakeComponent } from './user/occassion-wise-cake/occassion-wise-cake.component';
 import { CategoryWiseCakeComponent } from './user/category-wise-cake/category-wise-cake.component';
 import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.component';
+import { CartComponent } from './user/cart/cart.component';
+import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 
 
 const socialProvider={
@@ -51,7 +53,9 @@ const socialProvider={
     SearchComponent,
     OccassionWiseCakeComponent,
     CategoryWiseCakeComponent,
-    FlavourViseComponent
+    FlavourViseComponent,
+    CartComponent,
+    EmptyCartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './user/cart/cart.component';
 import { CategoryWiseCakeComponent } from './user/category-wise-cake/category-wise-cake.component';
 import { ContactUsComponent } from './user/contact-us/contact-us.component';
+import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.component';
 
 import { HomeComponent } from './user/home/home.component';
@@ -34,7 +36,10 @@ const routes: Routes = [
       { path: 'searchProduct/:text', component: SearchComponent },
       { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },
       { path: 'occassion-wise/:occassionId/:occName', component: OccassionWiseCakeComponent },
-      {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent}
+      {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent},
+      {path:"cart",component:CartComponent},
+      {path:"empty-cart",component:EmptyCartComponent}
+
 
     ],
   },
