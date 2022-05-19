@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   SizeCount: any=0;
   Address:any;
   message:any;
+  number:any;
 
   constructor(private cartServe: CartService,private orderServe:OrderService,private router:Router) {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
@@ -55,9 +56,9 @@ export class CartComponent implements OnInit {
 
           console.log(response, this.userId, this.Address, this.cartItems);
           this.orderServe
-            .placeOrder(response, this.userId, this.Address, this.cartItems)
+            .placeOrder(this.userId,response, this.Address,'8765456789', this.cartItems)
             .subscribe((data) => {
-              if ((data.msg = 'ok')) {
+              if ((data.msg == 'ok')) {
                 this.cartServe.deleteCart(this.userId).subscribe((data) => {
                   console.log(data);
                   this.ngOnInit();

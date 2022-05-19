@@ -15,8 +15,8 @@ export class OrderService {
  return this.http.post(this.createOrder, { amount });
   }
 
-  public placeOrder(response:any,userId:any,cartItems:any,address:any):Observable<any>{
-  return this.http.post(this.placeOrderApi,{response,userId,cartItems,address});
+  public placeOrder(userId:any,paymentResponse:any,address:any,alterMobile:any,orderedItems:any):Observable<any>{
+  return this.http.post(this.placeOrderApi,{userId,paymentResponse,address,alterMobile,orderedItems});
   }
-
+ 
 }
