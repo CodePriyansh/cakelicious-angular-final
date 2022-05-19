@@ -59,7 +59,7 @@ const socialProvider={
     FlavourViseComponent,
     CartComponent,
     EmptyCartComponent,
-    AllproductComponent
+    AllproductComponent,
     ViewWishlistComponent
   ],
   imports: [

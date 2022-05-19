@@ -9,7 +9,7 @@
 
         <form  class="search-form" #search_form>
             <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search" (click)="search()"></label>
+            <label for="search-box" class="fas fa-search" (click)="searching()"></label>
         </form>
 
         <div class="icons">
@@ -53,7 +53,8 @@
               <a >By Occassion  <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu2>
                 <ul>
-                  <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/{{occ.occName}}">{{occ.occName}}</a></li>
+                  <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/
+                    {{occ.occName}}">{{occ.occName}}</a></li>
 
                 </ul>
               </div>

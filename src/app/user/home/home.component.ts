@@ -10,8 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { ProductService } from 'src/app/services/product.service';
 import { OccassionService } from 'src/app/services/occassion.service';
 import { ElementRef, ViewChild } from '@angular/core';
-
-declare var webkitSpeechRecognition :any;
+declare var webkitSpeechRecognition:any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -106,17 +105,19 @@ export class HomeComponent implements OnInit {
   isLoggedIn() {
     return this.service.checkToken();
   }
-  search(){
+  searching(){
     if("webkitSpeechRecognition" in window){
-
+      
       let vSearch = new webkitSpeechRecognition();
+      vSearch.continuous = false;
+      vSearch.interimResults = false;
       vSearch.lang = "en-US";
+      vSearch.maxAlternatives = 1
       vSearch.start();
 
       vSearch.onresult = async (e:any) =>{
-        console.log(e.results[0][0].transcript);
         vSearch.stop();
-
+        console.log(e.results[0][0].transcript);
       }
       vSearch.onerror = function(e:any){
         console.log(e);
@@ -126,7 +127,5 @@ export class HomeComponent implements OnInit {
     else{
       console.log("Your browser dosen't support speech recognition");
     }
-
   }
-
 }
