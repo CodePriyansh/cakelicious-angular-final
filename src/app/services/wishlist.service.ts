@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WishlistService {
+  url = "https://cake-licious-backend.herokuapp.com/";
 
-  wishlistApi = 'http://localhost:3000/wishlist/add-to-wishlist';
-  getWishlist = 'http://localhost:3000/wishlist/view-wishlist';
-  deleteFullwishlist = 'http://localhost:3000/wishlist/delete-wishlist';
-  deleteOneitem = 'http://localhost:3000/wishlist/delete-wishlist-item';
+  wishlistApi = this.url+'wishlist/add-to-wishlist';
+  getWishlist = this.url+'wishlist/view-wishlist';
+  deleteFullwishlist = this.url+'wishlist/delete-wishlist';
+  deleteOneitem = this.url+'wishlist/delete-wishlist-item';
   constructor(private http:HttpClient) { }
 
   // CART-APIS

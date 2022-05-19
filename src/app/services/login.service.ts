@@ -7,10 +7,11 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class LoginService {
-
-  signUpApi = "http://localhost:3000/customer/sign-up";
-  signInApi = "http://localhost:3000/customer/sign-in";
-  signupGoogle = 'http://localhost:3000/customer/login-with-google';
+  url = "https://cake-licious-backend.herokuapp.com/";
+ 
+  signUpApi = this.url+"customer/sign-up";
+  signInApi = this.url+"customer/sign-in";
+  signupGoogle = this.url+'customer/login-with-google';
 
   constructor(private http:HttpClient) { }
 

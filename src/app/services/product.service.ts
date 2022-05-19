@@ -10,25 +10,26 @@ import { Product } from '../model/product';
 export class ProductService {
 
   constructor(private http: HttpClient) {}
+  url = "https://cake-licious-backend.herokuapp.com/";
 
   public getProductbyCategory(categoryId: any):Observable<Product[]>{
     let getProductByCategory =
-      'http://localhost:3000/product/getProductBycategory';
+      this.url+'product/getProductBycategory';
     return this.http.get<Product[]>(getProductByCategory + '/' + categoryId);
   }
 
 
   public getProductbypId(pId: any): Observable<Product[]>{
-    let getProductById = 'http://localhost:3000/product/getProductById';
+    let getProductById = this.url+'product/getProductById';
     return this.http.get<Product[]>(getProductById + '/' + pId);
   }
 
   public searchProduct(text: any): Observable<any>{
-    let getProductById = 'http://localhost:3000/product/searchProduct';
+    let getProductById = this.url+'product/searchProduct';
     return this.http.get<any>(getProductById + '/' + text);
   }
   public getProductList():Observable<any>{
-    var api = "http://localhost:3000/admin-product/viewProduct";
+    var api = this.url+"admin-product/viewProduct";
     return this.http.get(api);
   }
 

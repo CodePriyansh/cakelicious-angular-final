@@ -6,9 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
+  url = "https://cake-licious-backend.herokuapp.com/";
 
-   createOrder = "http://localhost:3000/order/create-order";
-   placeOrderApi = "http://localhost:3000/order/place-order";
+   createOrder = this.url+"order/create-order";
+   placeOrderApi = this.url+"order/place-order";
   constructor(private http:HttpClient) { }
 
   public CreateOrder(amount:any):Observable<any>{
