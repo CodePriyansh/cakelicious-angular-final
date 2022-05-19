@@ -25,6 +25,7 @@ import { CategoryWiseCakeComponent } from './user/category-wise-cake/category-wi
 import { FlavourViseComponent } from './user/flavour-wise-cake/flavour-vise.component';
 import { CartComponent } from './user/cart/cart.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
+import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 
 
 const socialProvider={
@@ -55,7 +56,8 @@ const socialProvider={
     CategoryWiseCakeComponent,
     FlavourViseComponent,
     CartComponent,
-    EmptyCartComponent
+    EmptyCartComponent,
+    ViewWishlistComponent
   ],
   imports: [
     BrowserModule,
