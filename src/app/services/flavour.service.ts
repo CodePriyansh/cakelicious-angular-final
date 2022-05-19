@@ -8,8 +8,10 @@ import { Product } from '../model/product';
   providedIn: 'root'
 })
 export class FlavourService {
-  private fetchFlaovryApi = "http://localhost:3000/admin-flavour/findall";
-  private productByFlavour = "http://localhost:3000/admin-product/getProductbyFlavour"
+  url = "https://cake-licious-backend.herokuapp.com/";
+
+  private fetchFlaovryApi = this.url+"admin-flavour/findall";
+  private productByFlavour = this.url+"admin-product/getProductbyFlavour"
   constructor(private http:HttpClient) { 
   }
   public getFlaovurList() : Observable<Flavour[]>{

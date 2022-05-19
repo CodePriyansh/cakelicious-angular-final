@@ -8,16 +8,17 @@ import { Product } from '../model/product';
   providedIn: 'root'
 })
 export class CategoryService {
+  url = "https://cake-licious-backend.herokuapp.com/";
 
   constructor(private http:HttpClient) {}
    public getCategory():Observable<Category[]>{
     let getCategory =
-      'http://localhost:3000/category/viewCategoryByuser';
+      this.url+'category/viewCategoryByuser';
     return this.http.get<Category[]>(getCategory);
   }
 
   public getProductByCategory(cid:any):Observable<Product[]>{
-    let productByCatgory="http://localhost:3000/admin-product/category-product"
+    let productByCatgory=this.url+"admin-product/category-product"
     return this.http.get<Product[]>(productByCatgory+'/'+cid)
   }
 }

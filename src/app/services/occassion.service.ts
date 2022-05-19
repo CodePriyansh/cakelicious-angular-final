@@ -10,19 +10,20 @@ import { Product } from '../model/product';
 export class OccassionService {
 
   constructor( private http:HttpClient) { }
+  url = "https://cake-licious-backend.herokuapp.com/";
 
   public getOccassion():Observable<Occassion[]>{
-    let getOccassion = 'http://localhost:3000/occassion/viewOccassion';
+    let getOccassion = this.url+'occassion/viewOccassion';
     return this.http.get<Occassion[]>(getOccassion);
   }
 
   public getSingleOccassion(occassionId:any):Observable<Occassion>{
-    let getSingleOccassion="http://localhost:3000/occassion/viewOneOccassion"
+    let getSingleOccassion=this.url+"occassion/viewOneOccassion"
     return this.http.get<Occassion>(getSingleOccassion+'/'+ occassionId);
   }
 
   public getProductByOccassion(oid:any):Observable<Product[]>{
-    let productsByOccasssion = "http://localhost:3000/admin-product/occassion-product"
+    let productsByOccasssion = this.url+"admin-product/occassion-product"
       return this.http.get<Product[]>(productsByOccasssion+'/'+oid)
   }
 }
