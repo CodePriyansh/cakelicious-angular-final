@@ -37,9 +37,9 @@
           </div>
           <ul class="menu-main" >
             <li>
-              <a href="#">All Cakes</a>
+              <a routerLink="allProduct">All Cakes</a>
             </li>
-          
+
             <li class="menu-item-has-children" (click)="subMenu(submenu,'By Category')">
               <a href="#">By Category <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu>
@@ -54,7 +54,7 @@
               <div class="sub-menu single-column-menu" #submenu2>
                 <ul>
                   <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/{{occ.occName}}">{{occ.occName}}</a></li>
-                
+
                 </ul>
               </div>
             </li>
@@ -91,10 +91,10 @@
 
  <router-outlet></router-outlet>
                        <!-- FOOTER SECTION -->
-  
+
                        <section class="footer p-5">
                         <div class="box-container">
-                          
+
                             <div class="box">
                                 <h3>our locations</h3>
                                 <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
@@ -104,7 +104,7 @@
                                 <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
                                 <a href="#"> <i class="fas fa-map-marker-alt"></i> africa </a> -->
                             </div>
-                    
+
                             <div class="box">
                                 <h3>quick links</h3>
                                 <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
@@ -113,7 +113,7 @@
                                 <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
                                 <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
                             </div>
-                    
+
                             <div class="box">
                                 <h3>extra links</h3>
                                 <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
@@ -122,7 +122,7 @@
                                 <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
                                 <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
                             </div>
-                    
+
                             <div class="box">
                                 <h3>contact info</h3>
                                 <a href="#"> <i class="fas fa-phone"></i> +987678769 </a>
@@ -130,7 +130,7 @@
                                 <a href="#"> <i class="fas fa-envelope"></i> cakelicious@gmail.com </a>
                                 <img src="image/worldmap.png" class="map" alt="">
                             </div>
-                            
+
                         </div>
                         <div class="share">
                             <a href="#" class="fab fa-facebook-f"></a>
@@ -139,15 +139,15 @@
                             <a href="#" class="fab fa-linkedin"></a>
                             <a href="#" class="fab fa-pinterest"></a>
                         </div>
-                    
+
                         <div class="credit">Copyright @<span>CakeLicious </span> | all rights reserved! </div>
-                    
+
                     </section>
-                      
-                      
-                      
-                      
-                      
+
+
+
+
+
 
 
 
