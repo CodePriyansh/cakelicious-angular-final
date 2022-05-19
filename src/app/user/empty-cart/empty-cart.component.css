@@ -43,6 +43,6 @@ body {
 }
 
 .btn-primary, .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #4466f2!important;
-    border-color: #4466f2!important;
+    background-color: var(--head-text)!important;
+    border-color: var(--head-text)!important;
 }
