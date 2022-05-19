@@ -85,7 +85,7 @@ export class ViewWishlistComponent implements OnInit {
           });
         }
       });
-    } else {
+    } else { 
       this.router.navigate(['signin']);
     }
   }
