@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     private flavourService: FlavourService,
     private category: CategoryService,
     private occassionServe: OccassionService,
-    private ElByClassName: ElementRef
+    private ElByClassName: ElementRef,
   ) {
     this.occassionServe.getOccassion().subscribe((data: any) => {
       // console.log(data);
@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit {
   signout() {
     sessionStorage.removeItem('jwt-token');
     sessionStorage.removeItem('user-detail');
-    // alert("logout success");
+    alert("logout success");
     this.router.navigate(['/signin']);
   }
 
@@ -128,4 +128,12 @@ export class HomeComponent implements OnInit {
       console.log("Your browser dosen't support speech recognition");
     }
   }
+
+  search(event:any){
+      let text = event.target.value
+
+      this.router.navigate(['/searchProduct',text])
+  }
+
+ 
 }

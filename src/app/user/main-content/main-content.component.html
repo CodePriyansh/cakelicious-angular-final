@@ -21,7 +21,7 @@
             </div>
 
           </div>
-<!--
+
           <div class="carousel-item">
             <img src="../../../assets/images/F-Banner-2.png" class="d-block w-100" />
             <div class="carousel-caption d-none d-md-block">
@@ -46,7 +46,7 @@
               <h5>CAKELICIOUS</h5>
               <p>Welcome To Delicious World</p>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -85,10 +85,10 @@
 
 <section class="wwo">
   <div class="container">
-    <h1 class="heading text-center" >What We Offer</h1>
+    <h1 class="heading text-center" data-aos="fade-down-left" >What We Offer</h1>
     <owl-carousel-o [options]="what_we_offer_options">
       <ng-template carouselSlide *ngFor="let occassion of occassionList;">
-        <div class="post-slide m-4">
+        <div class="post-slide m-4" data-aos="fade-up">
           <div class="post-img">
             <img src="{{occassion.occImage}}" alt="">
             <a href="" class="over-layer"><i><b>Explore</b></i></a>

@@ -28,6 +28,8 @@ import { CartComponent } from './user/cart/cart.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { AllproductComponent } from './user/allproduct/allproduct.component';
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
+import { OrderViewComponent } from './user/order-view/order-view.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 const socialProvider={
@@ -35,13 +37,13 @@ const socialProvider={
   useValue:{
     providers:[{
       id:GoogleLoginProvider.PROVIDER_ID,
-      provider:new GoogleLoginProvider("1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com")
+      provider:new GoogleLoginProvider("150365577052-cv0ao56rbs5t7ojg3lnirmpe5qpebuqn.apps.googleusercontent.com")
 
     }]
   }
 };
 
-
+//1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ const socialProvider={
     CartComponent,
     EmptyCartComponent,
     AllproductComponent,
-    ViewWishlistComponent
+    ViewWishlistComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ const socialProvider={
     CarouselModule ,
     BrowserAnimationsModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HttpClientModule,
     SocialLoginModule,
     FilterPipeModule,

@@ -5,10 +5,10 @@
 
     <div class="header-1">
 
-        <a href="#" class="logo"><img src="../../../assets/images/logo.png"></a>
+        <a href="#" class="logo"><img src="../../../assets/images/logo-removebg-preview (1).png"></a>
 
         <form  class="search-form" #search_form>
-            <input type="search" name="" placeholder="search here..." id="search-box">
+            <input type="search" name="" placeholder="search here..." id="search-box" (keyup)="search($event)">
             <label for="search-box" class="fas fa-search" (click)="searching()"></label>
         </form>
 
@@ -17,7 +17,9 @@
             <a  class="fas fa-heart" routerLink="view-wishlist"></a>
             <a class="fas fa-cart-plus" routerLink="cart" ></a>
             
-            <div id="login-btn" title="Login/Signup" class="fas fa-user-circle" routerLink="/signin" ></div>
+            <div id="login-btn" *ngIf="!isLoggedIn()" title="Login/Signup" class="fas fa-user-circle" routerLink="/signin" ></div>
+            <div id="login-btn" *ngIf="isLoggedIn()" routerLink="/view-order-history" class="fas fa-truck-moving"  ></div>
+            <div id="login-btn" *ngIf="isLoggedIn()" (click)="signout()" class="fas fa-sign-out-alt"  ></div>
           
         </div>
 
@@ -46,7 +48,7 @@
               <a href="#">By Category <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu>
                 <ul>
-                  <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}">{{cat.catName}}</a></li>
+                  <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{cat.catName}}</a></li>
 
                 </ul>
               </div>
@@ -56,7 +58,7 @@
               <div class="sub-menu single-column-menu" #submenu2>
                 <ul>
                   <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/
-                    {{occ.occName}}">{{occ.occName}}</a></li>
+                    {{occ.occName}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{occ.occName}}</a></li>
 
                 </ul>
               </div>
@@ -65,7 +67,7 @@
               <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
               <div class="sub-menu single-column-menu" #submenu3>
                 <ul>
-                  <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}">{{flavour.flavourname}}</a></li>
+                  <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{flavour.flavourname}}</a></li>
 
                 </ul>
               </div>

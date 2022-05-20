@@ -16,6 +16,7 @@ import { SignupComponent } from './user/signup/signup.component';
 import { AllproductComponent } from './user/allproduct/allproduct.component';
 import { AppGuardGuard } from './auth.guard'
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
+import { OrderViewComponent } from './user/order-view/order-view.component';
 
 const routes: Routes = [
   {
@@ -45,7 +46,8 @@ const routes: Routes = [
       {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent},
       {path:"cart",component:CartComponent,canActivate:[AppGuardGuard]},
       {path:"empty-cart",component:EmptyCartComponent},
-      {path:'view-wishlist',component:ViewWishlistComponent}
+      {path:'view-wishlist',component:ViewWishlistComponent},
+      {path:'view-order-history',component:OrderViewComponent}
 
 
     ],
