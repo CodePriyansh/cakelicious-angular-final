@@ -83,10 +83,11 @@
 </section>
 
 
-<section class="wwo">
-  <div class="container">
+<section class="wwo" data-aos="zoom-out-right">
+  <div class="container" >
     <h1 class="heading text-center" >What We Offer</h1>
-    <owl-carousel-o [options]="what_we_offer_options">
+    <owl-carousel-o [options]="what_we_offer_options" data-aos="fade-up"
+    data-aos-anchor-placement="top-center">
       <ng-template carouselSlide *ngFor="let occassion of occassionList;">
         <div class="post-slide m-4">
           <div class="post-img">
@@ -115,12 +116,13 @@
 </section>
 
 
-<section class="flavours-section">
+<section class="flavours-section" data-aos="fade-left">
   <div class="container p-5">
     <div class="heading text-center">
 
-      <h1>Flavours</h1>
-      <p>Experince variaty of flavours</p>
+      <h1 data-aos="zoom-in">Flavours</h1>
+      <p data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom">Experince variaty of flavours</p>
     </div>
 
     <owl-carousel-o [options]="customOptions">
@@ -141,11 +143,11 @@
 <section class="product-section big-screen">
   <div class="container">
     <div class="row justify-content-center">
-      <h1 class="heading text-center">Our Exclusive Products</h1>
+      <h1 class="heading text-center" data-aos="fade-down-right">Our Exclusive Products</h1>
 
 
 
-      <div class="post-slide m-4 col-lg-3 col-md-4 col-sm-2" *ngFor='let product of exclusiveList.slice(0,6)'>
+      <div data-aos="zoom-in" class="post-slide m-4 col-lg-3 col-md-4 col-sm-2" *ngFor='let product of exclusiveList.slice(0,6)'>
         <div class="post-img" >
           <img src="{{product.prodImage1}}" alt="" routerLink="product-view/{{product._id}}">
           <a routerLink="product-view/{{product._id}}" class="over-layer"><i class="fa fa-link"></i></a>
@@ -232,13 +234,13 @@
 <section class="why-choose-us pt-5 pb-5">
   <div class="container">
     <div class="text-center mb-2-8 mb-lg-6">
-      <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);">Why choose
+      <h1 class="display-18 display-md-16 display-lg-14 font-weight-700" style="color: rgb(58, 11, 11);" data-aos="zoom-in-up">Why choose
         <strong class="font-weight-700" style="color:orangered">Us</strong>
       </h1>
-      <span style="color: rgb(58, 11, 11);">The trusted source for why choose us</span>
+      <span style="color: rgb(58, 11, 11);" data-aos="zoom-out">The trusted source for why choose us</span>
     </div>
     <div class="row align-items-center text-center">
-      <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
+      <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0" data-aos="fade-left">
         <div class="pr-md-3">
           <div class="text-center text-sm-right mb-2-9">
             <div class="mb-4">
@@ -263,13 +265,13 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 d-none d-lg-block fadeOutDownBig">
+      <div class="col-lg-4 d-none d-lg-block fadeOutDownBig" >
         <div class="why-choose-center-image" style="margin-left:30px">
           <img src="../../../assets/images/logo-removebg-preview (1).png" alt="..." class="roun"
             style="background:transparent;">
         </div>
       </div>
-      <div class="col-sm-6 col-lg-4">
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right">
         <div class="pl-md-3">
           <div class="text-center text-sm-left mb-2-9 ">
             <div class="mb-4">
