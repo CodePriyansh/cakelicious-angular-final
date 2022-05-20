@@ -1,0 +1,112 @@
+<div class="container-fluid my-5  d-flex  justify-content-center">
+    <div class="card-1 mx-5">
+        <div class="card-header bg-white">
+
+        </div>
+        <div class="card-body" *ngFor="let item of orderList">
+            <div class="row justify-content-between mb-3">
+                <div class="col-auto">
+                    <h6 class="color-1 mb-0 change-color">Order-History</h6>
+                </div>
+                <div class="col-auto active "> <small>Order Id : {{item.orderId}}</small> </div>
+            </div>
+            <div class="row" *ngFor="let prodItem of item.orderedItem">
+                <div class="col">
+                    <div class="card card-2">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="sq align-self-center "> <img
+                                        class="img-fluid  my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"
+                                        src="{{prodItem.ProductId.prodImage1}}" width="135" height="135" /> </div>
+                                <div class="media-body my-auto text-right">
+                                    <div class="row  my-auto flex-column flex-md-row">
+                                        <div class="col my-auto">
+                                            <h6 class="mb-0"> {{prodItem.ProductId.prodName}}</h6>
+                                        </div>
+                                        <!-- <div class="col-auto my-auto"> <small>Cake Name</small></div> -->
+                                        <div class="col my-auto"> <small>Size : {{prodItem.size}}</small></div>
+                                        <div class="col my-auto"> <small>Qty : {{prodItem.Qty}}</small></div>
+                                        <div class="col my-auto">
+                                            <h6 class="mb-0">&#8377;{{prodItem.ProductId.prodPrice}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-3 ">
+                            <div class="row">
+                                <div class="col-md-3 mb-3"> <small> Track Order <span><i class=" ml-2 fa fa-refresh"
+                                                aria-hidden="true"></i></span></small> </div>
+                                <div class="col mt-auto">
+                                    <div class="progress my-auto">
+                                        <div class="progress-bar progress-bar  rounded" style="width: 50%"
+                                            role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <div class="media row justify-content-between ">
+                                        <div class="col-auto text-right mt-4"><span>placed <small
+                                                    class="text-right mr-sm-3"></small> <i
+                                                    class="fa fa-check-circle active"></i> </span></div>
+                                        <div class="flex-col"> <span> <small
+                                                    class="text-right mr-sm-2">Preparing</small><i
+                                                    class="fa fa-spinner fa-spin"></i></span></div>
+                                        <div class="col-auto flex-col-auto"><small class="text-right mr-sm-2">Out For
+                                                Delivery</small><span> <i class="fa fa-circle"></i></span></div>
+                                        <div class="col-auto flex-col-auto"><small class="text-right mr-sm-2">Delivered
+                                            </small><span> <i class="fa fa-circle"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <p class="mb-1 text-dark"><b>Order Details</b></p>
+                        </div>
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"><b>Total</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">&#8377;{{item.total}}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"> <b>Discount</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">&#8377;150</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"><b>GST 12%</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">{{item.total*12/100}}</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"><b>Delivery Charges</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">Free</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row invoice ">
+                <div class="col text-black">
+                    <p class="mb-1"> PAYMENT ID : {{item.paymentId}}</p>
+                    <p class="mb-1">ORDDER Date : {{item.updatedAt}} </p>
+                    <p class="mb-1">TRANSACTION ID: {{item.transactionId}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

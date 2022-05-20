@@ -10,6 +10,7 @@ import { HomeComponent } from './user/home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContentComponent } from './user/main-content/main-content.component';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
 import { CacheInterceptorsService } from './interceptors/cache-interceptors.service';
@@ -27,7 +28,9 @@ import { CartComponent } from './user/cart/cart.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { AllproductComponent } from './user/allproduct/allproduct.component';
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
-import { FormsModule } from '@angular/forms';
+import { OrderViewComponent } from './user/order-view/order-view.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -40,7 +43,7 @@ const socialProvider={
   }
 };
 
-
+//1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com
 
 @NgModule({
   declarations: [
@@ -59,7 +62,8 @@ const socialProvider={
     CartComponent,
     EmptyCartComponent,
     AllproductComponent,
-    ViewWishlistComponent
+    ViewWishlistComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,
@@ -67,11 +71,13 @@ const socialProvider={
     CarouselModule ,
     BrowserAnimationsModule,
     FormsModule,
+    Ng2SearchPipeModule,
     HttpClientModule,
     SocialLoginModule,
     FilterPipeModule,
     NgxPaginationModule,
     ToastrModule.forRoot()
+
   ],
   providers: [socialProvider,{
     provide : HTTP_INTERCEPTORS,
