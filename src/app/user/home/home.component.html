@@ -1,99 +1,101 @@
 <div class="super_container">
+
   <!-- Header -->
   <header class="header">
+
     <div class="header-1">
 
-      <a href="#" class="logo"><img src="../../../assets/images/logo-removebg-preview (1).png"></a>
+        <a href="#" class="logo"><img src="../../../assets/images/logo-removebg-preview (1).png"></a>
 
-      <form class="search-form" #search_form>
-        <input type="search" name="" placeholder="search here..." id="search-box" (keyup)="search($event)">
-        <label for="search-box" class="fas fa-search" (click)="searching()"></label>
-      </form>
+        <form  class="search-form" #search_form>
+            <input type="search" name="" placeholder="search here..." id="search-box" (keyup)="search($event)">
+            <label for="search-box" class="fas fa-search" (click)="searching()"></label>
+        </form>
 
-      <div class="icons">
-        <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
-        <a class="fas fa-heart" routerLink="view-wishlist"></a>
-        <a class="fas fa-cart-plus" routerLink="cart"></a>
-
-        <div id="login-btn" *ngIf="!isLoggedIn()" title="Login/Signup" class="fas fa-user-circle" routerLink="/signin">
+        <div class="icons">
+            <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
+            <a  class="fas fa-heart" routerLink="view-wishlist"></a>
+            <a class="fas fa-cart-plus" routerLink="cart" ></a>
+            
+            <div id="login-btn" *ngIf="!isLoggedIn()" title="Login/Signup" class="fas fa-user-circle" routerLink="/signin" ></div>
+            <div id="login-btn" *ngIf="isLoggedIn()" routerLink="/view-order-history" class="fas fa-truck-moving"  ></div>
+            <div id="login-btn" *ngIf="isLoggedIn()" (click)="signout()" class="fas fa-sign-out-alt"  ></div>
+          
         </div>
-        <div id="login-btn" *ngIf="isLoggedIn()" routerLink="/view-order-history" class="fas fa-truck-moving"></div>
-        <div id="login-btn" *ngIf="isLoggedIn()" (click)="signout()" class="fas fa-sign-out-alt"></div>
-
-      </div>
 
     </div>
-  </header>
-  <header class="header2">
-    <div>
-      <div class="row d-flex justify-content-center ">
+</header>
+<header class="header2">
+  <div >
+    <div class="row d-flex justify-content-center ">
 
-        <!-- menu start here -->
-        <!-- kdjbc -->
-        <div class="header-item d-flex justify-content-center">
-          <div class="menu-overlay" #overlay>
+      <!-- menu start here -->
+      <!-- kdjbc -->
+      <div class="header-item d-flex justify-content-center">
+        <div class="menu-overlay" #overlay>
+        </div>
+        <nav class="menu" #menu>
+          <div class="mobile-menu-head" #mobileMenuHead>
+            <div class="go-back" (click)="hideSubMenu(submenu,submenu2,submenu3)"><i class="fa fa-angle-left"></i></div>
+            <div class="current-menu-title" style="color:red;"  data-aos="flip-left">{{title}}</div>
+            <div class="mobile-menu-close" (click)="menuClick(menu,overlay,mobileMenuHead)">&times;</div>
           </div>
-          <nav class="menu" #menu>
-            <div class="mobile-menu-head" #mobileMenuHead>
-              <div class="go-back" (click)="hideSubMenu(submenu,submenu2,submenu3)"><i class="fa fa-angle-left"></i>
+          <ul class="menu-main" >
+            <li>
+              <a routerLink="allProduct">All Cakes</a>
+            </li>
+
+            <li class="menu-item-has-children" (click)="subMenu(submenu,'By Category')">
+              <a href="#">By Category <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu>
+                <ul>
+                  <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{cat.catName}}</a></li>
+
+                </ul>
               </div>
-              <div class="current-menu-title" style="color:red;" data-aos="flip-left">{{title}}</div>
-              <div class="mobile-menu-close" (click)="menuClick(menu,overlay,mobileMenuHead)">&times;</div>
-            </div>
-            <ul class="menu-main">
-              <li>
-                <a routerLink="allProduct">All Cakes</a>
-              </li>
-
-              <li class="menu-item-has-children" (click)="subMenu(submenu,'By Category')">
-                <a href="#">By Category <i class="fas fa-angle-down"></i></a>
-                <div class="sub-menu single-column-menu" #submenu>
-                  <ul>
-                    <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}"
-                        (click)="menuClick(menu,overlay,mobileMenuHead)">{{cat.catName}}</a></li>
-
-                  </ul>
-                </div>
-              </li>
-              <li class="menu-item-has-children" (click)="subMenu(submenu2,'By Occassion')">
-                <a>By Occassion <i class="fas fa-angle-down"></i></a>
-                <div class="sub-menu single-column-menu" #submenu2>
-                  <ul>
-                    <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/
+            </li>
+            <li class="menu-item-has-children" (click)="subMenu(submenu2,'By Occassion')">
+              <a >By Occassion  <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu2>
+                <ul>
+                  <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/
                     {{occ.occName}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{occ.occName}}</a></li>
 
-                  </ul>
-                </div>
-              </li>
-              <li class="menu-item-has-children" (click)="subMenu(submenu3,'By Flavour')">
-                <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
-                <div class="sub-menu single-column-menu" #submenu3>
-                  <ul>
-                    <li *ngFor="let flavour of flavourList"><a
-                        routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}"
-                        (click)="menuClick(menu,overlay,mobileMenuHead)">{{flavour.flavourname}}</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-item-has-children" (click)="subMenu(submenu3,'By Flavour')">
+              <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
+              <div class="sub-menu single-column-menu" #submenu3>
+                <ul>
+                  <li *ngFor="let flavour of flavourList"><a routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{flavour.flavourname}}</a></li>
 
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a routerLink="place-order">Services</a>
-              </li>
-              <li>
-                <a routerLink="contact">Contact Us</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <!-- menu end here -->
-        <div class="header-item item-right">
-          <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead)">
-            <span></span>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a routerLink="contact">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- menu end here -->
+      <div class="header-item item-right">
+        <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead)">
+          <span></span>
 
-          </div>
         </div>
       </div>
-  <!-- </header> -->
+    </div>
+    </div>
+  </header>
+
+
+
+
   <router-outlet></router-outlet>
   <!-- FOOTER SECTION -->
 
@@ -148,4 +150,15 @@
     <div class="credit" data-aos="fade-right">Copyright @<span>CakeLicious </span> | all rights reserved! </div>
 
   </section>
+
+
+
+
+
+
+
+
+
+
+
 </div>
