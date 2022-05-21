@@ -186,7 +186,7 @@ export class MainContentComponent implements OnInit {
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
-    // this.userId = this.userData.current_user._id;
+    this.userId = this.userData.current_user._id;
 
 
     this.flavourService.getFlaovurList().subscribe(data=>{

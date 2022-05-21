@@ -13,6 +13,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductViewComponent implements OnInit {
   productList :Product[]|any;
   id:any;
+  size: any=1;
+  egg: any;
   constructor(private product:ProductService ,private route: ActivatedRoute,
     private router: Router  , private cartService:CartService ,private toastr:ToastrService) {
 
@@ -32,6 +34,7 @@ export class ProductViewComponent implements OnInit {
   userData: any;
   cartItems: any = [];
   ItemsLength: any;
+  qty:any=1;
   addCart(id: any) {
     console.log(id)
     console.log(this.userId)
@@ -80,6 +83,29 @@ export class ProductViewComponent implements OnInit {
     }
   }
 
+
+  getEgg(event:any){
+    this.egg = event.target.value
+   console.log(event.target.value)
+  }
+
+  plus(){
+    if(this.qty>0){
+    this.qty += 1
+    console.log(this.qty)}
+  }
+  minus(){
+    if(this.qty>1){
+
+    this.qty -= 1
+    console.log(this.qty)
+    }
+  }
+
+   getSize(event:any){
+     this.size=event.target.value;
+    console.log(event.target.value)
+   }
 
 
   ngOnInit(): void {
