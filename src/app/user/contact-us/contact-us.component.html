@@ -7,10 +7,10 @@
     <div class="cake-contact" >
       <div class="cake-contact-row" >
         <div class="cake-contact-col" >
-          <img clas="image" src="../../../assets/images/flavour/Wedding-Image.png" alt="img" class="images" />
+          <img src="../../../assets/images/flavour/Wedding-Image.png" alt="img" class="images" />
         </div>
 
-        <div class="cake-contact-col" >
+        <div class="cake-contact-col" style="background-color:white;" >
           <h1>Contact Us</h1>
           <div class="social">
             <i class="fab fa-facebook m-1"></i>
@@ -22,9 +22,9 @@
           </p>
           <p>We want to hear from you, write us:</p>
           <form #userForm="ngForm" (ngSubmit)="userForm">
-            <input type="text" name="name" id="name" required disabled value="{{userData.current_user.name}}" />
-            <input type="text" name="email" id="email" required disabled value="{{userData.current_user.email}}" />
-            <input type="text" name="mobile" id="mobile" required disabled value="{{userData.current_user.mobile}}" />
+            <input type="text" name="name" id="name" required placeholder="Enter your name" disabled value="{{userData.current_user.name}}" />
+            <input type="text" name="email" id="email" required placeholder="Enter your email" disabled value="{{userData.current_user.email}}" />
+            <input type="text" name="mobile" id="mobile" required placeholder="Enter your Mobile" disabled value="{{userData.current_user.mobile}}" />
             <textarea row="8" col="10" [(ngModel)]="query" name="msg" placeholder="Give Your Opinion" #userQuery="ngModel" required ></textarea>
             <span class="spantag" *ngIf="userQuery.errors?.['required'] && userQuery.touched">please fill query</span>
             <button (click)="addQueryCall()" class="btn" [disabled]="!userForm.valid">

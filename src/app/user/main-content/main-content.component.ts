@@ -15,117 +15,130 @@ import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.css']
+  styleUrls: ['./main-content.component.css'],
 })
 export class MainContentComponent implements OnInit {
-  exclusiveList:Product[]|any=[];
-  occassionList:Occassion[]|any=[];
-  flavourList: any=[];
-  constructor(private productService:ProductService,private router: Router, private toastr: ToastrService,private flavourService:FlavourService, private ocassionServe:OccassionService ,private loginService:LoginService , private cartService:CartService) {
-    this.productService.getProductbyCategory("62833692871c3910a1fd0c25").subscribe((data: any)=>{
+  exclusiveList: Product[] | any = [];
+  occassionList: Occassion[] | any = [];
+  flavourList: any = [];
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private toastr: ToastrService,
+    private flavourService: FlavourService,
+    private ocassionServe: OccassionService,
+    private loginService: LoginService,
+    private cartService: CartService
+  ) {
+    this.productService
+      .getProductbyCategory('62833692871c3910a1fd0c25')
+      .subscribe((data: any) => {
+        console.log(data);
+        this.exclusiveList = data;
+      });
+
+    this.ocassionServe.getOccassion().subscribe((data: any) => {
       console.log(data);
-      this.exclusiveList=data;
-    })
-
-    this.ocassionServe.getOccassion().subscribe((data: any)=>{
-      console.log(data);
-      this.occassionList=data;
-    })
-
-
-
+      this.occassionList = data;
+    });
   }
   what_we_offer_options: OwlOptions = {
     loop: true,
-    autoplay:true,
+    autoplay: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
 
-    navText: ['<i class="fa fa-caret-left" aria-hidden="true"></i>', '<i class="fa fa-caret-right" aria-hidden="true"></i>'],
+    navText: [
+      '<i class="fa fa-caret-left" aria-hidden="true"></i>',
+      '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+    ],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 2,
       },
       740: {
-        items: 3
+        items: 3,
       },
       940: {
-        items: 3
+        items: 3,
       },
-      1200:{
-        items:3
+      1200: {
+        items: 3,
       },
-      1300:{
-        items:3
+      1300: {
+        items: 3,
       },
-      1500:{
-        items:3
-      }
+      1500: {
+        items: 3,
+      },
     },
-    nav: true
-  }
+    nav: true,
+  };
 
   product_options: OwlOptions = {
     loop: true,
-    autoplay:true,
+    autoplay: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
 
-    navText: ['<i class="fa fa-caret-left" aria-hidden="true"></i>', '<i class="fa fa-caret-right" aria-hidden="true"></i>'],
+    navText: [
+      '<i class="fa fa-caret-left" aria-hidden="true"></i>',
+      '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+    ],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 2,
       },
       740: {
-        items: 3
+        items: 3,
       },
       940: {
-        items: 4
-      }
+        items: 4,
+      },
     },
-    nav: true
-  }
+    nav: true,
+  };
 
   customOptions: OwlOptions = {
     loop: true,
-    autoplay:true,
+    autoplay: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: false,
     navSpeed: 800,
-    animateIn:true,
-    animateOut:true,
+    animateIn: true,
+    animateOut: true,
 
     navText: ['', ''],
     responsive: {
       0: {
-        items: 2
+        items: 2,
       },
       400: {
-        items: 3
+        items: 3,
       },
       740: {
-        items: 4
+        items: 4,
       },
       940: {
-        items: 5
-      }
+        items: 5,
+      },
     },
-    nav: true
-  }
+    nav: true,
+  };
 
   userId: any;
   // id: any;
@@ -150,7 +163,6 @@ export class MainContentComponent implements OnInit {
           }
           value = this.ID.indexOf(id);
           console.log(value);
-
           if (value == -1) {
             this.cartService.addtoCart(id, this.userId).subscribe((data) => {
               if (data.status == 'ok') {
@@ -181,22 +193,22 @@ export class MainContentComponent implements OnInit {
     }
   }
 
-
-
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
 
 
-    this.flavourService.getFlaovurList().subscribe(data=>{
-      this.flavourList = data;
-    },err=>{
-      if(err instanceof HttpErrorResponse){
-         if(err.status == 500)
-           alert('Something went wrong...');
+    this.flavourService.getFlaovurList().subscribe(
+      (data) => {
+        this.flavourList = data;
+      },
+      (err) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status == 500) alert('Something went wrong...');
+        }
       }
-    })
+    );
   }
-//gkfjdhgjksfdj
+  //gkfjdhgjksfdj
 }
