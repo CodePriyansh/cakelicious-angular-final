@@ -28,8 +28,6 @@ export class CartComponent implements OnInit {
 
   }
 
-
-
   onPay(n: any) {
      this.orderServe.CreateOrder(this.totalAmt).subscribe((data) => {
       console.log(data);
@@ -135,39 +133,43 @@ export class CartComponent implements OnInit {
     });
   }
 
-  plus(event: any, price: any) {
-    console.log(event.target.value);
-    console.log(price);
-    let x = parseInt(price);
-    console.log(x);
-    this.totalAmt += event.target.value * x;
-  }
 
-  plusSize(event: any, price: any) {
-    //  alert("kjgkjg")
-    ++this.SizeCount;
-    console.log(event.target.value);
-    console.log(price);
-    // this.qty = event.target.value
-    let value = event.target.value.split(' ')[0];
-    console.log(value);
 
-    this.totalAmt += (value - 1) * 100;
-  }
+  updateQuantity(i:any,q:any,str:string){
+    this.totalAmt=0
+     if(str=='QTY'){
+      this.cartItems[i].qty=q;
+       this.cartItems[i].price=this.cartItems[i].prodPrice*q;
+     }else{
+       this.cartItems[i].size=q.target.value[0]*1;
+     }
+     for(let item of this.cartItems){
+      this.totalAmt+=(item.price+((item.size-1)*100));
+      }
+      
+ }
+
 
   ngOnInit(): void {
 
     this.cartServe.getCartItems(this.userId).subscribe((data) => {
-      console.log(data);
+    
       if (data) {
-        console.log(data);
-        this.cartItems = data.cartItems;
-        this.UpdatedCartItems = data.cartItems;
-        this.Items = this.cartItems.length;
-        for (let item of data.cartItems) {
-          console.log(item);
-          this.totalAmt += item.prodPrice;
+        
+        this.cartItems=data.cartItems;
+        for(let i=0; i<this.cartItems.length;i++){
+      
+          this.cartItems[i].size=1;
+          this.cartItems[i].price=this.cartItems[i].prodPrice;
+          this.cartItems[i].qty=1;
         }
+        console.log(this.cartItems)
+      this.totalAmt=0;
+        for(let item of this.cartItems){
+ this.totalAmt+=item.price;
+        }
+      
+        
       } else {
         this.router.navigate(['empty-cart']);
       }

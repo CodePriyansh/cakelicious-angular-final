@@ -198,6 +198,7 @@ export class MainContentComponent implements OnInit {
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
 
+
     this.flavourService.getFlaovurList().subscribe(
       (data) => {
         this.flavourList = data;

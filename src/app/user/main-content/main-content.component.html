@@ -24,6 +24,7 @@
 
         <div class="carousel-item">
 
+
 <div class="banner-imagee">
 
 <div class="container pb-5">
@@ -39,6 +40,7 @@
 
       </div>
     </div>
+
 
   </div>
 </div>
@@ -243,7 +245,9 @@
           <div class="mt-3">
             <span class="font-size-lg">{{product.prodPrice}}
             </span>
-            <a class="read-more"> Add to Cart</a>
+
+            <a (click)="addCart(product._id)" class="read-more">Add to Cart</a>
+
           </div>
         </div>
       </div>

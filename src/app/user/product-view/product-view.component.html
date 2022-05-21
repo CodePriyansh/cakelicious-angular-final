@@ -50,9 +50,9 @@
           </div>
           <p>{{prod.prodDescription}}</p>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6"> 
               <label for="size">Size</label>
-              <select id="size" name="size" class="form-control">
+              <select id="size" name="size" class="form-control" (change)="getSize($event)" >
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -60,23 +60,22 @@
               </select>
             </div>
             <div class="col-md-6">
-              <label for="color">Color</label>
-              <select id="color" name="color" class="form-control">
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Red</option>
+              <label for="color">Type</label>
+              <select id="color" name="color" style="color:green" class="form-control" (change)="getEgg($event)">
+                <option style="color:green">Eggless</option>
+                <option style="color:red"> made with Egg</option>
               </select>
             </div>
           </div>
           <div class="product-count">
             <label for="size">Quantity</label>
             <form action="#" class="display-flex">
-              <div class="qtyminus">-</div>
-              <input type="text" name="quantity" value="1" class="qty">
-              <div class="qtyplus">+</div>
+              <div class="qtyminus" (click)="minus()" >-</div>
+              <input type="text" name="qty" max=5 min=1  value=1 class="qty" [(ngModel)]="this.qty">
+              <div class="qtyplus" (click)="plus()" >+</div>
             </form>
             <a (click)="addCart(prod._id)" class="round-black-btn">Add to Cart</a>
-            <a href="#" class="round-black-btn mx-3">Buy Now</a>
+            <a data-bs-toggle="modal" data-bs-target="#myModal" class="round-black-btn mx-3" >Buy Now</a>
           </div>
         </div>
         <div>
@@ -153,5 +152,39 @@
     </div>
 
 
+  </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Order Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body text-center">
+        Order Total : 
+      </div>
+      <div class="modal-body">
+         Total Quantity : {{qty}}
+      </div> <div class="modal-body">
+         Cake Size : {{size}} KG
+      </div>
+      <div class="modal-body">
+        Type : {{egg}} 
+     </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Proceed to Checkout</button>
+      </div>
+
+    </div>
   </div>
 </div>
