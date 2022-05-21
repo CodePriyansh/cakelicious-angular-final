@@ -30,6 +30,7 @@ import { AllproductComponent } from './user/allproduct/allproduct.component';
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 import { OrderViewComponent } from './user/order-view/order-view.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PlaceOrderComponent } from './user/place-order/place-order.component';
 
 
 const socialProvider={
@@ -63,7 +64,8 @@ const socialProvider={
     EmptyCartComponent,
     AllproductComponent,
     ViewWishlistComponent,
-    OrderViewComponent
+    OrderViewComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,
