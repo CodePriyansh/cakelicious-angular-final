@@ -16,11 +16,11 @@
             <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
             <a  class="fas fa-heart" routerLink="view-wishlist"></a>
             <a class="fas fa-cart-plus" routerLink="cart" ></a>
-            
+
             <div id="login-btn" *ngIf="!isLoggedIn()" title="Login/Signup" class="fas fa-user-circle" routerLink="/signin" ></div>
             <div id="login-btn" *ngIf="isLoggedIn()" routerLink="/view-order-history" class="fas fa-truck-moving"  ></div>
             <div id="login-btn" *ngIf="isLoggedIn()" (click)="signout()" class="fas fa-sign-out-alt"  ></div>
-          
+
         </div>
 
     </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-  </header>
+  <!-- </header> -->
 
 
 
