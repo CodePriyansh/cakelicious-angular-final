@@ -18,6 +18,7 @@ import { AppGuardGuard } from './auth.guard'
 import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.component';
 import { OrderViewComponent } from './user/order-view/order-view.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
+import { OrderSuccessComponent } from './user/order-success/order-success.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,9 @@ const routes: Routes = [
       {path:"empty-cart",component:EmptyCartComponent},
       {path:'view-wishlist',component:ViewWishlistComponent},
       {path:'view-order-history',component:OrderViewComponent},
-      {path:'place-order' , component:PlaceOrderComponent}
+      {path:'place-order' , component:PlaceOrderComponent},
+      {path:'order-success' , component:OrderSuccessComponent}
+
     ],
   },
 ];

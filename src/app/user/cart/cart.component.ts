@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 declare var Razorpay: any;
@@ -19,9 +20,9 @@ export class CartComponent implements OnInit {
   SizeCount: any=0;
   Address:any;
   message:any;
-  number:any;
+  alterNumber:any;
 
-  constructor(private cartServe: CartService,private orderServe:OrderService,private router:Router) {
+  constructor(private cartServe: CartService,private orderServe:OrderService,private router:Router,private toastr:ToastrService) {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
@@ -29,6 +30,7 @@ export class CartComponent implements OnInit {
   }
 
   onPay(n: any) {
+    if(n==1){
      this.orderServe.CreateOrder(this.totalAmt).subscribe((data) => {
       console.log(data);
       var options = {
@@ -54,7 +56,7 @@ export class CartComponent implements OnInit {
 
           console.log(response, this.userId, this.Address, this.cartItems);
           this.orderServe
-            .placeOrder(this.userId,response, this.Address,'8765456789', this.cartItems)
+            .placeOrder(this.userId,response, this.Address,this.alterNumber, this.cartItems)
             .subscribe((data) => {
               if ((data.msg == 'ok')) {
                 this.cartServe.deleteCart(this.userId).subscribe((data) => {
@@ -111,6 +113,23 @@ export class CartComponent implements OnInit {
       );
       rzp1.open();
     });
+  }else{
+
+
+    this.orderServe.CreateOrder(this.totalAmt).subscribe((data) => {
+      console.log(data)
+          if(data){
+          console.log(this.userId,this.Address,this.alterNumber,data.id,this.totalAmt,this.cartItems)
+           this.orderServe.cashOnDelivery(this.userId,this.Address,this.alterNumber,data.id,this.totalAmt,this.cartItems).subscribe(data=>{
+               
+            if(data.status=='ok'){
+              this.toastr.success("order Successfull","cash on Deliver")
+              this.router.navigate(['/order-success'])
+            }
+           })
+          }
+        })
+  }
   }
 
 
@@ -146,7 +165,9 @@ export class CartComponent implements OnInit {
      for(let item of this.cartItems){
       this.totalAmt+=(item.price+((item.size-1)*100));
       }
-      
+
+      console.log(this.cartItems)
+
  }
 
 
