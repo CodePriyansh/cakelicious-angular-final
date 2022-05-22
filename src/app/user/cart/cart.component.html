@@ -219,57 +219,83 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="width:130%">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">order Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
-          <div class="row">
-            <div class="col-6">
-              <form>
-                <div class="form-group m-2">
-                  <label for="exampleFormControlInput1">Your Name</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1"
-                    value="{{userData.current_user.name}}" disabled>
-                </div>
-                <div class="form-group m-2">
-                  <label for="exampleFormControlInput1">Email address</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1"
-                    value="{{userData.current_user.email}}" disabled>
-                </div>
+        <div class="product-info-tabs">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="order-info-tab" data-bs-toggle="tab" href="#order-info" role="tab"
+                aria-controls="order-info" aria-selected="true">Product Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="payment-tab" data-bs-toggle="tab" href="#payment" role="tab"
+                aria-controls="payment" aria-selected="false">Payment</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="order-info" role="tabpanel" aria-labelledby="order-info-tab">
+              <div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <form>
+                      <div class="form-group">
+                        <label>Alternative number</label>
+                        <input class="form-control" type="text" [(ngModel)]="alterNumber" name="alterNumber">
+                      </div>
+                      <div class="form-group m-2">
+                        <label for="exampleFormControlTextarea1">you can Add some message</label>
+                        <textarea class="form-control" name="message" id="exampleFormControlTextarea1"
+                          [(ngModel)]="message" rows="3"></textarea>
+                      </div>
+                      <div class="form-group m-2">
+                        <label for="exampleFormControlTextarea1">Address</label>
+                        <textarea class="form-control" [(ngModel)]="Address" name="Address"
+                          id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
 
-                <div class="form-group m-2">
-                  <label for="exampleFormControlTextarea1">you can Add some message</label>
-                  <textarea class="form-control" name="message" id="exampleFormControlTextarea1" [(ngModel)]="message"
-                    rows="3"></textarea>
-                </div>
-                <div class="form-group m-2">
-                  <label for="exampleFormControlTextarea1">Address</label>
-                  <textarea class="form-control" [(ngModel)]="Address" name="Address" id="exampleFormControlTextarea1"
-                    rows="3"></textarea>
-                </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-12">
+                    <h2>Total Amount :</h2>
+                    <h2>&#x20b9; {{totalAmt}}</h2>
+                    <div class="nav nav-tabs" id="myTab" role="tablist">
+                      <button type="button" class="btn btn-warning" style="background:rgb(255, 255, 40)" id="payment-tab" data-bs-toggle="tab"
+                        href="#payment" role="tab" aria-controls="payment" aria-selected="false">Procced To Buy</button>
+                    </div>
+                  </div>
 
-              </form>
+
+                </div>
+              </div>
+
             </div>
-            <div class="col-5">
-              <h2>Total Amount :</h2>
-              <h2>&#x20b9; {{totalAmt}}</h2>
-              <button type="button" class="btn btn-warning" data-bs-dismiss="modal" aria-label="Close"
-                (click)="onPay(1)">Procced To Buy</button>
+            <div class="tab-pane fade" #payment id="payment" role="tabpanel" aria-labelledby="payment-tab">
+
+              <!-- <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked (click)="changePayMethod(online)">Online Payment (Razorpay)
+                <label class="form-check-label" for="radio1"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" (click)="changePayMethod(cash)">Cash on Delivery
+                <label class="form-check-label" for="radio2"></label>
+              </div> -->
+              <h4>Choose your payment Option :</h4>
+              <button class="btn btn-primary d-block mt-3 width-50" data-bs-dismiss="modal" aria-label="Close" (click)="onPay(1)" >pay ₹{{totalAmt}}
+                (Razorpay)</button>
+                <div>Or</div>
+              <button class="btn btn-warning mt-3" data-bs-dismiss="modal" aria-label="Close" (click)="onPay(-1)">place order (cash on delivery)</button>
 
             </div>
-
 
           </div>
         </div>
       </div>
-      <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+
     </div>
   </div>
 </div>

@@ -18,9 +18,10 @@ export class OrderViewComponent implements OnInit {
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
     this.orderServe.orderHistoryUser(this.userId).subscribe((data) => {
+      if(data.length){
      console.log(data);
      console.log(data[0].orderedItem[0].ProductId)
-     this.orderList = data;
+     this.orderList = data;}
      
     })
   }

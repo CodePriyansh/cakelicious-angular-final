@@ -1,12 +1,17 @@
-<div class="container-fluid my-5  d-flex  justify-content-center">
+<div class="container-fluid my-5  d-flex  justify-content-center" *ngFor="let item of orderList; index as i">
+
     <div class="card-1 mx-5">
+        
         <div class="card-header bg-white">
 
         </div>
-        <div class="card-body" *ngFor="let item of orderList">
+        <div class="card-body">
             <div class="row justify-content-between mb-3">
                 <div class="col-auto">
                     <h6 class="color-1 mb-0 change-color">Order-History</h6>
+                </div>
+                <div class="col-auto">
+                    <h6 class="color-1 mb-0 change-color">Order-Number : {{i+1}}</h6>
                 </div>
                 <div class="col-auto active "> <small>Order Id : {{item.orderId}}</small> </div>
             </div>

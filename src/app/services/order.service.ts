@@ -10,7 +10,8 @@ export class OrderService {
 
    createOrder = this.url+"order/create-order";
    placeOrderApi = this.url+"order/place-order";
-   orderHistoryApi ="http://localhost:3000/order/view-order"
+   orderHistoryApi =this.url+"order/view-order"
+   codApi =this.url+"order/cash-on-delivery"
    ;
   constructor(private http:HttpClient) { }
   public CreateOrder(amount:any):Observable<any>{
@@ -23,6 +24,10 @@ export class OrderService {
 
   public orderHistoryUser(userId:any):Observable<any>{
 return this.http.post(this.orderHistoryApi,{userId})
+  }
+
+  public cashOnDelivery(userId:any,address:any,alterMobile:any,orderId:any,totalAmt:any,orderedItems:any):Observable<any>{
+   return this.http.post(this.codApi,{userId,address,orderId,alterMobile,totalAmt,orderedItems})
   }
  
 }

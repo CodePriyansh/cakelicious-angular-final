@@ -31,6 +31,7 @@ import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.compon
 import { OrderViewComponent } from './user/order-view/order-view.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
+import { OrderSuccessComponent } from './user/order-success/order-success.component';
 
 
 const socialProvider={
@@ -65,7 +66,8 @@ const socialProvider={
     AllproductComponent,
     ViewWishlistComponent,
     OrderViewComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
