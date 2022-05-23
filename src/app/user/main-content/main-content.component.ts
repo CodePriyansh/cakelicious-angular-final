@@ -196,7 +196,7 @@ export class MainContentComponent implements OnInit {
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
-    if(this.userData=='{}')
+    if(this.userData!=='{}')
     this.userId = this.userData.current_user._id;
 
 
