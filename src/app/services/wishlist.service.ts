@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class WishlistService {
   url = "https://cake-licious-backend.herokuapp.com/";
-
   wishlistApi = this.url+'wishlist/add-to-wishlist';
   getWishlist = this.url+'wishlist/view-wishlist';
   deleteFullwishlist = this.url+'wishlist/delete-wishlist';
