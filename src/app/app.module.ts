@@ -39,7 +39,7 @@ const socialProvider={
   useValue:{
     providers:[{
       id:GoogleLoginProvider.PROVIDER_ID,
-      provider:new GoogleLoginProvider("150365577052-cv0ao56rbs5t7ojg3lnirmpe5qpebuqn.apps.googleusercontent.com")
+      provider:new GoogleLoginProvider("1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com")
 
     }]
   }
