@@ -11,21 +11,43 @@ import { User } from 'src/app/model/user';
 })
 export class SignupComponent implements OnInit {
   user: User = new User('', '', '', '');
+  otp: any;
   constructor(
     private service: LoginService,
     private router: Router,
     private toastr: ToastrService
   ) {}
 
-  public signUp() {
+  public signUp(val:any) {
+
+
+        val=""+val;
+        console.log(this.otp)
+        console.log(val)
+    if(val!==this.otp){
+this.toastr.error("otp wrong ","try again")
+      console.log(val)
+    }else{
+    console.log(this.user)
     this.service.signUp(this.user).subscribe((data: any) => {
       this.toastr.success(
         'Congratulations :' +
           data.name +
-          ', Your account has been created successfully, Please check your inbox to activate your account..'
+          ', Your account has been created successfully, Please check your Mail inbox to activate your account..'
       );
       this.router.navigate(['/signin']);
     });
+  }
+}
+
+  sendOtp(){
+
+   this.service.verifyOtp(this.user).subscribe(data=>{
+
+     console.log(data)
+    this.otp = data.Otp;
+   })
+
   }
 
 

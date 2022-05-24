@@ -163,7 +163,7 @@ export class CartComponent implements OnInit {
        this.cartItems[i].size=q.target.value[0]*1;
      }
      for(let item of this.cartItems){
-      this.totalAmt+=(item.price+((item.size-1)*100));
+      this.totalAmt+=(item.price+((item.size-1)*500));
       }
 
       console.log(this.cartItems)

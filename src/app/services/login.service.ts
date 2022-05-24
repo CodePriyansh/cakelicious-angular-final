@@ -9,14 +9,15 @@ import { User } from '../model/user';
 export class LoginService {
   url = "https://cake-licious-backend.herokuapp.com/";
  
-  signUpApi = this.url+"customer/sign-up";
+  signUpApi = "http://localhost:3000/customer/sign-up";
   signInApi = this.url+"customer/sign-in";
   signupGoogle = this.url+'customer/login-with-google';
+  optApi = 'http://localhost:3000/customer/send-otp';
 
   constructor(private http:HttpClient) { }
 
   public signUp(user:User){
-    return this.http.post(this.signUpApi,user)
+    return this.http.post(this.signUpApi,{user})
   }
 
   public signInn(user:User){
@@ -29,6 +30,10 @@ export class LoginService {
 
     public checkToken() {
     return !!sessionStorage.getItem('jwt-token');
+  }
+
+  public verifyOtp(user:any):Observable<any>{
+    return this.http.post(this.optApi,user)
   }
 
 }
