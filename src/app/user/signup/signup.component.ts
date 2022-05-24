@@ -36,6 +36,7 @@ this.toastr.error("otp wrong ","try again")
           ', Your account has been created successfully, Please check your Mail inbox to activate your account..'
       );
       this.router.navigate(['/signin']);
+    
     });
   }
 }
@@ -43,7 +44,6 @@ this.toastr.error("otp wrong ","try again")
   sendOtp(){
 
    this.service.verifyOtp(this.user).subscribe(data=>{
-
      console.log(data)
     this.otp = data.Otp;
    })

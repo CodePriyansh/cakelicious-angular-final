@@ -107,7 +107,7 @@ export class ViewWishlistComponent implements OnInit {
           console.log(item);
         }
       } else {
-        this.router.navigate(['empty-cart']);
+        this.router.navigate(['empty-cart',"Favourite"]);
       }
     });
   }

@@ -164,6 +164,9 @@ wishlistItem: any = [];
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
+    const length = Object.keys(this.userData).length;
+    console.log(length)
+    if(length!=0)
     this.userId = this.userData.current_user._id;
 
   }
