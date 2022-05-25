@@ -4,43 +4,7 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-.btn {
-    padding: 14px 26px;
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color:#fff;
-}
-.btn:hover{
-    opacity: .6;
-}
-.btn-danger {
-    background-color: #e34c43;
-    border-color: #e34c43;
-}
-.banner-image{
-    background:  url("../../../assets/images/F-Banner-3.png");
 
-    background-size: cover;
-    background-position: center;
-}
-.banner-phone-image img{
-    width:300px;
-}
-.banner-imagee{
-  background:  url("../../../assets/images/Banner-final (2).png");
-
-  background-size: cover;
-  background-position: center;
-}
-.banner-phone-imagee img{
-  width:300px;
-}
-
-.aa{
-line-height:26px;
-}
    /* Carousel */
 
    .carousel-item{

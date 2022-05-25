@@ -155,3 +155,47 @@
   }
 
 
+
+  /* rating  */
+  .cont {
+    width: 93%;
+    max-width: 350px;
+    text-align: center;
+    padding: 5px 0;
+    background: #fff;
+    color: rgb(255, 0, 0);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(111, 102, 100, 0.2) 0px 7px 29px 0px;
+  }
+  
+  div.stars {
+    width: auto;
+    display: inline-block;
+  }
+  label.star:before {
+    font-size: 0.75rem;
+  }
+  
+  input.star:checked ~ label.star:before {
+    color: pink !important;
+  }
+  .star{
+
+  }
+
+  /* Add application styles & imports to this file! */
+input.star:checked ~ label.star:before {
+    color: #fd4 !important;
+  }
+  input.star:hover ~ label.star:hover {
+    color: #fd4 !important;
+  }
+  label.star:before {
+    font-size: 1.5rem;
+  }
+  
+  div.stars {
+    width: auto !important;
+  }
+  

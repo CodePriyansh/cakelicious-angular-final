@@ -2,9 +2,7 @@
 
     <div class="card-1 mx-5">
         
-        <div class="card-header bg-white">
-
-        </div>
+     
         <div class="card-body">
             <div class="row justify-content-between mb-3">
                 <div class="col-auto">
@@ -16,7 +14,7 @@
                 <div class="col-auto active "> <small>Order Id : {{item.orderId}}</small> </div>
             </div>
             <div class="row" *ngFor="let prodItem of item.orderedItem">
-                <div class="col">
+                <div class="col-lg-7 col-md-12 col-sm-12">
                     <div class="card card-2">
                         <div class="card-body">
                             <div class="media">
@@ -63,6 +61,32 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-md-12">
+                    <form [formGroup]="form">
+                        <div class="cont mx-5">
+                          <div class="stars">
+                            <ngx-star-rating formControlName="rating1" [id]="'rating'"></ngx-star-rating>
+                          </div> 
+                          <div>Rating: {{form.value.rating1}}</div>
+                          <!-- <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p> -->
+                      
+                          <h3 *ngIf="form.value.rating1==5"> Very Goood 😍</h3>
+                          <h3 *ngIf="form.value.rating1==4"> Goood</h3>
+                          <h3 *ngIf="form.value.rating1==3"> ok</h3>
+                          <h3 *ngIf="form.value.rating1==2"> not bad</h3>
+                          <h3 *ngIf="form.value.rating1==1"> bad 😞</h3>
+                      
+                          <div class="m-3">
+                            <label for="" class="form-label">Please Give Your Reviews</label>
+                            <textarea class="form-control" #message   rows="3" placeholder="Message"></textarea>
+                          </div>
+                        <button type="submit" class="btn btn-primary" (click)="sendReview(form.value.rating1,message.value,prodItem.ProductId._id)">Submit</button>
+                      
+                        </div>
+                          
+                       
+                        </form>
                 </div>
             </div>
 

@@ -33,6 +33,7 @@
     "ngx-filter-pipe": "^2.1.2",
     "ngx-owl-carousel-o": "^7.0.2",
     "ngx-pagination": "^5.1.1",
+    "ngx-star-rating": "^2.1.0",
     "ngx-toastr": "^14.3.0",
     "particles.js": "^2.0.0",
     "path": "^0.12.7",

@@ -10,7 +10,7 @@ import { HomeComponent } from './user/home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContentComponent } from './user/main-content/main-content.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
 import { CacheInterceptorsService } from './interceptors/cache-interceptors.service';
@@ -32,6 +32,7 @@ import { OrderViewComponent } from './user/order-view/order-view.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderSuccessComponent } from './user/order-success/order-success.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 
 const socialProvider={
@@ -39,7 +40,7 @@ const socialProvider={
   useValue:{
     providers:[{
       id:GoogleLoginProvider.PROVIDER_ID,
-      provider:new GoogleLoginProvider("1027856516784-u5ja0r356f4uksto7mnmp9hhpbcmgnd1.apps.googleusercontent.com")
+      provider:new GoogleLoginProvider("150365577052-cv0ao56rbs5t7ojg3lnirmpe5qpebuqn.apps.googleusercontent.com")
 
     }]
   }
@@ -81,7 +82,9 @@ const socialProvider={
     SocialLoginModule,
     FilterPipeModule,
     NgxPaginationModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    NgxStarRatingModule
 
   ],
   providers: [socialProvider,{
