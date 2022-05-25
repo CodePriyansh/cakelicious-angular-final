@@ -1,3 +1,79 @@
+/* model mohit css */
+.addon-description, .addon-description-mob {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.addon-card, .addon-card-green {
+  padding: 10px;
+  box-shadow: 0 12px 23px 0 rgb(0 0 0 / 6%);
+  background-color: #fff;
+  margin: 2% 1% 0;
+  cursor: pointer;
+  min-width: 170px;
+}
+.addon-card {
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+.addon-image {
+  width: 185px;
+  height: 185px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.img-fluid {
+  width: 82%;
+  height: 100%;
+}
+.title-price-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-price {
+  padding-top: 0;
+}
+.addon-price, .addon-title {
+  font-size: 13px;
+  color: #292640;
+  font-family: Poppins,sans-serif;
+}
+.addon-title {
+  width: 130px;
+  font-weight: 600;
+  line-height: 1.67;
+  opacity: .8;
+  margin-top: 7px;
+  display: block;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.addon-price {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  line-height: 1.31;
+  margin-top: 2px;
+}
+.addon-price, .addon-title {
+  font-size: 13px;
+  color: #292640;
+  font-family: Poppins,sans-serif;
+}
+
+.addon-image img {
+  border-style: none;
+}
+
+
+
+
 .pd-wrap {
 	padding: 40px 0;
 	font-family: 'Poppins', sans-serif;
@@ -103,11 +179,11 @@
     content: '\2605';
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+    color: #ffc700;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+    color: #deb217;
 }
 /* .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
@@ -133,7 +209,7 @@
 	box-shadow: none;
 }
 .product-count {
-	margin-top: 15px; 
+	margin-top: 15px;
 }
 .product-count .qtyminus,
 .product-count .qtyplus {
@@ -147,10 +223,10 @@
     cursor: pointer;
 }
 .product-count .qtyminus {
-	border-radius: 3px 0 0 3px; 
+	border-radius: 3px 0 0 3px;
 }
 .product-count .qtyplus {
-	border-radius: 0 3px 3px 0; 
+	border-radius: 0 3px 3px 0;
 }
 .product-count .qty {
 	width: 60px;
@@ -163,7 +239,7 @@
     padding: 7px 45px;
     display: inline-block;
     margin-top: 20px;
-    border: solid 2px var(--head-text); 
+    border: solid 2px var(--head-text);
     transition: all 0.5s ease-in-out 0s;
 }
 .round-black-btn:hover,
@@ -174,7 +250,7 @@
 }
 
 .product-info-tabs {
-	margin-top: 25px; 
+	margin-top: 25px;
 }
 .product-info-tabs .nav-tabs {
 	border-bottom: 2px solid #d8d8d8;
@@ -183,17 +259,17 @@
 	margin-bottom: 0;
 }
 .product-info-tabs .nav-tabs .nav-link {
-	border: none; 
+	border: none;
 	border-bottom: 2px solid transparent;
 	color: #323232;
 }
 .product-info-tabs .nav-tabs .nav-item .nav-link:hover {
-	border: none; 
+	border: none;
 }
-.product-info-tabs .nav-tabs .nav-item.show .nav-link, 
-.product-info-tabs .nav-tabs .nav-link.active, 
+.product-info-tabs .nav-tabs .nav-item.show .nav-link,
+.product-info-tabs .nav-tabs .nav-link.active,
 .product-info-tabs .nav-tabs .nav-link.active:hover {
-	border: none; 
+	border: none;
 	border-bottom: 2px solid #d8d8d8;
 	font-weight: bold;
 }

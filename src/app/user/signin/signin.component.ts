@@ -13,12 +13,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SigninComponent implements OnInit {
   user: User = new User('', '', '', '');
+  visible:boolean= true;
+  changetype:boolean = true;
   constructor(
     private service: LoginService,
     private toastr: ToastrService,
     private social: SocialAuthService,
     private router: Router
   ) {}
+
+  // show and hide password
+  viewPass(){
+    this.visible = !this.visible;
+    this.changetype = !this.changetype
+  }
 
   signinWithGoogle() {
     this.social
@@ -61,7 +69,7 @@ export class SigninComponent implements OnInit {
         sessionStorage.setItem('jwt-token', data.token);
         sessionStorage.setItem('user-detail', JSON.stringify(data));
         this.router.navigate(['/']);
-      } 
+      }
     },
     (err) => {
       if (err instanceof HttpErrorResponse) {

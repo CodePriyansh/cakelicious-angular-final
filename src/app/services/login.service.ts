@@ -8,11 +8,11 @@ import { User } from '../model/user';
 })
 export class LoginService {
   url = "https://cake-licious-backend.herokuapp.com/";
- 
-  signUpApi = this.url+"customer/sign-up";
-  signInApi = this.url+"customer/sign-in";
+
+  signUpApi = "http://localhost:3000/customer/sign-up";
+  signInApi = "http://localhost:3000/customer/sign-in";
   signupGoogle = this.url+'customer/login-with-google';
-  optApi = this.url+"customer/send-otp";
+  optApi = "http://localhost:3000/customer/send-otp";
 
   constructor(private http:HttpClient) { }
 

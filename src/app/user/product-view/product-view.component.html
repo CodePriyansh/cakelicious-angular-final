@@ -73,7 +73,7 @@
                 (click)="updateQuantity(val.value,'QTY')">+</div>
             </form>
             <a (click)="addCart(prod._id)" class="round-black-btn">Add to Cart</a>
-            <a class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            <a class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#myModal" class="close" data-dismiss="modal" aria-hidden="true"
               class="round-black-btn mx-3">Buy Now</a>
           </div>
         </div>
@@ -118,15 +118,15 @@
               <label>Your rating</label>
               <div class="reviews-counter">
                 <div class="rate">
-                  <input type="radio"  name="rate" value="5" />
+                  <input type="radio" name="rate" value="5" />
                   <label for="star5" title="text">5 stars</label>
-                  <input type="radio"  name="rate" value="4" />
+                  <input type="radio" name="rate" value="4" />
                   <label for="star4" title="text">4 stars</label>
-                  <input type="radio"  name="rate" value="3" />
+                  <input type="radio" name="rate" value="3" />
                   <label for="star3" title="text">3 stars</label>
-                  <input type="radio"  name="rate" value="2" />
+                  <input type="radio" name="rate" value="2" />
                   <label for="star2" title="text">2 stars</label>
-                  <input type="radio"  name="rate" value="1" />
+                  <input type="radio" name="rate" value="1" />
                   <label for="star1" title="text">1 star</label>
                 </div>
               </div>
@@ -157,6 +157,55 @@
   </div>
 </div>
 
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3" *ngFor="let items of offerListList">
+                <div class="addon-description" >
+                  <div class="addon-card">
+                    <div class="addon-image"><img src="{{items.Image}}" alt="Magic Candles Set"
+                        class="img-fluid v-align-bottom lazyloaded" title="Magic Candles Set"></div>
+                    <div class="title-price-icon">
+                      <div class="title-price"><span class="addon-title">{{items.name}}</span><span
+                          class="addon-price"><img
+                            src="https://media.bakingo.com/bakingo-ssr/static/media/rupees.ac282a46.svg" width="0"
+                            height="0" style="margin-right: 3px;">₹{{items.Price}}</span>
+                            <form action="#" class="display display-flex">
+                              <div class="qtyminus" onclick="this.parentNode.querySelector('input[id=form1]').stepDown()"
+                                >-</div>
+                              <input type="number" #val id="form1" name="qty" max=5 min=1 value=1 class="qty">
+                              <div class="qtyplus" onclick="this.parentNode.querySelector('input[id=form1]').stepUp()"
+                                >+</div>
+                            <a (click)="addCart(items._id)" class="round-black-btn" >Add to Cart</a>
+
+                            </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Continue</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <!-- Modal -->
@@ -207,7 +256,8 @@
                     <h2>&#x20b9; {{totalAmt}}</h2>
                     <div class="nav nav-tabs" id="myTab" role="tablist">
                       <button type="button" class="btn btn-warning" id="payment-tab" data-bs-toggle="tab"
-                        href="#payment" role="tab" aria-controls="payment" aria-selected="false">Procced To Buy</button>
+                        href="#payment" role="tab" aria-controls="payment" aria-selected="false">Procced To
+                        Buy</button>
                     </div>
                   </div>
 
@@ -227,10 +277,12 @@
                 <label class="form-check-label" for="radio2"></label>
               </div> -->
               <h4>Choose your payment Option :</h4>
-              <button class="btn btn-primary d-block mt-3 width-50" data-bs-dismiss="modal" aria-label="Close" (click)="pay('online')" >pay ₹{{totalAmt}}
+              <button class="btn btn-primary d-block mt-3 width-50" data-bs-dismiss="modal" aria-label="Close"
+                (click)="pay('online')">pay ₹{{totalAmt}}
                 (Razorpay)</button>
-                <div>Or</div>
-              <button class="btn btn-warning mt-3" data-bs-dismiss="modal" aria-label="Close" (click)="pay('cash')">place order (cash on delivery)</button>
+              <div>Or</div>
+              <button class="btn btn-warning mt-3" data-bs-dismiss="modal" aria-label="Close"
+                (click)="pay('cash')">place order (cash on delivery)</button>
 
             </div>
 
@@ -241,6 +293,3 @@
     </div>
   </div>
 </div>
-
-
-

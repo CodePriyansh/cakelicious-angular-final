@@ -1,3 +1,10 @@
+/* eye */
+.eyeicon{
+  /* position:absolute; */
+  margin-left: 260px;
+  cursor:pointer;
+}
+
 /* @extend display-flex; */
 display-flex,
 .display-flex,
