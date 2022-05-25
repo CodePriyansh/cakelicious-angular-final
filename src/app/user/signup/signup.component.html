@@ -31,15 +31,20 @@
             </div>
             <div class="form-group">
               <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-              <input type="password" name="your_pass" [(ngModel)]="user.password" placeholder="Password" required
+              <input [type]="changetype?'password':'text'" name="your_pass" [(ngModel)]="user.password" placeholder="Password" required
                 #userPassword="ngModel" />
+                <span class="eyeicon" (click)="viewPass()">
+                  <i [ngClass]="visible?'fa fa-eye':'fa fa-eye-slash'"></i></span>
+
               <span class="spantag" *ngIf="userPassword.errors?.['required'] && userPassword.touched">Please Enter Valid
                 password</span>
             </div>
             <div class="form-group">
               <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-              <input type="password" required #userRepassword="ngModel" [(ngModel)]="user.password" name="re_pass"
+              <input [type]="changetype2?'password':'text'" required #userRepassword="ngModel" [(ngModel)]="Repassword" name="re_pass"
                 id="re_pass" placeholder="Repeat your password" />
+                <span class="eyeicon" (click)="viewRePass()">
+                  <i [ngClass]="visible2?'fa fa-eye':'fa fa-eye-slash'"></i></span>
               <span class="spantag" *ngIf="userRepassword.errors?.['required'] && userRepassword.touched">Please Enter
                 Valid password</span>
             </div>
@@ -48,7 +53,7 @@
               <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a
                   href="#" class="term-service">Terms of service</a></label>
             </div>
-            <div class="form-group form-button">
+            <div class="form-group form-button" >
               <input type="submit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm"
                 [disabled]="!userForm.valid" (click)="sendOtp()" name="signup" id="signup" class="form-submit" value="Register" />
             </div>
@@ -66,7 +71,7 @@
 
 
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+<div *ngIf="this.user.password == Repassword" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
