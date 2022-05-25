@@ -28,6 +28,7 @@ export class ProductViewComponent implements OnInit {
   price:any;
   paymentMethod:string='online';
   alterNumber?:number;
+  offerListList:any;
   constructor(private product:ProductService ,private route: ActivatedRoute,
     private router: Router  , private cartService:CartService ,private toastr:ToastrService,private orderServe:OrderService) {
 
@@ -45,7 +46,7 @@ export class ProductViewComponent implements OnInit {
       this.productList[0].price= this.productList[0].prodPrice
     })
   }
-  
+
 
   updateQuantity(q:any,str:string){
     this.totalAmt=0
@@ -63,7 +64,7 @@ export class ProductViewComponent implements OnInit {
 
  }
 
-  
+
 
 
   addCart(id: any) {
@@ -115,7 +116,7 @@ export class ProductViewComponent implements OnInit {
   }
 
 
-  
+
 pay(check:any){
   if(check=='online'){
     this.orderServe.CreateOrder(this.totalAmt).subscribe((data) => {
@@ -196,7 +197,7 @@ pay(check:any){
       );
       rzp1.open();
     });
-   
+
 
   }else{
 
@@ -205,7 +206,7 @@ pay(check:any){
       if(data){
       console.log(this.userId,this.Address,this.alterNumber,data.id,this.totalAmt,this.productList)
        this.orderServe.cashOnDelivery(this.userId,this.Address,this.alterNumber,data.id,this.totalAmt,this.productList).subscribe(data=>{
-           
+
         if(data.status=='ok'){
           this.toastr.success("order Successfull","cash on Deliver")
           this.router.navigate(['/order-success'])
@@ -219,11 +220,20 @@ pay(check:any){
 
 }
 
-   
+
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
+
+    this.product.viewOfferItem().subscribe((data) => {
+      if (data.error) {
+        alert('Something went wrong');
+      } else {
+        console.log(data);
+        this.offerListList = data;
+      }
+    });
 
   }
 
