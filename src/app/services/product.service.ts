@@ -33,11 +33,5 @@ export class ProductService {
     return this.http.get(api);
   }
 
-  public viewOfferItem():Observable<any>{
-    var api = "http://localhost:3000/offeritem/viewOffer";
-    return this.http.get(api);
-  }
-
-
-
+  
 }

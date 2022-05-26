@@ -21,12 +21,64 @@ export class CartComponent implements OnInit {
   Address:any;
   message:any;
   alterNumber:any;
+  offerListList:[]|any;
+  ItemsLength: any;
+  ID: any = [];
+  id:any;
 
-  constructor(private cartServe: CartService,private orderServe:OrderService,private router:Router,private toastr:ToastrService) {
+  constructor(private cartService: CartService,private orderServe:OrderService,private router:Router,private toastr:ToastrService) {
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
 
+  }
+  addCart(id: any) {
+    console.log(id)
+    console.log("hello")
+    console.log(this.userId)
+    if (this.userId) {
+      this.cartService.getCartItems(this.userId).subscribe((data) => {
+        console.log(data);
+
+        if (data) {
+          let value: any;
+          this.cartItems = data.cartItems;
+          this.ItemsLength = this.cartItems.length;
+          for (let id of this.cartItems) {
+            console.log(id._id);
+            this.ID.push(id._id);
+          }
+          value = this.ID.indexOf(id);
+          console.log(value);
+
+          if (value == -1) {
+            this.cartService.addtoCart(id, this.userId).subscribe((data) => {
+              if (data.status == 'ok') {
+                console.log(data);
+                this.toastr.success('item Added To CART', 'CakeLicious');
+              } else {
+                console.log(data);
+                alert('item not added');
+              }
+            });
+          } else {
+            this.toastr.warning('item Already In Cart', 'CakeLicious');
+          }
+        } else {
+          this.cartService.addtoCart(id, this.userId).subscribe((data) => {
+            if (data.status == 'ok') {
+              console.log(data);
+              this.toastr.success('item Added To CART', 'CakeLicious');
+            } else {
+              console.log(data);
+              alert('item not added');
+            }
+          });
+        }
+      });
+    } else {
+      this.router.navigate(['signin']);
+    }
   }
 
   onPay(n: any) {
@@ -59,7 +111,7 @@ export class CartComponent implements OnInit {
             .placeOrder(this.userId,response, this.Address,this.alterNumber, this.cartItems)
             .subscribe((data) => {
               if ((data.msg == 'ok')) {
-                this.cartServe.deleteCart(this.userId).subscribe((data) => {
+                this.cartService.deleteCart(this.userId).subscribe((data) => {
                   console.log(data);
                   this.ngOnInit();
                   // this.router.navigate(['/order-success'])
@@ -134,7 +186,7 @@ export class CartComponent implements OnInit {
 
 
   deleteCart() {
-    this.cartServe.deleteCart(this.userId).subscribe((data) => {
+    this.cartService.deleteCart(this.userId).subscribe((data) => {
       console.log(data);
       if(data){
         this.ngOnInit()
@@ -143,7 +195,7 @@ export class CartComponent implements OnInit {
   }
 
   deleteItem(pid: any) {
-    this.cartServe.deleteOne(this.userId, pid).subscribe((data) => {
+    this.cartService.deleteOne(this.userId, pid).subscribe((data) => {
 
       console.log(data);
       if(data){
@@ -173,7 +225,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cartServe.getCartItems(this.userId).subscribe((data) => {
+    this.cartService.getCartItems(this.userId).subscribe((data) => {
     
       if (data) {
         
@@ -187,7 +239,7 @@ export class CartComponent implements OnInit {
         console.log(this.cartItems)
       this.totalAmt=0;
         for(let item of this.cartItems){
- this.totalAmt+=item.price;
+      this.totalAmt+=item.price;
         }
       
         
@@ -195,5 +247,24 @@ export class CartComponent implements OnInit {
         this.router.navigate(['empty-cart']);
       }
     });
+
+    this.cartService.viewOfferItem().subscribe((data) => {
+      if (data.error) {
+        alert('Something went wrong');
+      } else {
+        console.log(data);
+
+        console.log(data[0]._id)
+        // console.log("bad")
+        
+        this.offerListList = data;
+      
+        // console.log("hello")
+        // console.log(this.offerListList);
+        // console.log("undefind ke upr")
+        console.log(this.offerListList[0]._id);
+      }
+    });
+
   }
 }

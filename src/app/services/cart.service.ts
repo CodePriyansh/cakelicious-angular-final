@@ -9,8 +9,8 @@ export class CartService {
 
   url = "https://cake-licious-backend.herokuapp.com/";
 
-  cartApi = this.url+'cart/add-to-cart';
-  getCart = this.url+'cart/view-cart';
+  cartApi = 'http://localhost:3000/cart/add-to-cart';
+  getCart = 'http://localhost:3000/cart/view-cart';
   deleteFullCart = this.url+'cart/delete-cart';
   deleteOneitem = this.url+'cart/delete-cart-item';
   constructor(private http:HttpClient) { }
@@ -30,6 +30,11 @@ export class CartService {
 
   public deleteOne(Userid:any,pId:any):Observable<any>{
     return this.http.post(this.deleteOneitem,{Userid,pId})
+  }
+
+  public viewOfferItem():Observable<any>{
+    var api = "http://localhost:3000/offeritem/viewOffer";
+    return this.http.get(api);
   }
 
 

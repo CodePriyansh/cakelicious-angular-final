@@ -77,7 +77,9 @@
                   <img src="{{item.prodImage1}}" class="w-100" alt="Blue Jeans Jacket" />
                   <p class="text-start text-md-center m-2">
                     <strong>&#x20b9; {{item.prodPrice}}</strong>
+                    <span class="line-through">M.R.P.: ₹{{item.prodPrice+(item.prodPrice*20/100)}}</span>
                   </p>
+                  
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                   </a>
@@ -202,7 +204,7 @@
               </li>
             </ul>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+              data-bs-target="#myModal">
               Go to checkout
             </button>
           </div>
@@ -296,6 +298,59 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+
+<!-- additional product -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Additional Items</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let items of offerListList">
+              <div class="addon-description" >
+                <div class="addon-card">
+                  <div class="addon-image"><img src="{{items.Image}}" alt="Magic Candles Set"
+                      class="img-fluid v-align-bottom lazyloaded" title="Magic Candles Set"></div>
+                  <div class="title-price-icon">
+                    <div class="title-price"><span class="addon-title">{{items.name}}</span><span
+                        class="addon-price"><img
+                          src="https://media.bakingo.com/bakingo-ssr/static/media/rupees.ac282a46.svg" width="0"
+                          height="0" style="margin-right: 3px;">₹{{items.Price}}</span>
+                          <form action="#" class="display display-flex ">
+                            <!-- <div class="qtyminus" onclick="this.parentNode.querySelector('input[id=form1]').stepDown()"
+                              >-</div> -->
+                            <input type="number" #val id="form1" name="qty" max=5 min=1 value=1 class="qty m-auto" style="	height:27px;
+                            width: 44px;" >
+                            <!-- <div class="qtyplus" onclick="this.parentNode.querySelector('input[id=form1]').stepUp()"
+                              >+</div> -->
+                          <a style="margin-top:-5px ; height: 33px;
+                          width: -149px;" (click)="addCart(items._id)"  class="round-black-btn ml-4 justify-content-center">Add</a>
+
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" routerLink="/cart" >Continue</button>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>

@@ -47,8 +47,11 @@
               </div>
               <span>3 Reviews</span>
             </div>
-            <div class="product-price-discount"><span>{{prod.prodPrice}}</span><span
-                class="line-through">{{prod.prodPrice}}</span></div>
+            <div class="product-price-discount">
+              <span style="color:red;">20%</span> ₹{{prod.prodPrice}}
+              <span class="line-through">M.R.P.: ₹{{prod.prodPrice+(prod.prodPrice*20/100)}}</span><br>
+                <p>Inclusive of all taxes</p>
+              </div>
           </div>
           <p>{{prod.prodDescription}}</p>
           <div class="row">
@@ -73,7 +76,7 @@
                 (click)="updateQuantity(val.value,'QTY')">+</div>
             </form>
             <a (click)="addCart(prod._id)" class="round-black-btn">Add to Cart</a>
-            <a class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#myModal" class="close" data-dismiss="modal" aria-hidden="true"
+            <a class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal" class="close" data-dismiss="modal" aria-hidden="true"
               class="round-black-btn mx-3">Buy Now</a>
           </div>
         </div>
@@ -157,55 +160,7 @@
   </div>
 </div>
 
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
 
-        <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <div class="modal-body">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3" *ngFor="let items of offerListList">
-                <div class="addon-description" >
-                  <div class="addon-card">
-                    <div class="addon-image"><img src="{{items.Image}}" alt="Magic Candles Set"
-                        class="img-fluid v-align-bottom lazyloaded" title="Magic Candles Set"></div>
-                    <div class="title-price-icon">
-                      <div class="title-price"><span class="addon-title">{{items.name}}</span><span
-                          class="addon-price"><img
-                            src="https://media.bakingo.com/bakingo-ssr/static/media/rupees.ac282a46.svg" width="0"
-                            height="0" style="margin-right: 3px;">₹{{items.Price}}</span>
-                            <form action="#" class="display display-flex">
-                              <div class="qtyminus" onclick="this.parentNode.querySelector('input[id=form1]').stepDown()"
-                                >-</div>
-                              <input type="number" #val id="form1" name="qty" max=5 min=1 value=1 class="qty">
-                              <div class="qtyplus" onclick="this.parentNode.querySelector('input[id=form1]').stepUp()"
-                                >+</div>
-                            <a (click)="addCart(items._id)" class="round-black-btn" >Add to Cart</a>
-
-                            </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">Continue</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 <!-- Modal -->
