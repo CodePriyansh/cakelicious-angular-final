@@ -10,53 +10,155 @@ body {
    .carousel-item{
      max-height: 500px;
    }
+   .carousel-caption{
+       font-size:16px;
+       max-width: 695px;
+       top:26%;
+       left:41%;
+   }
+   .carousel-caption h5{
+     font-size:3.5em;
+     }
+     .carousel-caption h4{
+      font-size:2.5em;
+      }
+   .carousel-caption p{
+  max-width: 51ch;
+  font-size:1.2em;
 
+   }
 
    .carousel-text{
     color: var(--head-text);
-    transform: translate(5%,-50%);
+    /* transform: translate(5%,-50%);
     -webkit-transform: translate(5%,-50%);
     -moz-transform: translate(5%,-50%);
     -ms-transform: translate(5%,-50%);
-    -o-transform: translate(5%,-50%);
+    -o-transform: translate(5%,-50%); */
 }
-   .carousel-text h5{
 
-     font-size:400%
+.quote{
+  font-size:140%;
+}
+.quote2{
+    font-size: 100%;
+}
 
-   }
-/* ARTICLE SECTION */
 
-.article .container {
-    /* background-image: linear-gradient(
-      180deg,
-      var(--section-back) 0%,
-      var(--section-back) 50%,
-      rgb(240 69 6 / 27%) 102%
-    );*/
-    background-image: url("../../../assets/images/bANNER-FRESH-CAKE-3.png");
+@media only screen and (max-width: 1280px) {
+ 
+  .carousel-caption{
+    font-size:14px;
+    max-width: 720px;
+    top:19%;
+    left:41%;
+}
 
-    border-radius: 8px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    padding: 3%;
-    text-align: center;
+.quote{
+  font-size:120%;
+}
+.quote2{
+    font-size: 90%;
+}
+}
 
-    /* overflow: hidden; */
-    background: -webkit-linear-gradient(rgba(255,245,242, 0.8), rgba(240,69,6, 0.3)),
-     url("../../../assets/images/bANNER-FRESH-CAKE-3.png");
+@media only screen and (max-width: 980px) {
+  .carousel-caption{
+    font-size:12px;
+    max-width: 720px;
+    top:17%;
+    left:41%;
+}
+
+.quote{
+  font-size:90%;
+}
+.quote2{
+    font-size: 80%;
+}
+}
+
+
+@media only screen and (max-width: 767px) {
+  .carousel-caption{
+    font-size:10px;
+    max-width: 720px;
+    top:15%;
+    left:41%;
+}
+
+.quote{
+  font-size:80%;
+}
+.quote2{
+    font-size: 80%;
+}
+}
+
+@media only screen and (max-width: 576px) {
+  .carousel-caption{
+    font-size:6px;
+    max-width: 720px;
+    top:12%;
+    left:41%;
+}
+}
+
+@media only screen and (max-width: 421px) {
+  .carousel-caption{
+    font-size:5px;
+    max-width: 720px;
+    top:7%;
+    left:41%;
+}
+.carousel-caption h5{
+  display:none;
+}
+
+.quote{
+  font-size:73%;
+  padding-top:12px;
+}
+.quote2{
+    font-size: 65%;
+}
+.carousel-caption p{
+  color:#333;
+  height:39px;
+  overflow:hidden;
+  font-size: 1.55em;
+}
+.carousel-caption h4{
+  color:var(--head-text)
+  font-size 0.7em;
+}
+}
+
+@media only screen and (max-width: 300px) {
+  .carousel-caption h5{
+    display:none;
+  }
+  .carousel-caption h4{
+    color:var(--head-text)
+    font-size 0.7em;
+  }
+  .carousel-caption p{
+    color:#333;
+    height:39px;
+    overflow:hidden;
+  font-size: 1.3em;
 
   }
+  .carousel-caption{
+    font-size:6px;
+    width:52%;
+    top:0%;
+    left:41%;
+    
+}
+}
+   
 
-  .article
-  img {
-     object-fit: cover;
-  }
 
   /* what we offer */
 

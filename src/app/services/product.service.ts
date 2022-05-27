@@ -20,7 +20,7 @@ export class ProductService {
 
 
   public getProductbypId(pId: any): Observable<Product[]>{
-    let getProductById = this.url+'product/getProductById';
+    let getProductById = 'http://localhost:3000/product/getProductById';
     return this.http.get<Product[]>(getProductById + '/' + pId);
   }
 
@@ -39,5 +39,17 @@ export class ProductService {
   }
 
 
+public givRating(userId:any,pId:any,rating:any,review:any):Observable<any>
+{
+  var api = "http://localhost:3000/product/addReview";
+ return this.http.post(api,{userId,pId,rating,review});
+}
+
+
+public editRating(userId:any,pId:any,rating:any,review:any,rId:any):Observable<any>
+{
+  var api = "http://localhost:3000/product/editReview";
+ return this.http.post(api,{userId,pId,rating,review,rId});
+}
 
 }

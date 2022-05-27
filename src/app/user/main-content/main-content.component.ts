@@ -127,7 +127,7 @@ export class MainContentComponent implements OnInit {
         items: 1,
       },
       400: {
-        items: 2,
+        items: 1,
       },
       740: {
         items: 1,
@@ -149,7 +149,7 @@ export class MainContentComponent implements OnInit {
     animateIn: true,
     animateOut: true,
 
-    navText: ['', ''],
+    navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
     responsive: {
       0: {
         items: 2,

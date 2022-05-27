@@ -18,7 +18,7 @@ declare var webkitSpeechRecognition:any;
 })
 export class HomeComponent implements OnInit {
   occassionList: Occassion[] | any;
-  categoryList: Category[] | any;
+  categoryList: Category[] | any=[];
   flavourList?: Flavour[]; // or |any
   title="CAKELICIOUS";
   constructor(

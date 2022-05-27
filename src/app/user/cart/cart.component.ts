@@ -62,8 +62,8 @@ export class CartComponent implements OnInit {
                 this.cartServe.deleteCart(this.userId).subscribe((data) => {
                   console.log(data);
                   this.ngOnInit();
-                  // this.router.navigate(['/order-success'])
-                  // window.location.reload()
+                  this.router.navigate(['/order-success'])
+                  window.location.reload()
                 });
               }
             });
@@ -174,7 +174,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
 
     this.cartServe.getCartItems(this.userId).subscribe((data) => {
-    
+          console.log(data)
       if (data) {
         
         this.cartItems=data.cartItems;
@@ -189,9 +189,8 @@ export class CartComponent implements OnInit {
         for(let item of this.cartItems){
  this.totalAmt+=item.price;
         }
-      
-        
-      } else {
+      }
+       else {
         this.router.navigate(['empty-cart']);
       }
     });

@@ -319,5 +319,44 @@
 
 
 
+.card {
+	border-radius: 5px;
+	background-color: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: 15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.star-active {
+	color: #FBC02D;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.blue-text {
+	color: #0091EA;
+}
+
+.content {
+	font-size: 18px;
+}
+
+.profile-pic {
+	width: 90px;
+	height: 90px;
+	border-radius: 100%;
+	margin-right: 30px;
+}
+ 
+.pic {
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+
+.vote {
+	cursor: pointer;
+}
 
 
