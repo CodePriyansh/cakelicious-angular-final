@@ -19,6 +19,7 @@ import { ViewWishlistComponent } from './user/view-wishlist/view-wishlist.compon
 import { OrderViewComponent } from './user/order-view/order-view.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderSuccessComponent } from './user/order-success/order-success.component';
+import { UpdateProfleComponent } from './user/update-profle/update-profle.component';
 
 const routes: Routes = [
   {
@@ -51,7 +52,8 @@ const routes: Routes = [
       {path:'view-wishlist',component:ViewWishlistComponent},
       {path:'view-order-history',component:OrderViewComponent},
       {path:'place-order' , component:PlaceOrderComponent},
-      {path:'order-success' , component:OrderSuccessComponent}
+      {path:'order-success' , component:OrderSuccessComponent},
+      {path:'update-profile'  , component:UpdateProfleComponent}
     ],
   },
 ];

@@ -253,8 +253,9 @@ a:hover {
 	border-radius: 4px;
     background: var(--head-text);
     color: #fff;
-    padding: 7px 45px;
+    padding: 0px 9px;
     display: inline-block;
+    margin-left:113px;
     margin-top: 20px;
     border: solid 2px var(--head-text);
     transition: all 0.5s ease-in-out 0s;
@@ -274,6 +275,9 @@ span.line-through {
     font-size: 14px;
     vertical-align: middle;
     color: #a5a5a5;
+}
+form a{
+  margin-left: 2.10rem!important;
 }
 
 
