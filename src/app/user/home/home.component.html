@@ -18,15 +18,14 @@
         <a class="fas fa-cart-plus" routerLink="cart"></a>
         <div id="login-btn" *ngIf="!isLoggedIn()" routerLink="/signin" title="Login/Signup" class="fas fa-user-circle">
         </div>
-        <div id="login-btn" *ngIf="isLoggedIn()"  class="fas fa-bars user-dropdown" >
+        <div id="login-btn" *ngIf="isLoggedIn()" class="fas fa-bars user-dropdown">
           <div class="dropdown-content">
-
             <a class="" style="
               font-size: 1.2rem;
               margin: 0;
               padding: 5%;
-        ">Profile</a>
-          <a class="" style="
+        " routerLink="/update-profile">Profile</a>
+            <a class="" style="
           font-size: 1.2rem;
           margin: 0;
           padding: 5%;
@@ -36,7 +35,7 @@
               margin: 0;
               padding: 5%;
         " *ngIf="isLoggedIn()" (click)="signout()">signout</a>
-          
+
 
           </div>
 
