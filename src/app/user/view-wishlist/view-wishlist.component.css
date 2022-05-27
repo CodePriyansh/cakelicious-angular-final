@@ -3,11 +3,14 @@ body {
 }
 .ratings i {
   font-size: 16px;
-  color: red;
+  color: yellow;
 }
-.strike-text {
-  color: red;
-  text-decoration: line-through;
+.product-price-discount span.line-through {
+	text-decoration: line-through;
+    margin-left: 10px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #a5a5a5;
 }
 .product-image {
   width: 100%;

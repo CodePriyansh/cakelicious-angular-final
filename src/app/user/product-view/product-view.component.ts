@@ -28,7 +28,6 @@ export class ProductViewComponent implements OnInit {
   price:any;
   paymentMethod:string='online';
   alterNumber?:number;
-  offerListList:any;
   constructor(private product:ProductService ,private route: ActivatedRoute,
     private router: Router  , private cartService:CartService ,private toastr:ToastrService,private orderServe:OrderService) {
 
@@ -225,15 +224,6 @@ pay(check:any){
     this.userData = JSON.parse(sessionStorage.getItem('user-detail') || '{}');
     console.log(this.userData);
     this.userId = this.userData.current_user._id;
-
-    this.product.viewOfferItem().subscribe((data) => {
-      if (data.error) {
-        alert('Something went wrong');
-      } else {
-        console.log(data);
-        this.offerListList = data;
-      }
-    });
 
   }
 
