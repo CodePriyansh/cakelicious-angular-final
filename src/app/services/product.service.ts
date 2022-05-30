@@ -29,7 +29,7 @@ export class ProductService {
     return this.http.get<any>(getProductById + '/' + text);
   }
   public getProductList():Observable<any>{
-    var api = this.url+"admin-product/viewProduct";
+    var api = "http://localhost:3000/admin-product/viewProduct";
     return this.http.get(api);
   }
 

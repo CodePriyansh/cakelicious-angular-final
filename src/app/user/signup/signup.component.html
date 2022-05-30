@@ -78,7 +78,7 @@
       <div class="d-flex justify-content-center align-items-center">
         <div class="card py-5 px-3">
           <h5 class="m-0">Mobile phone verification</h5><span class="mobile-text">Enter the code we just send on your
-            mobile phone <b class="text-danger">+91 86684833</b></span>
+            mobile phone <b class="text-danger">+91 {{user.mobile}}</b></span>
           <div class="d-flex flex-row mt-5">
             <input type="text" class="form-control" ngModel maxlength="4" required placeholder="enter otp" autofocus=""
               #otp1 name="otp" #otp="ngModel">

@@ -9,9 +9,9 @@ export class OrderService {
   url = "https://cake-licious-backend.herokuapp.com/";
 
    createOrder = this.url+"order/create-order";
-   placeOrderApi = this.url+"order/place-order";
-   orderHistoryApi =this.url+"order/view-order"
-   codApi =this.url+"order/cash-on-delivery"
+   placeOrderApi = "http://localhost:3000/order/place-order";
+   orderHistoryApi ="http://localhost:3000/order/view-order"
+   codApi ="http://localhost:3000/order/cash-on-delivery"
    ;
   constructor(private http:HttpClient) { }
   public CreateOrder(amount:any):Observable<any>{

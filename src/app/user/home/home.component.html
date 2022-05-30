@@ -5,14 +5,14 @@
 
     <div class="header-1">
 
-      <a href="#" class="logo"><img src="../../../assets/images/logo-removebg-preview (1).png"></a>
+      <a href="#" class="logo" data-aos="fade-right"><img src="../../../assets/images/logo-removebg-preview (1).png"></a>
 
-      <form class="search-form" #search_form>
+      <form class="search-form" #search_form data-aos="fade-left">
         <input type="search" name="" placeholder="search here..." id="search-box" (keyup)="search($event)">
         <label for="search-box" class="fas fa-search" (click)="searching()"></label>
       </form>
 
-      <div class="icons">
+      <div class="icons" >
         <div id="search-btn" (click)="change(search_form)" class="fas fa-search"></div>
         <a class="fas fa-heart" routerLink="view-wishlist"></a>
         <a class="fas fa-cart-plus" routerLink="cart"></a>
@@ -47,7 +47,7 @@
 
     </div>
   </header>
-  <header class="header2">
+  <header class="header2" >
     <div>
       <div class="row d-flex justify-content-center ">
 
@@ -72,7 +72,7 @@
                 <a href="#">By Category <i class="fas fa-angle-down"></i></a>
                 <div class="sub-menu single-column-menu" #submenu>
                   <ul>
-                    <li *ngFor="let cat of categoryList.slice(0,5);"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}"
+                    <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}"
                         (click)="menuClick(menu,overlay,mobileMenuHead)">{{cat.catName}}</a></li>
 
                   </ul>

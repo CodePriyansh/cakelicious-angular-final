@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/services/order.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-order-view',
@@ -14,10 +15,12 @@ export class OrderViewComponent implements OnInit {
   user: any;
   userData: any;
   userId: any;
-  orderList: any = [];
-  rev=false;
+  orderList: any[] = [];
+  rev:boolean[]=[];
   checkEdit=0;
-  constructor(private orderServe: OrderService, private fb: FormBuilder,private productServe:ProductService) {
+  public counts = ['Confirmed', 'Preparing', 'OutFoodDelivery', 'Delivered'];
+
+  constructor(private orderServe: OrderService, private fb: FormBuilder,private productServe:ProductService,private toaster:ToastrService) {
     this.form = this.fb.group({
       rating1: ['', Validators.required],
     });
@@ -31,6 +34,9 @@ export class OrderViewComponent implements OnInit {
         console.log(data);
         console.log(data[0].orderedItem[0].ProductId);
         this.orderList = data;
+        for(let item of this.orderList)
+           for(let prodItem of item.orderedItem)
+             this.rev.push(false);
       }
     });
   }
@@ -42,6 +48,8 @@ export class OrderViewComponent implements OnInit {
     if(this.checkEdit==0){
     this.productServe.givRating(this.userId,pid,this.x,msg).subscribe((data) => {
          console.log(data)
+        this.toaster.success("thank you for review","Review");
+        this.ngOnInit();
     }
     )
     console.log("r");
@@ -50,6 +58,11 @@ export class OrderViewComponent implements OnInit {
     console.log(this.revId)
     this.productServe.editRating(this.userId,pid,this.x,msg,this.revId).subscribe((data) => {
       console.log(data)
+      if(data){
+        this.toaster.success("thank you for review","Review")
+        this.ngOnInit()
+
+      }
  }
  )
 
@@ -82,13 +95,14 @@ export class OrderViewComponent implements OnInit {
     }
   }
     revId:any;
-    i=0;
-   changeRev(id:any){
-     this.i++;
-     if(this.i==1){
-     this.rev=true;}else{
-       this.i=0;
-      this.rev=false;
+  
+   changeRev(id:any,index:any){
+     
+     if(!this.rev[index]){
+     this.rev[index]=true;
+    }else{
+      
+      this.rev[index]=false;
      }
      this.checkEdit=1;
      this.revId = id;

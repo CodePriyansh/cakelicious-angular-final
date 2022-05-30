@@ -11,7 +11,7 @@ export class LoginService {
 
   signUpApi = "http://localhost:3000/customer/sign-up";
   signInApi = "http://localhost:3000/customer/sign-in";
-  signupGoogle = this.url+'customer/login-with-google';
+  signupGoogle = "http://localhost:3000/customer/login-with-google"
   optApi = "http://localhost:3000/customer/send-otp";
 
   constructor(private http:HttpClient) { }

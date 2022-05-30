@@ -220,19 +220,9 @@ export class CartComponent implements OnInit {
               this.cartItems
             )
             .subscribe((data) => {
-<<<<<<< HEAD
-              if ((data.msg == 'ok')) {
-                this.cartServe.deleteCart(this.userId).subscribe((data) => {
-                  console.log(data);
-                  this.ngOnInit();
-                  this.router.navigate(['/order-success'])
-                  window.location.reload()
-                });
-=======
               if (data.status == 'ok') {
                 this.toastr.success('order Successfull', 'cash on Deliver');
                 this.router.navigate(['/order-success']);
->>>>>>> e6bce385e6d3f9a4c232fc9e23e2241e299d3bf9
               }
             });
         }
@@ -243,9 +233,7 @@ export class CartComponent implements OnInit {
   deleteCart() {
     this.cartServe.deleteCart(this.userId).subscribe((data) => {
       console.log(data);
-      if (data) {
         this.ngOnInit();
-      }
     });
   }
 
@@ -275,10 +263,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartServe.getCartItems(this.userId).subscribe((data) => {
-<<<<<<< HEAD
           console.log(data)
-=======
->>>>>>> e6bce385e6d3f9a4c232fc9e23e2241e299d3bf9
       if (data) {
         this.cartItems = data.cartItems;
         for (let i = 0; i < this.cartItems.length; i++) {
@@ -295,12 +280,8 @@ export class CartComponent implements OnInit {
             this.smallItemCount++;
           }
         }
-<<<<<<< HEAD
       }
        else {
-=======
-      } else {
->>>>>>> e6bce385e6d3f9a4c232fc9e23e2241e299d3bf9
         this.router.navigate(['empty-cart']);
       }
     });
