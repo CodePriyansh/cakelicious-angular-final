@@ -144,6 +144,10 @@ body {
     font-size: 1.5em;
     margin-right: 40%;
   }
+  .quote2{
+    font-size: 55%;
+    margin-top:3px;
+}
   .carousel-caption p{
     color:#333;
     height:39px;
