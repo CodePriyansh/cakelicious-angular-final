@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6" *ngFor="let product of productList">
       <div class="post-slide m-4">
-        <div class="post-img">
+        <div class="post-img" routerLink="/product-view/{{product._id}}">
           <img src="{{product.prodImage1}}" alt="">
           <div class="over-layer">
 

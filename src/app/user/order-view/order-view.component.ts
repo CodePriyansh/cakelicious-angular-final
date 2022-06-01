@@ -95,13 +95,13 @@ export class OrderViewComponent implements OnInit {
     }
   }
     revId:any;
-  
+
    changeRev(id:any,index:any){
-     
+
      if(!this.rev[index]){
      this.rev[index]=true;
     }else{
-      
+
       this.rev[index]=false;
      }
      this.checkEdit=1;
