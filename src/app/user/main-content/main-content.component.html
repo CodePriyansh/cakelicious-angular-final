@@ -137,7 +137,7 @@
     <div data-aos="zoom-in" class="post-slide m-4 col-lg-3 col-md-4 col-sm-2" *ngFor='let product of exclusiveList.slice(0,6)'>
       <div class="post-img" >
         <img src="{{product.prodImage1}}" alt="" routerLink="product-view/{{product._id}}">
-        <a routerLink="product-view/{{product._id}}" class="over-layer">see detail</a>
+        <a routerLink="product-view/{{product._id}}" class="over-layer"><i class="fa fa-eye" aria-hidden="true"></i></a>
       </div>
       <div class="post-content">
         <h3 class="post-title">
@@ -176,7 +176,7 @@
   <h1 class="heading text-center">Our Exclusive Products</h1>
   <owl-carousel-o [options]="product_options">
     <ng-template carouselSlide *ngFor="let product of exclusiveList">
-      <div class="post-slide m-4">
+      <div class="post-slide m-1">
         <div class="post-img">
 
           <img

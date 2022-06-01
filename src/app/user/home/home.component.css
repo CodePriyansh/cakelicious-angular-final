@@ -463,6 +463,11 @@ html::-webkit-scrollbar-thumb{
 	.header2{
 		padding:4px
 	}
+	.footer .box{
+		text-align: center
+	}
+
+	
 }
 /*responsive*/
 @media(max-width: 991px){
@@ -659,6 +664,8 @@ html::-webkit-scrollbar-thumb{
 
 
 
+
+
 .footer .box-container{
  display:flex;
  justify-content: space-evenly;
@@ -726,4 +733,17 @@ html::-webkit-scrollbar-thumb{
     color:var(--head-text);
 }
 
+
+@media(max-width: 421px){
+	.footer .share a{
+		height: 2rem;
+		width: 2rem;
+		line-height: 2rem;
+		font-size: 1.3rem;
+		color:#fff;
+		background:var(--head-text);
+		margin:0 .3rem;
+		border-radius: 50%; 
+	}
+}
 

@@ -82,14 +82,13 @@ export class MainContentComponent implements OnInit {
   };
 
   product_options: OwlOptions = {
-    loop: true,
-    autoplay: true,
+    loop: false,
+    autoplay: false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-
     navText: [
       '<i class="fa fa-caret-left" aria-hidden="true"></i>',
       '<i class="fa fa-caret-right" aria-hidden="true"></i>',
