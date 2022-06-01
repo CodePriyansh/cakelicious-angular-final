@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
       .subscribe((data: any) => {
         console.log(data);
         this.celebrationList = data;
-       
+
       });
   }
 
@@ -62,7 +62,7 @@ export class CartComponent implements OnInit {
     if (this.userId) {
       this.cartServe.getCartItems(this.userId).subscribe((data) => {
         console.log(data);
-        
+
         if (data) {
           let value: any;
           this.cartItems = data.cartItems;
@@ -100,7 +100,7 @@ export class CartComponent implements OnInit {
                 alert('item not added');
               }
             });
-          
+
         }
       });
     } else {
@@ -222,7 +222,7 @@ export class CartComponent implements OnInit {
             .subscribe((data) => {
               if (data.status == 'ok') {
                 this.toastr.success('order Successfull', 'cash on Deliver');
-                this.router.navigate(['/order-success']);
+                this.router.navigate(['empty-cart/3"'])
               }
             });
         }
@@ -282,7 +282,7 @@ export class CartComponent implements OnInit {
         }
       }
        else {
-        this.router.navigate(['empty-cart']);
+        this.router.navigate(['empty-cart/2',]);
       }
     });
   }

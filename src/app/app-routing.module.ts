@@ -48,7 +48,7 @@ const routes: Routes = [
       { path: 'occassion-wise/:occassionId/:occName', component: OccassionWiseCakeComponent },
       {path:"flavour-wise/:fid/:fname",component:FlavourViseComponent},
       {path:"cart",component:CartComponent,canActivate:[AppGuardGuard]},
-      {path:"empty-cart",component:EmptyCartComponent},
+      {path:"empty-cart/:val",component:EmptyCartComponent},
       {path:'view-wishlist',component:ViewWishlistComponent},
       {path:'view-order-history',component:OrderViewComponent},
       {path:'place-order' , component:PlaceOrderComponent},

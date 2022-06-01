@@ -46,7 +46,7 @@ body {
 
 
 @media only screen and (max-width: 1280px) {
- 
+
   .carousel-caption{
     font-size:14px;
     max-width: 720px;
@@ -138,9 +138,11 @@ body {
   .carousel-caption h5{
     display:none;
   }
+
   .carousel-caption h4{
-    color:var(--head-text)
-    font-size 0.7em;
+    color:var(--head-text);
+    font-size: 1.5em;
+    margin-right: 40%;
   }
   .quote2{
     font-size: 55%;
@@ -151,17 +153,19 @@ body {
     height:39px;
     overflow:hidden;
   font-size: 1.3em;
-
+  max-width: 51ch;
+  font-size:0.7em;
+  margin-right: 40%;
   }
   .carousel-caption{
     font-size:6px;
     width:52%;
     top:0%;
     left:41%;
-    
+
 }
 }
-   
+
 
 
   /* what we offer */
@@ -338,7 +342,7 @@ body {
   .heading {
     padding-bottom: 5%;
     padding-top: 5%;
-    
+
   }
 
 
@@ -495,3 +499,110 @@ body {
         font-size: 0.9rem;
         color: #e94e11;
     }
+/* .text-center{
+  margin: 30px;
+} */
+@media only screen and (min-width: 422px) {
+  .r{
+  margin-top: 10%;
+  }
+ }
+ @media only screen and (min-width: 298px) {
+  .r{
+  margin-top: 10%;
+  }
+ }
+ @media only screen and (min-width:604px) {
+  .fa-check-circle:before {
+    content: "\f058";
+    font-size: 55px;
+}
+h4, .h4 {
+  font-size: calc(1.1rem + 0.3vw);
+}
+ }
+ @media only screen and (min-width:950px) {
+  .fa-check-circle:before {
+    content: "\f058";
+    font-size: 65px;
+}
+.text-sm-left {
+
+  margin-top: -28px;
+}
+
+ }
+ @media only screen and (max-width:317px) {
+  .display-30{
+    font-size: 9px;
+  }
+
+ }
+
+ @media only screen and (max-width:669px) {
+.text-sm-left{
+margin-top: -3%;
+}
+.display-30{
+  font-size: 15px;
+}
+.fa-check-circle:before {
+  content: "\f058";
+  font-size: 55px;
+}
+.sub-info{
+font-size: 22px;
+}
+ }
+ @media only screen and (max-width:1070px) {
+
+  .display-30{
+    font-size: 11px;
+  }
+  .fa-check-circle:before {
+    content: "\f058";
+    font-size: 55px;
+  }
+  .sub-info{
+  font-size: 18px;
+  }
+
+ }
+ @media only screen and (max-width: 948px) {
+
+  .text-sm-left[_ngcontent-kxe-c64] {
+    margin-top: -11%;
+}
+  .display-30{
+    font-size: 13px;
+  }
+  .fa-check-circle:before {
+    content: "\f058";
+    font-size: 55px;
+  }
+  .sub-info{
+  font-size: 18px;
+  }
+
+ }
+ @media only screen and (max-width:682px) {
+
+  .col-sm-6 {
+      flex: 0 0 auto;
+        }
+  /* .text-sm-left[_ngcontent-kxe-c64] {
+  ma  rgin-top: -11%;
+} */
+  .display-30{
+    font-size: 13px;
+  }
+  .fa-check-circle:before {
+    content: "\f058";
+    font-size: 55px;
+  }
+  .sub-info{
+  font-size: 19px;
+  }
+
+
+ }

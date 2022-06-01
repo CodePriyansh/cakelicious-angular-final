@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-empty-cart',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./empty-cart.component.css']
 })
 export class EmptyCartComponent implements OnInit {
-
-  constructor() { }
+card:number|undefined;
+  constructor(private activeRouter:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //alert(this.activeRouter.snapshot.params['val']);
+this.card=this.activeRouter.snapshot.params['val'];
+
   }
 
 }

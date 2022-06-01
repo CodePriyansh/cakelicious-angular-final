@@ -85,7 +85,7 @@ export class ViewWishlistComponent implements OnInit {
           });
         }
       });
-    } else { 
+    } else {
       this.router.navigate(['signin']);
     }
   }
@@ -107,7 +107,7 @@ export class ViewWishlistComponent implements OnInit {
           console.log(item);
         }
       } else {
-        this.router.navigate(['empty-cart',"Favourite"]);
+        this.router.navigate(['empty-cart/1']);
       }
     });
   }
