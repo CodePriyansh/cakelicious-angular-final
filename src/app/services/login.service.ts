@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
+import { environment } from "../../environments/environment.prod";
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  url = "https://cake-licious-backend.herokuapp.com/";
-
-  signUpApi = "http://localhost:3000/customer/sign-up";
-  signInApi = "http://localhost:3000/customer/sign-in";
-  signupGoogle = "http://localhost:3000/customer/login-with-google"
-  optApi = "http://localhost:3000/customer/send-otp";
+  url = "https://cake-licious-backend.herokuapp.com";
+  signUpApi = this.url+"/customer/sign-up";
+  signInApi = this.url+"/customer/sign-in";
+  signupGoogle =this.url+"/customer/login-with-google"
+  optApi = this.url+"/customer/send-otp";
 
   constructor(private http:HttpClient) { }
 
@@ -28,7 +28,7 @@ export class LoginService {
     return this.http.post(this.signupGoogle, { email });
   }
 
-    public checkToken() {
+  public checkToken() {
     return !!sessionStorage.getItem('jwt-token');
   }
 

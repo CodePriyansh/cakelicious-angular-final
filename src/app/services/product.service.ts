@@ -20,7 +20,7 @@ export class ProductService {
 
 
   public getProductbypId(pId: any): Observable<Product[]>{
-    let getProductById = 'http://localhost:3000/product/getProductById';
+    let getProductById = this.url+"product/getProductById";
     return this.http.get<Product[]>(getProductById + '/' + pId);
   }
 
@@ -29,26 +29,26 @@ export class ProductService {
     return this.http.get<any>(getProductById + '/' + text);
   }
   public getProductList():Observable<any>{
-    var api = "http://localhost:3000/admin-product/viewProduct";
+    var api = this.url+"admin-product/viewProduct";
     return this.http.get(api);
   }
 
   public viewOfferItem():Observable<any>{
-    var api = "http://localhost:3000/offeritem/viewOffer";
+    var api = this.url+"offeritem/viewOffer";
     return this.http.get(api);
   }
 
 
 public givRating(userId:any,pId:any,rating:any,review:any):Observable<any>
 {
-  var api = "http://localhost:3000/product/addReview";
+  var api =this.url+"product/addReview";
  return this.http.post(api,{userId,pId,rating,review});
 }
 
 
 public editRating(userId:any,pId:any,rating:any,review:any,rId:any):Observable<any>
 {
-  var api = "http://localhost:3000/product/editReview";
+  var api = this.url+"product/editReview";
  return this.http.post(api,{userId,pId,rating,review,rId});
 }
 

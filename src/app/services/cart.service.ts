@@ -9,8 +9,8 @@ export class CartService {
 
   url = "https://cake-licious-backend.herokuapp.com/";
 
-  cartApi = 'http://localhost:3000/cart/add-to-cart';
-  getCart = 'http://localhost:3000/cart/view-cart';
+  cartApi = this.url+"cart/add-to-cart";
+  getCart = this.url+"cart/view-cart";
   deleteFullCart = this.url+'cart/delete-cart';
   deleteOneitem = this.url+'cart/delete-cart-item';
   constructor(private http:HttpClient) { }

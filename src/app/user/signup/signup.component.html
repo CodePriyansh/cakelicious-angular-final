@@ -4,7 +4,7 @@
   <!-- Sign up form -->
   <section class="signup m-0">
     <div class="container">
-      <div class="signup-content p-5">
+      <div class="signup-content p-sm-2 p-md-3 p-lg-5">
         <div class="signup-form ">
           <h2 class="form-title">Sign up</h2>
           <form class="register-form" #userForm="ngForm" (ngSubmit)="userForm">
@@ -33,7 +33,7 @@
               <label for="pass"><i class="zmdi zmdi-lock"></i></label>
               <input [type]="changetype?'password':'text'" name="your_pass" [(ngModel)]="user.password" placeholder="Password" required
                 #userPassword="ngModel" />
-                <span class="eyeicon" (click)="viewPass()">
+                <span class="eyeicon" (click)="viewPass()" style="position:absolute; top:32%; color:var(--head-text)" >
                   <i [ngClass]="visible?'fa fa-eye':'fa fa-eye-slash'"></i></span>
 
               <span class="spantag" *ngIf="userPassword.errors?.['required'] && userPassword.touched">Please Enter Valid
@@ -43,15 +43,14 @@
               <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
               <input [type]="changetype2?'password':'text'" required #userRepassword="ngModel" [(ngModel)]="Repassword" name="re_pass"
                 id="re_pass" placeholder="Repeat your password" />
-                <span class="eyeicon" (click)="viewRePass()">
+                <span class="eyeicon" (click)="viewRePass()" style="position:absolute; top:32%; color:var(--head-text)" >
                   <i [ngClass]="visible2?'fa fa-eye':'fa fa-eye-slash'"></i></span>
               <span class="spantag" *ngIf="userRepassword.errors?.['required'] && userRepassword.touched">Please Enter
                 Valid password</span>
             </div>
             <div class="form-group">
               <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-              <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a
-                  href="#" class="term-service">Terms of service</a></label>
+              <label for="agree-term" class="label-agree-term"><span><span></span></span>Agree Terms & condition</label>
             </div>
             <div class="form-group form-button" >
               <input type="submit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm"
