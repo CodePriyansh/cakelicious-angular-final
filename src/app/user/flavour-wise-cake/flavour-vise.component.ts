@@ -152,7 +152,6 @@ export class FlavourViseComponent implements OnInit {
     console.log(length)
     if(length!=0)
     this.userId = this.userData.current_user._id;
-
   }
 
 }
