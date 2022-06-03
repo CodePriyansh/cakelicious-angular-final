@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   categoryList: Category[] | any=[];
   flavourList?: Flavour[]; // or |any
   title="CAKELICIOUS";
+  load:any=true;
   constructor(
     private router: Router,
     private service: LoginService,
@@ -37,6 +38,21 @@ export class HomeComponent implements OnInit {
       // console.log(data);
       this.categoryList = data;
     });
+
+    this.flavourService.getFlaovurList().subscribe(
+      (data) => {
+        this.flavourList = data;
+      },
+      (err) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status == 500) alert('Something went wrong...');
+        }
+      }
+    );
+
+    // setTimeout(()=>{
+    //   this.load=false;
+    // },3000)  
   }
 
   public searchProduct(event: any) {
@@ -92,16 +108,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.flavourService.getFlaovurList().subscribe(
-      (data) => {
-        this.flavourList = data;
-      },
-      (err) => {
-        if (err instanceof HttpErrorResponse) {
-          if (err.status == 500) alert('Something went wrong...');
-        }
-      }
-    );
+   
   }
 
   isLoggedIn() {
