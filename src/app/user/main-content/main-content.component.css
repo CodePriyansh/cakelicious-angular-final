@@ -22,7 +22,9 @@ body {
   max-width: 51ch;
   font-size: 1.2em;
 }
-
+.carousel-indicators{
+  display:none;
+}
 .cr-2{
   left:19%;
 }
@@ -168,31 +170,41 @@ body {
         margin-left:4%;
         text-align: left;
   }
+  .quote{
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
 }
 
 @media only screen and (max-width: 421px) {
   .carousel-caption {
-    font-size: 5px;
+    font-size: 6px;
     max-width: 720px;
-    top: 7%;
+    top: 11%;
     left: 41%;
   }
   .carousel-caption h5 {
     display: none;
   }
 
+  
+
   .quote {
     font-size: 73%;
     /* padding-top: 12px; */
+  }
+  .quote{
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
   .quote2 {
     font-size: 65%;
   }
   .carousel-caption p {
     color: #333;
-    height: 39px;
+    height: 50px;
     overflow: hidden;
-    font-size: 1.55em;
+    font-size: 1.6em;
   }
   .carousel-caption h4 {
     color: var(--head-text) font-size 0.7em;
@@ -204,7 +216,7 @@ body {
   
   .cr-2 p{
     line-height:180%;
-    width:40ch;
+    width:35ch;
   }
   
   .cr-2 h4{
@@ -212,25 +224,75 @@ body {
         margin-left:11%;
         text-align: left;
   }
+
+
+  .cr-3{
+    top:18%;
+    left:7%;
+    text-align: left;
+  }
+  
+  .cr-3 p{
+    line-height:180%;
+    max-width: 40ch;
+
+     
+  }
+  
+  .cr-3 h4{
+        margin-bottom: 3%;
+  }
 }
 
 
 @media only screen and (max-width: 390px) {
-  .cr-2{
-    left:19%;
+  .carousel-caption {
+    font-size: 6px;
+    max-width: 720px;
+    top: 7%;
+    left: 35%;
   }
+  .carousel-caption p {
+    max-width: 59ch;
+    font-size: 1.6em;
+  }
+  .cr-2{
+    left:16%;
+  }
+ 
   
   .cr-2 p{
-    line-height:160%;
-    width:35ch;
-    height:50px;
-    overflow: hidden
+    line-height:150%;
+    width:33ch;
+    height:45px;
+    overflow: hidden;
+  }
+  .quote{
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
   
   .cr-2 h4{
         margin-bottom: 5%;
         margin-left:4%;
         text-align: left;
+  }
+
+  .cr-3{
+    top:14%;
+    left:3%;
+    text-align: left;
+  }
+  
+  .cr-3 p{
+    line-height:180%;
+    max-width: 35ch;
+
+     
+  }
+  
+  .cr-3 h4{
+        margin-bottom: 3%;
   }
 }
 
@@ -254,37 +316,28 @@ body {
 
   }
 
+  cr-3{
+    top:13%;
+    left:0%;
+    text-align: left;
+  }
+  
+  .cr-3 p{
+    line-height:170%;
+    max-width: 29ch;
+
+     
+  }
+  
+  .cr-3 h4{
+        margin-bottom: 2%;
+  }
+
 }
 @media only screen and (max-width: 300px) {
-
-  .cr-2{
-    left:19%;
-  }
-  
-  .cr-2 p{
-    line-height:200%;
-    width:30ch;
-  }
-  
-  .cr-2 h4{
-        margin-bottom: 5%;
-        margin-left:4%;
-        text-align: left;
-  }
   .carousel-caption h5 {
     display: none;
-  }
-
-  .carousel-caption h4 {
-    color: var(--head-text);
-    font-size: 1.5em;
-    margin-right: 40%;
-  }
-  .quote2 {
-    font-size: 55%;
-    margin-top: 3px;
-  }
-  .carousel-caption p {
+  } .carousel-caption p {
     color: #333;
     height: 39px;
     overflow: hidden;
@@ -299,6 +352,32 @@ body {
     top: 0%;
     left: 41%;
   }
+  .carousel-caption h4 {
+    color: var(--head-text);
+    font-size: 1.5em;
+    margin-right: 40%;
+  }
+  .cr-2{
+    left:19%;
+  }
+  
+  .cr-2 p{
+    line-height:200%;
+    width:30ch;
+  }
+  
+  .cr-2 h4{
+        margin-bottom: 5%;
+        margin-left:4%;
+        text-align: left;
+  }
+  
+  .quote2 {
+    font-size: 55%;
+    margin-top: 3px;
+  }
+ 
+  
 }
 
 /* what we offer */

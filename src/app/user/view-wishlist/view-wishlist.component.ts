@@ -98,7 +98,7 @@ export class ViewWishlistComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+ if(this.userId){
     this.wishlistService.getWishlistItems(this.userId).subscribe((data:any) => {
       console.log(data);
       if (data) {
@@ -113,5 +113,8 @@ export class ViewWishlistComponent implements OnInit {
         this.router.navigate(['empty-cart/1']);
       }
     });
+  }else{
+    this.router.navigate(['signin']);
   }
+}
 }

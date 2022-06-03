@@ -33,6 +33,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderSuccessComponent } from './user/order-success/order-success.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import { AboutComponent } from './user/about/about.component';
 
 
 const socialProvider={
@@ -69,7 +70,8 @@ const socialProvider={
     ViewWishlistComponent,
     OrderViewComponent,
     PlaceOrderComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

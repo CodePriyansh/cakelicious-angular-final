@@ -49,10 +49,12 @@ export class HomeComponent implements OnInit {
     search_form.classList.toggle('active');
   }
 
-  menuClick(menu:any,overlay:any,mobileMenuHead:any){
+  menuClick(menu:any,overlay:any,mobileMenuHead:any,sf:any){
     menu.classList.toggle('active')
     // overlay.classList.add('active')
     mobileMenuHead.classList.add('active');
+    sf.classList.remove('active');
+
   }
 
   subMenu(subMenu:any,title:any){

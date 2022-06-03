@@ -20,6 +20,7 @@ import { OrderViewComponent } from './user/order-view/order-view.component';
 import { PlaceOrderComponent } from './user/place-order/place-order.component';
 import { OrderSuccessComponent } from './user/order-success/order-success.component';
 import { UpdateProfleComponent } from './user/update-profle/update-profle.component';
+import { AboutComponent } from './user/about/about.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,9 @@ const routes: Routes = [
       },
       {
         path: 'allProduct',component:AllproductComponent
+      },
+      {
+        path: 'about',component:AboutComponent
       },
       { path: 'searchProduct/:text', component: SearchComponent },
       { path: 'category-wise/:categoryId/:catName', component: CategoryWiseCakeComponent },

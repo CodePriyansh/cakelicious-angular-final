@@ -1,7 +1,6 @@
 /* eye */
 .eyeicon{
   /* position:absolute; */
-  margin-left: 260px;
   cursor:pointer;
 }
 
@@ -451,12 +450,15 @@ label {
     -webkit-justify-content: center;
     -o-justify-content: center;
     -ms-justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
+ 
 
   .signin-image {
     margin-left: 0px;
     margin-right: 0px;
-    margin-top: 50px;
+    margin-top: 40px;
     order: 2;
     -moz-order: 2;
     -webkit-order: 2;
@@ -506,11 +508,20 @@ label {
     -ms-flex-direction: column;
   }
 
+.signin-content{
+  padding-top: 20px;
+    padding-bottom: 27px;
+}
+
   .social-label {
     margin-right: 0px;
     margin-bottom: 10px;
   }
+  .signin-form {
+   
+    padding: 0 10px;
+  }
 }
 .spantag{
-  color: red;
+  color: var(--head-text);
 }

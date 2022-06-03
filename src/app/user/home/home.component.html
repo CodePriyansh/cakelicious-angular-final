@@ -61,7 +61,7 @@
               <div class="go-back" (click)="hideSubMenu(submenu,submenu2,submenu3)"><i class="fa fa-angle-left"></i>
               </div>
               <div class="current-menu-title" style="color:red;" data-aos="flip-left">{{title}}</div>
-              <div class="mobile-menu-close" (click)="menuClick(menu,overlay,mobileMenuHead)">&times;</div>
+              <div class="mobile-menu-close" (click)="menuClick(menu,overlay,mobileMenuHead,search_form)">&times;</div>
             </div>
             <ul class="menu-main">
               <li>
@@ -69,11 +69,11 @@
               </li>
 
               <li class="menu-item-has-children" (click)="subMenu(submenu,'By Category')">
-                <a href="#">By Category <i class="fas fa-angle-down"></i></a>
+                <a >By Category <i class="fas fa-angle-down"></i></a>
                 <div class="sub-menu single-column-menu" #submenu>
                   <ul>
                     <li *ngFor="let cat of categoryList"><a routerLink="/category-wise/{{cat._id}}/{{cat.catName}}"
-                        (click)="menuClick(menu,overlay,mobileMenuHead)">{{cat.catName}}</a></li>
+                        (click)="menuClick(menu,overlay,mobileMenuHead,search_form)">{{cat.catName}}</a></li>
 
                   </ul>
                 </div>
@@ -83,24 +83,25 @@
                 <div class="sub-menu single-column-menu" #submenu2>
                   <ul>
                     <li *ngFor="let occ of occassionList"><a routerLink="/occassion-wise/{{occ._id}}/
-                    {{occ.occName}}" (click)="menuClick(menu,overlay,mobileMenuHead)">{{occ.occName}}</a></li>
+                    {{occ.occName}}" (click)="menuClick(menu,overlay,mobileMenuHead,search_form
+                )">{{occ.occName}}</a></li>
 
                   </ul>
                 </div>
               </li>
               <li class="menu-item-has-children" (click)="subMenu(submenu3,'By Flavour')">
-                <a href="#">By Flavour <i class="fas fa-angle-down"></i></a>
+                <a >By Flavour <i class="fas fa-angle-down"></i></a>
                 <div class="sub-menu single-column-menu" #submenu3>
                   <ul>
                     <li *ngFor="let flavour of flavourList"><a
                         routerLink="/flavour-wise/{{flavour._id}}/{{flavour.flavourname}}"
-                        (click)="menuClick(menu,overlay,mobileMenuHead)">{{flavour.flavourname}}</a></li>
+                        (click)="menuClick(menu,overlay,mobileMenuHead,search_form)">{{flavour.flavourname}}</a></li>
 
                   </ul>
                 </div>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a routerLink="about">About Us</a>
               </li>
               <li>
                 <a routerLink="contact">Contact Us</a>
@@ -111,8 +112,9 @@
         </div>
         <!-- menu end here -->
         <div class="header-item item-right">
-          <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead)">
-            <span></span>
+          <div class="mobile-menu-trigger" (click)="menuClick(menu,overlay,mobileMenuHead,search_form)">
+
+          <span></span>
 
           </div>
         </div>
@@ -173,7 +175,6 @@
     <div class="credit">Copyright @<span>CakeLicious </span> | all rights reserved! </div>
 
   </section>
-
 
 
 

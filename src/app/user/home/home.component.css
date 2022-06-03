@@ -260,9 +260,9 @@ html::-webkit-scrollbar-thumb{
   }
 
   .header .header-1 .search-form.active{
-      top:109%;
+      top:101%;
       z-index: 100;
-	  margin-right: 5rem;
+	  margin-right: 2rem;
 	  border: 1.5px dotted var(--head-text);
 	  width: 67%;
 
@@ -285,6 +285,14 @@ html::-webkit-scrollbar-thumb{
   html{
       font-size: 50%;
   }
+  .header .header-1 .search-form.active{
+	top:105%;
+	z-index: 100;
+	margin-right: 3rem;
+	border: 1.5px dotted var(--head-text);
+	width: 60%;
+
+}
 
   .header .header-1 .icons div,
 .header .header-1 .icons a{
@@ -745,5 +753,29 @@ html::-webkit-scrollbar-thumb{
 		margin:0 .3rem;
 		border-radius: 50%; 
 	}
+
+	.header .header-1 .search-form.active{
+		top:101%;
+		z-index: 100;
+		margin-right: 3rem;
+		border: 1.5px dotted var(--head-text);
+		width: 60%;
+		height:38px;
+	
+	}
+	.header .header-1 .search-form input{
+		font-size: 1.1rem;
+		padding:0 .5rem;
+		height:100%;
+		width:100%;
+		text-transform: none;
+		color:var(--head-text);
+	  }
+	  .header .header-1 .search-form label{
+		font-size: 1rem;
+		padding-right: .8rem;
+		color:var(--head-text);
+		cursor: pointer;
+	  }
 }
 
