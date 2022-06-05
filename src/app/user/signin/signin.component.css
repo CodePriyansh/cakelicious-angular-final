@@ -102,7 +102,7 @@ h2 {
   padding: 0;
   font-weight: bold;
   color: #d4551e;
-  font-family: Poppins;
+ 
   font-size: 36px;
 }
 
@@ -121,7 +121,7 @@ body {
   color: #d4551e;
   background: #f8f8f8;
   font-weight: 400;
-  font-family: Poppins;
+ 
 }
 
 .container {
@@ -207,24 +207,17 @@ figure {
   cursor: pointer;
 }
 .form-submit:hover {
-  background: #4292dc;
+  background: #e67349;
 }
 
 .signup-image-link {
   font-size: 14px;
-  color: #d4551e;
+  color: var(--head-text);
   display: block;
   text-align: center;
 }
 
-.term-service {
-  font-size: 13px;
-  color: #d4551e;
-}
 
-.register-form {
-  width: 100%;
-}
 
 .form-group {
   position: relative;
@@ -241,7 +234,7 @@ input {
   border: none;
   border-bottom: 1px solid #999;
   padding: 6px 30px;
-  font-family: Poppins;
+ 
   box-sizing: border-box;
 }
 input::-webkit-input-placeholder {

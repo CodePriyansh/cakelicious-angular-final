@@ -2,9 +2,8 @@
 <div class="row text-center mt-lg-3 mt-md-2 mt-sm-1 pt-sm2" style="color:#f04506;
 ">
   <owl-carousel-o [options]="infoOption">
-    <ng-template carouselSlide><h5 class="quote mt-lg-3 mt-md-2 mt-sm-2" style="font-weight:400; " > <i class="fa fa-birthday-cake" aria-hidden="true"></i> Cakelicious : The Most beautiful cakes in the Town...</h5></ng-template>
-    <ng-template carouselSlide><h5 class="quote mt-lg-3 mt-md-2 mt-sm-2" ><i class="fa  fa-map-marker-alt " aria-hidden="true" > location : INDORE </i></h5></ng-template>
-    <!-- <ng-template carouselSlide><h5 style="font-weight:400">Slide 3</h5></ng-template>   -->
+    <ng-template carouselSlide><h5 class="quote " style="font-weight:400; " > <i class="fa fa-birthday-cake" aria-hidden="true"></i> Cakelicious : The Most beautiful cakes in the Town...</h5></ng-template>
+    <ng-template carouselSlide><h5 class="quote " ><i class="fa  fa-map-marker-alt " aria-hidden="true" ></i> location : INDORE </h5></ng-template>
   </owl-carousel-o>
 </div>
 <section class="mt-2  mt-sm-0">
@@ -38,7 +37,6 @@
             <h4>Delicous Cakes For You</h4>
             <p  data-aos="fade-right">Cake comes in all sizes, shapes, and flavors, it’s perfect for any kind of event or occasion. Time and time again, it’s the star attraction. It's to no surprise that it gets a lot of flashy snapshots!</p>
           </div>
-
         </div>
 
         <div class="carousel-item" style="background-color:#fff5f2">
@@ -77,7 +75,11 @@
 
 <section class="wwo" data-aos="zoom-out-right">
 <div class="container" >
-  <h1 class="heading text-center" >What We Offer</h1>
+  <div class="heading" style="width:max-content; margin:0 auto;">
+  <h1 class="text-center" >What We <span style="color:var(--head-text)">Offer</span></h1>
+  <hr style="color:#f04506">
+  <h4 class="text-center">Popular Occassion</h4>
+</div>
   <owl-carousel-o [options]="what_we_offer_options" data-aos="fade-up"
   data-aos-anchor-placement="top-center">
     <ng-template carouselSlide *ngFor="let occassion of occassionList;">
@@ -93,12 +95,13 @@
 
           <p class="post-description">{{occassion.occDescription}}</p>
 
+          <div class="post-btn mb-2">
           <span *ngIf="occassion.occName=='Birthday'" class="post-date">🎂</span>
           <span *ngIf="occassion.occName=='Wedding'" class="post-date">👰</span>
           <span *ngIf="occassion.occName=='Baby Shower'" class="post-date">👼</span>
           <span *ngIf="occassion.occName=='Anniversory'" class="post-date">🧑‍🤝‍🧑</span>
           <a  class="read-more" routerLink="/occassion-wise/{{occassion._id}}/{{occassion.occName}}"> View Products</a>
-
+</div>
         </div>
       </div>
     </ng-template>
@@ -113,6 +116,7 @@
   <div class="heading text-center">
 
     <h1 data-aos="zoom-in">Flavours</h1>
+    <hr style="color:var(--head-text)">
     <p data-aos="fade-up"
     data-aos-anchor-placement="center-bottom">Experince variaty of flavours</p>
   </div>
@@ -146,7 +150,7 @@
           <a>{{product.prodName}}</a>
 
         </h3>
-        <p class="post-description mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus enim cupiditate onsectetur neque quisquam ipsa!</p>
+        <p class="post-description mb-2">{{product.prodDescription}}</p>
 
         <span class="post-date">
           <div class="mt-1 d-flex justify-content-between align-items-center">

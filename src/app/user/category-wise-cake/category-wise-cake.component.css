@@ -94,6 +94,8 @@
     transition: all 0.3s ease 0s;
     height:2ch;
     overflow: hidden;
+    font-family: 'Rubik', sans-serif;
+
   }
   .post-slide .post-title a:hover {
     text-decoration: none;

@@ -1,9 +1,9 @@
 
  @charset "utf-8";
-
  @import "~bootstrap/dist/css/bootstrap.css";
  @import '~ngx-toastr/toastr.css';
   @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+  @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
   :root {
     --head-text: #f04506;
@@ -199,3 +199,8 @@ input.star:checked ~ label.star:before {
     width: auto !important;
   }
   
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Bree Serif', serif;
+
+  }

@@ -44,7 +44,7 @@ export class MainContentComponent implements OnInit {
   }
   what_we_offer_options: OwlOptions = {
     loop: true,
-    autoplay: true,
+    autoplay: false,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
