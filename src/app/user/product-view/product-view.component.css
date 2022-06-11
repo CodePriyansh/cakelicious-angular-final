@@ -286,3 +286,12 @@
 }
 
 
+.addtocart{
+	color: white;
+	box-shadow: 0px 10px 20px -10px var(--head-text);
+}
+
+.addtocart:hover{
+	color: rgb(255, 0, 0);
+	box-shadow: 0px 10px 20px -10px var(--head-text);
+}

@@ -139,7 +139,7 @@ export class MainContentComponent implements OnInit {
   };
   customOptions: OwlOptions = {
     loop: true,
-    autoplay: true,
+    autoplay: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
