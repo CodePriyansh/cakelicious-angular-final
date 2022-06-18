@@ -243,9 +243,7 @@ export class CartComponent implements OnInit {
   deleteItem(pid: any) {
     this.cartServe.deleteOne(this.userId, pid).subscribe((data) => {
       console.log(data);
-      if (data) {
         this.ngOnInit();
-      }
     });
   }
 
@@ -267,7 +265,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartServe.getCartItems(this.userId).subscribe((data) => {
           console.log(data)
-      if (data) {
+      if (data.cartItems .length!=0) {
         this.cartItems = data.cartItems;
         for (let i = 0; i < this.cartItems.length; i++) {
           this.cartItems[i].size = 1;

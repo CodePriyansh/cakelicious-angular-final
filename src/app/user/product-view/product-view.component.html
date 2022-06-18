@@ -76,7 +76,7 @@
               <div class="qtyplus" onclick="this.parentNode.querySelector('input[id=form1]').stepUp()"
                 (click)="updateQuantity(val.value,'QTY')">+</div>
             </form>
-            <a href="" (click)="addCart(prod._id)" class="round-black-btn addtocart" style="cursor: pointer;">Add to Cart</a>
+            <a (click)="addCart(prod._id)" style="color: white;"  class="round-black-btn addtocart" style="cursor: pointer;"> Add to Cart</a>
             <a class="btn btn-secondry buy-now" data-bs-toggle="modal" data-bs-target="#exampleModal" class="close" data-dismiss="modal" aria-hidden="true"
               class="round-black-btn mx-3" style="color:white; background: #FFD814;
               border-color: #FCD200; box-shadow: 0px 10px 20px -10px #FFD814; cursor: pointer;">Buy Now</a>
@@ -106,10 +106,10 @@
           <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab"
             aria-controls="description" aria-selected="true">Description</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review"
             aria-selected="false">Reviews (0)</a>
-        </li>
+        </li> -->
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">

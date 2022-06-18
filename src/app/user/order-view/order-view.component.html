@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-lg-4 col-sm-12 col-md-12 " *ngIf="item.orderStatus=='Delivered'">
                     <div class="cont mx-lg-5 m-2">
-                        <div class="m-3" *ngFor="let review of prodItem.ProductId.prodReview;">
+                        <div class="m-3" *ngFor="let review of prodItem.ProductId.prodReview.slice(0,1);">
                             {{review.review}}
                             <div *ngIf="review.userId==userId" class="thank-div m-4" style="color:#fd4">
                                 <i *ngIf="review.rating>=1" class="fa fa-star" aria-hidden="true"></i>
