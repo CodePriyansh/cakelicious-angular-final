@@ -12,7 +12,7 @@ export class LoginService {
   signUpApi = this.url+"/customer/sign-up";
   signInApi = this.url+"/customer/sign-in";
   signupGoogle =this.url+"/customer/login-with-google"
-  optApi = "http://localhost:3000/customer/send-otp";
+  optApi = this.url+"/customer/send-otp";
 
   constructor(private http:HttpClient) { }
 
