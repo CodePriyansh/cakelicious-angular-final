@@ -10,7 +10,7 @@ import { environment } from "../../environments/environment.prod";
 export class LoginService {
   url = "https://cake-licious-backend.herokuapp.com";
   signUpApi = this.url+"/customer/sign-up";
-  signInApi = this.url+"/customer/sign-in";
+  signInApi = this.url+"/customer/sign-in"; 
   signupGoogle =this.url+"/customer/login-with-google"
   optApi = this.url+"/customer/send-otp";
 
